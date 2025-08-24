@@ -1,0 +1,2270 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summarizing Your Way to Synthesis - Scholar's Compass</title>
+    <meta name="description" content="Master summary and synthesis skills to distill ideas and build compelling arguments for academic success.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --primary-dark: #345280;
+            --primary-light: #6a8ec7;
+            --secondary: #ff8c42;
+            --secondary-light: #ffab70;
+            --accent: #6a7fdb;
+            --light: #f8f9fa;
+            --dark: #222;
+            --dark-secondary: #333;
+            --dark-text: #f0f0f0;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --dark-gray: #444;
+            --orange-glow: rgba(255, 140, 66, 0.15);
+            --orange-hover: rgba(255, 140, 66, 0.8);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-quick: all 0.15s ease-out;
+            --shadow-soft: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-medium: 0 5px 25px rgba(0,0,0,0.15);
+            --border-radius: 8px;
+            --min-touch-target: 44px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--dark);
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            background-image: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            min-height: 100vh;
+            transition: var(--transition-smooth);
+            padding-top: 70px; /* Just navbar height */
+            opacity: 0;
+            animation: fadeInPage 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInPage {
+            to { opacity: 1; }
+        }
+
+        body.dark-mode {
+            background-color: var(--dark);
+            color: var(--dark-text);
+            background-image: linear-gradient(to bottom, #222, #333);
+        }
+
+        /* Progress Bar at very top */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Enhanced Navigation Styles */
+        .navbar {
+            position: fixed;
+            top: 5px; /* Account for progress bar */
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            padding: 15px 0;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .navbar {
+            background: rgba(51, 51, 51, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-menu {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: var(--border-radius);
+            transition: var(--transition-smooth);
+            min-width: var(--min-touch-target);
+            min-height: var(--min-touch-target);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .hamburger-menu:hover {
+            background-color: var(--orange-glow);
+            box-shadow: 0 0 15px var(--orange-glow);
+        }
+
+        .hamburger-menu:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        body.dark-mode .hamburger-menu:hover {
+            background-color: var(--dark-gray);
+        }
+
+        .hamburger-menu .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition-smooth);
+            border-radius: 1px;
+        }
+
+        body.dark-mode .hamburger-menu .bar {
+            background-color: var(--primary-light);
+        }
+
+        .hamburger-menu.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .hamburger-menu.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: var(--transition-smooth);
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+        }
+
+        .navbar-brand:hover {
+            color: var(--secondary);
+            text-decoration: none;
+            background-color: var(--orange-glow);
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        body.dark-mode .navbar-brand {
+            color: var(--primary-light);
+        }
+
+        body.dark-mode .navbar-brand:hover {
+            color: var(--secondary-light);
+        }
+
+        .navbar-brand i {
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Enhanced Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -350px;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: 2px 0 20px rgba(0,0,0,0.15);
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode .sidebar {
+            background: rgba(51, 51, 51, 0.98);
+            box-shadow: 2px 0 20px rgba(0,0,0,0.3);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1002;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: var(--border-radius);
+            transition: var(--transition-smooth);
+            min-width: var(--min-touch-target);
+            min-height: var(--min-touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-close:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        .sidebar-content {
+            padding: 20px 0;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section h3 {
+            padding: 0 20px 10px;
+            color: var(--gray);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--light-gray);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        body.dark-mode .sidebar-section h3 {
+            color: #aaa;
+            border-bottom-color: #444;
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 15px 20px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            border-left: 3px solid transparent;
+            position: relative;
+            min-height: var(--min-touch-target);
+            display: flex;
+            align-items: center;
+        }
+
+        body.dark-mode .sidebar-link {
+            color: var(--dark-text);
+        }
+
+        .sidebar-link:hover {
+            background-color: var(--orange-glow);
+            color: var(--secondary);
+            text-decoration: none;
+            border-left-color: var(--secondary);
+            transform: translateX(5px);
+            box-shadow: inset 0 0 20px var(--orange-glow);
+        }
+
+        body.dark-mode .sidebar-link:hover {
+            background-color: var(--dark-gray);
+            color: var(--secondary-light);
+        }
+
+        .sidebar-link.current {
+            background-color: var(--orange-glow);
+            color: var(--secondary);
+            border-left-color: var(--secondary);
+            font-weight: 600;
+            box-shadow: inset 0 0 15px var(--orange-glow);
+        }
+
+        body.dark-mode .sidebar-link.current {
+            background-color: var(--dark-gray);
+            color: var(--secondary-light);
+            border-left-color: var(--secondary-light);
+        }
+
+        .sidebar-link i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        /* Reading time estimates */
+        .reading-time {
+            font-size: 0.75em;
+            color: var(--gray);
+            opacity: 0.8;
+            margin-left: auto;
+            padding-left: 10px;
+        }
+
+        /* Enhanced Overlay */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(3px);
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Enhanced Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .container {
+            background-color: var(--dark-secondary);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent), var(--secondary));
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            transition: var(--transition-smooth);
+        }
+
+        h1:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        body.dark-mode h1 {
+            color: var(--primary-light);
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        h1:hover::after {
+            width: 120px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .subtitle {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray);
+            font-size: 1.2em;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .subtitle {
+            color: #aaa;
+        }
+
+        /* Enhanced Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: var(--light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 25px 0;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+        }
+
+        .stats-bar:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+
+        body.dark-mode .stats-bar {
+            background: var(--dark-gray);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .stat {
+            text-align: center;
+            transition: var(--transition-smooth);
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+
+        .stat:hover {
+            background-color: var(--orange-glow);
+            transform: scale(1.05);
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        body.dark-mode .stat-label {
+            color: var(--primary-light);
+        }
+
+        /* Enhanced Sections */
+        .section {
+            margin-bottom: 25px;
+            background: #fff;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .section {
+            background: var(--dark-secondary);
+            border-color: #444;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--orange-hover);
+        }
+
+        body.dark-mode .section:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .section-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.3em;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,140,66,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .section-header:hover::before {
+            left: 100%;
+        }
+
+        .section-header:hover {
+            background-color: var(--secondary);
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        .section-icon {
+            transition: var(--transition-smooth);
+            font-size: 1.2em;
+        }
+
+        .section.active .section-icon {
+            transform: rotate(90deg);
+            color: var(--secondary-light);
+        }
+
+        .section-content {
+            padding: 25px;
+            font-size: 1.1em;
+            line-height: 1.7;
+            transition: var(--transition-smooth);
+            display: none;
+        }
+
+        .section.active .section-content {
+            display: block;
+            animation: fadeInContent 0.5s ease-out;
+        }
+
+        @keyframes fadeInContent {
+            from { 
+                opacity: 0; 
+                transform: translateY(10px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        body.dark-mode .section-content {
+            color: var(--dark-text);
+        }
+
+        .section-content p {
+            margin: 0 0 15px 0;
+        }
+        
+        .section-content ul, .section-content ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        .section-content li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        /* Enhanced Interactive Elements */
+        .example-box, .highlight-box, .tools-note, .practice-item, .key-takeaway {
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .example-box:hover, .highlight-box:hover, .tools-note:hover, .practice-item:hover, .key-takeaway:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .example-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .example-box {
+            background-color: #2a4365;
+            color: #e3f2fd;
+            border-left-color: var(--primary-light);
+        }
+
+        .example-box::before {
+            content: "Example";
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-style: normal;
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .example-box:hover::before {
+            background: var(--secondary);
+        }
+
+        body.dark-mode .example-box::before {
+            background: var(--primary-light);
+        }
+
+        .example-box strong {
+            color: #1565c0;
+            font-style: normal;
+        }
+
+        body.dark-mode .example-box strong {
+            color: #90cdf4;
+        }
+
+        .highlight-box {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            border: 1px solid #bee5eb;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .highlight-box {
+            background-color: #1c3a4f;
+            color: #d1ecf1;
+            border-color: #2c5282;
+        }
+
+        .highlight-box::before {
+            content: "Research Insight";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .highlight-box:hover::before {
+            background: var(--secondary);
+        }
+
+        .tools-note {
+            background-color: #d4edda;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            border-left: 3px solid var(--success);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .tools-note {
+            background-color: #1d3a2d;
+            color: #d4edda;
+            border-left-color: #38a169;
+        }
+
+        .tools-note::before {
+            content: "Toolkit";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--success);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .tools-note:hover::before {
+            background: var(--secondary);
+        }
+
+        .practice-item {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            border-left: 4px solid var(--warning);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .practice-item {
+            background-color: #5a4a1f;
+            color: #ffeaa7;
+            border-left-color: #f9c74f;
+        }
+
+        .practice-item::before {
+            content: "Practice";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--warning);
+            color: #333;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .practice-item:hover::before {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .practice-item strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        body.dark-mode .practice-item strong {
+            color: #f9c74f;
+        }
+
+        .key-takeaway {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .key-takeaway {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+
+        .key-takeaway h4 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .key-takeaway:hover h4 {
+            color: var(--secondary);
+        }
+
+        .key-takeaway h4 i {
+            margin-right: 10px;
+        }
+
+        /* Enhanced Interactive Elements */
+        .interactive-element {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px dashed var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        .interactive-element:hover {
+            border-color: var(--secondary);
+            background-color: var(--orange-glow);
+            box-shadow: var(--shadow-medium);
+        }
+
+        body.dark-mode .interactive-element {
+            background: var(--dark-gray);
+            border-color: var(--primary-light);
+        }
+
+        .interactive-element h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .interactive-element:hover h3 {
+            color: var(--secondary);
+        }
+
+        body.dark-mode .interactive-element h3 {
+            color: var(--primary-light);
+        }
+
+        .interactive-element h3 i {
+            margin-right: 10px;
+        }
+
+        /* Enhanced Buttons */
+        .btn, .video-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            min-height: var(--min-touch-target);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before, .video-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn:hover::before, .video-link:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover, .video-link:hover {
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        .video-link {
+            margin-top: 15px;
+        }
+
+        .video-link i, .btn i {
+            margin-right: 8px;
+        }
+
+        /* Enhanced Quick Navigation */
+        .quick-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            padding: 15px 10px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .quick-nav {
+            background: rgba(51, 51, 51, 0.95);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+        }
+
+        .quick-nav a {
+            display: block;
+            text-align: center;
+            margin: 8px 0;
+            color: var(--primary);
+            font-size: 1.5em;
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition-smooth);
+            padding: 8px;
+            border-radius: var(--border-radius);
+            min-width: var(--min-touch-target);
+            min-height: var(--min-touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quick-nav a:hover {
+            color: var(--secondary);
+            background-color: var(--orange-glow);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--orange-glow);
+        }
+
+        .quick-nav a.active {
+            color: var(--secondary);
+            background-color: var(--orange-glow);
+            box-shadow: 0 0 10px var(--orange-glow);
+        }
+
+        body.dark-mode .quick-nav a {
+            color: var(--primary-light);
+        }
+
+        .quick-nav a span {
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--dark);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.6em;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            pointer-events: none;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+
+        body.dark-mode .quick-nav a span {
+            background: var(--dark-text);
+            color: var(--dark);
+        }
+
+        .quick-nav a:hover span {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-5px);
+        }
+
+        /* Enhanced Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-soft);
+            z-index: 999;
+            transition: var(--transition-smooth);
+            border: none;
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--secondary);
+            transform: scale(1.1) rotate(180deg);
+            box-shadow: 0 0 25px var(--orange-glow);
+        }
+
+        .dark-mode-toggle:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 3px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-soft);
+            z-index: 999;
+            transition: var(--transition-smooth);
+            opacity: 0;
+            visibility: hidden;
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        /* Enhanced Tables with Mobile Scrolling */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+        }
+
+        .table-container:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        body.dark-mode .table-container {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1em;
+            min-width: 600px;
+            transition: var(--transition-smooth);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 15px 10px;
+            font-weight: bold;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .comparison-table td {
+            padding: 12px 10px;
+            border: 1px solid #ddd;
+            background-color: #f8f9fa;
+            transition: var(--transition-quick);
+            vertical-align: top;
+        }
+
+        .comparison-table tr:nth-child(even) td {
+            background-color: #ffffff;
+        }
+
+        body.dark-mode .comparison-table td {
+            background-color: var(--dark-gray);
+            border-color: #555;
+            color: var(--dark-text);
+        }
+
+        body.dark-mode .comparison-table tr:nth-child(even) td {
+            background-color: #3a3a3a;
+        }
+
+        .comparison-table td:hover {
+            background-color: var(--orange-glow);
+            cursor: default;
+            transform: scale(1.02);
+        }
+
+        body.dark-mode .comparison-table td:hover {
+            background-color: #2a4365;
+        }
+
+        /* Enhanced Difficulty Labels */
+        .difficulty-label {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .difficulty-easy {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .difficulty-easy:hover {
+            background-color: var(--success);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .difficulty-medium {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .difficulty-medium:hover {
+            background-color: var(--warning);
+            color: #333;
+            transform: scale(1.05);
+        }
+
+        .difficulty-hard {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .difficulty-hard:hover {
+            background-color: var(--danger);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Synthesis framework - Enhanced */
+        .synthesis-framework {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .synthesis-source {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition-smooth);
+            border: 2px solid transparent;
+        }
+
+        .synthesis-source:hover {
+            background-color: var(--orange-glow);
+            transform: translateY(-3px);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-medium);
+        }
+
+        body.dark-mode .synthesis-source {
+            background: #4a5568;
+            color: var(--dark-text);
+        }
+
+        .synthesis-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8em;
+            color: var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        .synthesis-arrow:hover {
+            color: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        .synthesis-result {
+            grid-column: span 4;
+            background: #d1ecf1;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            border-left: 4px solid var(--accent);
+            transition: var(--transition-smooth);
+        }
+
+        .synthesis-result:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        body.dark-mode .synthesis-result {
+            background: #2a4365;
+            color: var(--dark-text);
+        }
+
+        /* Enhanced Career Examples */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .career-card {
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--orange-glow), transparent);
+            transition: left 0.6s;
+        }
+
+        .career-card:hover::before {
+            left: 100%;
+        }
+
+        .career-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-left-color: var(--secondary);
+        }
+
+        body.dark-mode .career-card {
+            background: #2d3748;
+            border-left-color: var(--primary-light);
+            color: var(--dark-text);
+        }
+
+        .career-card h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .career-card:hover h4 {
+            color: var(--secondary);
+        }
+
+        body.dark-mode .career-card h4 {
+            color: var(--primary-light);
+        }
+
+        .career-card h4 i {
+            margin-right: 12px;
+            font-size: 1.2em;
+        }
+
+        /* Responsive Design - Mobile First */
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+                padding-top: 65px;
+            }
+            
+            .navbar {
+                padding: 8px 0;
+                top: 5px;
+            }
+            
+            .navbar-content {
+                padding: 0 15px;
+            }
+            
+            .sidebar {
+                width: 280px;
+                left: -280px;
+            }
+            
+            .container {
+                padding: 15px;
+                margin: 10px;
+                width: auto;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .quick-nav {
+                display: none;
+            }
+
+            .dark-mode-toggle {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .back-to-top {
+                bottom: 75px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .table-container {
+                margin: 15px -15px;
+                border-radius: 0;
+            }
+
+            .comparison-table {
+                font-size: 0.9em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 6px;
+            }
+
+            .synthesis-framework {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .synthesis-arrow {
+                display: none;
+            }
+            
+            .synthesis-result {
+                grid-column: span 1;
+                margin-top: 10px;
+            }
+            
+            .career-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) and (min-width: 481px) {
+            .sidebar {
+                width: 320px;
+                left: -320px;
+            }
+
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .comparison-table {
+                font-size: 0.95em;
+            }
+
+            .synthesis-framework {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Touch gestures for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .section-header, .sidebar-link, .career-card {
+                -webkit-tap-highlight-color: rgba(255, 140, 66, 0.3);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .navbar, .sidebar, .sidebar-overlay, .dark-mode-toggle, .quick-nav, .video-link, .btn, .back-to-top, .progress-container {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+                padding-top: 0 !important;
+                font-size: 12pt !important;
+            }
+            
+            .container {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            .section-header {
+                background: #ddd !important;
+                color: black !important;
+                page-break-after: avoid;
+            }
+            
+            .section-content {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+
+            .example-box, .highlight-box, .tools-note, .practice-item {
+                page-break-inside: avoid;
+                border: 1px solid #ddd !important;
+            }
+
+            .table-container {
+                overflow: visible !important;
+            }
+
+            .comparison-table {
+                min-width: auto !important;
+            }
+        }
+
+        /* Accessibility Enhancements */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary: #0000cc;
+                --secondary: #ff6600;
+                --light-gray: #cccccc;
+                --dark-gray: #333333;
+            }
+        }
+
+        /* Focus visible for better keyboard navigation */
+        *:focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body>
+    <!-- Progress Bar at very top -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-compass"></i>Scholar's Compass
+            </a>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-compass me-2"></i>Navigation</h2>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h3>Main</h3>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>Home
+                    <span class="reading-time">2 min</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Chapters</h3>
+                <a href="chapter-1.html" class="sidebar-link">
+                    <i class="fas fa-highlighter"></i>1. Annotating Your Way to Greatness
+                    <span class="reading-time">15 min</span>
+                </a>
+                <a href="chapter-2.html" class="sidebar-link">
+                    <i class="fas fa-book-reader"></i>2. Active Reading Strategies
+                    <span class="reading-time">12 min</span>
+                </a>
+                <a href="chapter-3.html" class="sidebar-link current">
+                    <i class="fas fa-clipboard-list"></i>3. Summarizing Your Way to Synthesis
+                    <span class="reading-time">10 min</span>
+                </a>
+                <a href="chapter-4.html" class="sidebar-link">
+                    <i class="fas fa-comments"></i>4. Argumentation: Joining the Academic Conversation
+                    <span class="reading-time">18 min</span>
+                </a>
+                <a href="chapter-5.html" class="sidebar-link">
+                    <i class="fas fa-link"></i>5. Source Integration for Success!
+                    <span class="reading-time">14 min</span>
+                </a>
+                <a href="chapter-6.html" class="sidebar-link">
+                    <i class="fas fa-project-diagram"></i>6. Analysis and Synthesis
+                    <span class="reading-time">16 min</span>
+                </a>
+                <a href="chapter-7.html" class="sidebar-link">
+                    <i class="fas fa-bullseye"></i>7. Crafting Powerful Thesis Statements
+                    <span class="reading-time">11 min</span>
+                </a>
+                <a href="chapter-8.html" class="sidebar-link">
+                    <i class="fas fa-align-left"></i>8. Designing Effective Paragraphs
+                    <span class="reading-time">13 min</span>
+                </a>
+                <a href="chapter-9.html" class="sidebar-link">
+                    <i class="fas fa-pen-fancy"></i>9. Strategies for Getting Started
+                    <span class="reading-time">9 min</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="quick-nav" id="quickNav">
+        <a href="#section1" title="Introduction" data-section="section1"><span>Introduction</span><i class="fas fa-info-circle"></i></a>
+        <a href="#section2" title="Summary vs Paraphrase" data-section="section2"><span>Summary vs Paraphrase</span><i class="fas fa-compress-arrows-alt"></i></a>
+        <a href="#section3" title="Step-by-Step" data-section="section3"><span>Step-by-Step</span><i class="fas fa-footsteps"></i></a>
+        <a href="#section4" title="Synthesis" data-section="section4"><span>Synthesis</span><i class="fas fa-project-diagram"></i></a>
+        <a href="#section5" title="Practice" data-section="section5"><span>Practice</span><i class="fas fa-pencil-alt"></i></a>
+        <a href="#section6" title="Application" data-section="section6"><span>Application</span><i class="fas fa-rocket"></i></a>
+    </div>
+
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-clipboard-list"></i> Summarizing Your Way to Synthesis</h1>
+            <p class="subtitle">Your Guide to Distilling Ideas and Building Arguments</p>
+            
+            <div style="margin-top: 20px;">
+                <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">Better Retention!</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Faster Writing!</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Be More Engaged!</span>
+            </div>
+        </div>
+
+        <div class="section active" id="section1">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-info-circle"></i> I. Introduction: Your Secret Weapon</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>Imagine you've found five perfect sources for your paper. Your highlighter is drained, and your notes are everywhere. You can sense a great argument, but how do you weave these voices together without just creating a messy patchwork of quotes?</p>
+                
+                <div class="highlight-box">
+                    <p>Summary and synthesis transform you from a passive collector of information into an active, critical conversation partner. These skills help you distill complex ideas and combine them to create your own compelling arguments.</p>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>By the end of this guide, you will be able to:</strong></p>
+                    <ul>
+                        <li>Distinguish between effective and ineffective summaries</li>
+                        <li>Condense complex texts into clear, concise overviews</li>
+                        <li>Synthesize multiple sources to support an original thesis</li>
+                        <li>Integrate these skills into your research and writing process</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section2">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-compress-arrows-alt"></i> II. Summary vs. Paraphrase: Knowing the Difference</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>It's crucial to understand how summary differs from its close cousin, paraphrase. Both use your own words, but they serve different purposes.</p>
+                
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <tbody><tr>
+                            <th></th>
+                            <th>Summary</th>
+                            <th>Paraphrase</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Scope</strong></td>
+                            <td>Covers the main ideas of a <strong>large text</strong> (chapter, article, book)</td>
+                            <td>Renders a <strong>specific sentence or passage</strong> from a source into your own words</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Length</strong></td>
+                            <td><strong>Much shorter</strong> than the original</td>
+                            <td>Roughly the <strong>same length</strong> as the original passage</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Purpose</strong></td>
+                            <td>To give an overview of the source's central argument and main points</td>
+                            <td>To clarify a specific, complex idea or to avoid over-quoting</td>
+                        </tr>
+                    </tbody></table>
+                </div>
+
+                <div class="example-box">
+                    <strong>Example: Original Text</strong><br>
+                    "In a landmark study conducted over a ten-year period, researchers at the University of Michigan found a robust correlation between community investment in public libraries and a range of positive civic outcomes, including higher voter turnout, improved student test scores, and lower rates of juvenile delinquency, suggesting that libraries serve as a critical hub for community engagement and development."
+                </div>
+
+                <div class="practice-item">
+                    <strong>A Paraphrase</strong> (clarifies the specific sentence):<br>
+                    According to a decade-long University of Michigan study, a strong connection exists between a community's funding of its public libraries and several beneficial community results. These include increased voting, better student performance, and reduced youth crime, indicating that libraries act as vital centers for community involvement.
+                </div>
+
+                <div class="practice-item">
+                    <strong>A Summary</strong> (captures the main point of the entire study):<br>
+                    A long-term University of Michigan study concluded that public libraries are vital for community development, linking them to improved civic engagement, education, and safety.
+                </div>
+
+                <div class="key-takeaway">
+                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+                    <p>Use a <strong>summary</strong> when you need to provide background or explain the gist of a source's argument. Use a <strong>paraphrase</strong> when you need to clarify a short, specific piece of evidence but don't need the exact wording of a quote.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section3">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-footsteps"></i> III. The Step-by-Step Guide to Writing a Summary</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>Follow this process to craft effective summaries every time.</p>
+                
+                <div class="tools-note">
+                    <p><strong>Step 1: Active Reading &amp; Annotation</strong></p>
+                    <ul>
+                        <li>Read the text once for general understanding</li>
+                        <li>Read it again, annotating as you go</li>
+                        <li>Mark the thesis statement, topic sentences, key terms, data, and conclusion</li>
+                    </ul>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>Step 2: Isolate the Core Components</strong></p>
+                    <ul>
+                        <li>What is the single most important point the author is making?</li>
+                        <li>What are the 2-4 most important pieces of evidence?</li>
+                        <li>What is the author's ultimate conclusion or recommendation?</li>
+                    </ul>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>Step 3: Draft Your Summary</strong></p>
+                    <ul>
+                        <li>Start with a "source sentence" mentioning author, title, and purpose</li>
+                        <li>State the central thesis clearly and succinctly</li>
+                        <li>Paraphrase the major supporting points in a logical order</li>
+                        <li>Conclude with the author's final finding or implication</li>
+                    </ul>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>Step 4: Revise and Refine</strong></p>
+                    <ul>
+                        <li>Check for length: Is it appropriately concise?</li>
+                        <li>Check for objectivity: Have you removed all personal judgment?</li>
+                        <li>Check for accuracy: Would the author recognize their argument?</li>
+                        <li>Read it aloud: Does it flow and make sense on its own?</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <strong>Example Source Sentence:</strong><br>
+                    "In her article 'The Digital Classroom,' Dr. Elena Rodriguez argues that technology should supplement rather than replace traditional teaching methods, highlighting three key areas where human interaction remains irreplaceable in education."
+                </div>
+                
+                <div class="key-takeaway">
+                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+                    <p>A strong summary is a precise "elevator pitch" for someone else's work—it represents the essence accurately and efficiently without including your personal opinions or evaluations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section4">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-project-diagram"></i> IV. Moving Beyond Summary to Synthesis</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>If summary is about accurately representing a single voice, synthesis is about weaving multiple voices together into a new, coherent narrative to support your own argument.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>The Synthesis Thought Process:</strong></p>
+                    <ul>
+                        <li>How does Source A's finding relate to Source B's theory?</li>
+                        <li>Where do these authors agree? Where do they disagree?</li>
+                        <li>How does this collection of evidence combine to support my thesis?</li>
+                    </ul>
+                </div>
+
+                <h3>A Practical Framework for Synthesis</h3>
+                
+                <div class="synthesis-framework">
+                    <div class="synthesis-source">
+                        <strong>Source A (Lee, 2022)</strong><br>
+                        Finds that meditation reduces student stress.
+                    </div>
+                    <div class="synthesis-arrow">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="synthesis-source">
+                        <strong>Source B (Morris et al., 2023)</strong><br>
+                        Shows group exercise improves mood and social connection.
+                    </div>
+                    <div class="synthesis-arrow">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="synthesis-source">
+                        <strong>Source C (Iwanaga, 2021)</strong><br>
+                        Argues that sleep quality is the primary factor in academic focus.
+                    </div>
+                    <div class="synthesis-arrow">
+                        <i class="fas fa-equals"></i>
+                    </div>
+                    <div class="synthesis-result">
+                        <strong>Synthesized Conclusion:</strong> A comprehensive student wellness program should integrate mental (meditation), physical (exercise), and physiological (sleep education) components, as the research shows these factors are interconnected and mutually reinforcing.
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <strong>How to Write a Synthesized Paragraph:</strong>
+                    <ol>
+                        <li><strong>Make a claim</strong> that requires evidence</li>
+                        <li><strong>Introduce your sources</strong> together using transitional language</li>
+                        <li><strong>Weave the evidence together</strong>, showing how the sources speak to each other</li>
+                        <li><strong>Explain</strong> how this combination of evidence supports your original claim</li>
+                    </ol>
+                </div>
+
+                <div class="example-box">
+                    <strong>Example Transitional Language:</strong><br>
+                    "Research from multiple fields confirms the importance of holistic wellness. Lee (2022) demonstrates..., while Morris et al. (2023) add to this by showing.... This physical component complements Iwanaga's (2021) focus on..."
+                </div>
+                
+                <div class="key-takeaway">
+                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+                    <p>Synthesis is the difference between a solo and a choir—it creates harmony from multiple voices to support your own original argument.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section5">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-pencil-alt"></i> V. Practice Exercises</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>Now it's your turn to practice. Try these exercises to develop your summary and synthesis skills.</p>
+                
+                <div class="practice-item">
+                    <span class="difficulty-label difficulty-medium">Exercise 1: Summary Revision</span>
+                    <strong>Original Passage:</strong><br>
+                    "A comprehensive analysis of urban green spaces in major metropolitan areas reveals a significant correlation between park accessibility and community health outcomes. The study, which surveyed over 10,000 residents, found that neighborhoods with higher park density reported 20% lower rates of stress-related illnesses and 15% higher levels of reported physical activity. Researchers conclude that urban planning policies must prioritize equitable access to green spaces as a public health imperative."
+
+                    <strong>Weak Student Summary:</strong><br>
+                    "This article is about parks in cities. It says that parks are good and make people healthier, which isn't surprising. They think we should build more of them."
+
+                    <div class="interactive-element">
+                        <h3><i class="fas fa-tasks"></i> Your Task:</h3>
+                        <ol>
+                            <li>Identify the 3 biggest flaws in the weak summary</li>
+                            <li>Write a revised, 2-3 sentence summary that follows the golden rules</li>
+                        </ol>
+                        <textarea style="width: 100%; height: 100px; margin-top: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" placeholder="Type your revised summary here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <span class="difficulty-label difficulty-hard">Exercise 2: Synthesis Zone</span>
+                    <strong>Sources to Synthesize:</strong>
+                    <ul>
+                        <li><strong>Source 1 (Textbook):</strong> "Active learning techniques, such as group problem-solving and peer teaching, lead to deeper cognitive processing and better long-term retention of material compared to passive listening."</li>
+                        <li><strong>Source 2 (Journal Article):</strong> "A significant challenge to implementing active learning is student resistance. Learners accustomed to lecture-based formats may perceive group work as a failure of the instructor to 'teach' them properly."</li>
+                        <li><strong>Source 3 (Blog Post by a Teaching Expert):</strong> "The effectiveness of active learning is not in the technique itself, but in its implementation. Clear explanation of the why behind the activity and scaffolding the skills for collaboration are essential for success."</li>
+                    </ul>
+
+                    <div class="interactive-element">
+                        <h3><i class="fas fa-tasks"></i> Your Task:</h3>
+                        <p>Write a paragraph synthesizing these three sources to support the following claim:</p>
+                        <p><em>"For active learning to be successful, instructors must not only choose effective techniques but also strategically manage student expectations and preparedness."</em></p>
+                        <textarea style="width: 100%; height: 150px; margin-top: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" placeholder="Type your synthesized paragraph here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="key-takeaway">
+                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+                    <p>Regular practice with summary and synthesis will transform your research and writing process, making you more efficient and your arguments more persuasive.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section6">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-rocket"></i> VI. Application in Your Assignments &amp; Future Career</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>Summary and synthesis skills are essential across many academic assignments and will serve you throughout your professional career. Here's how to apply them effectively in both contexts.</p>
+                
+                <h3>Academic Applications</h3>
+
+                <div class="tools-note">
+                    <p><strong>The Annotated Bibliography</strong></p>
+                    <p>A perfect training ground for summary. Each entry is a concise summary of a source, often followed by a brief reflection on its usefulness for your specific project.</p>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>The Literature Review</strong></p>
+                    <p>The heart of synthesis. A literature review is never just a list of summaries. It's a synthesized conversation where you organize sources by theme, debate, or methodology to reveal a gap in the research that your project will address.</p>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>The Research Paper</strong></p>
+                    <p>Every body paragraph of a strong research paper is an act of synthesis. You state your claim, present evidence from your sources, and explain how that evidence works together to prove your point.</p>
+                </div>
+
+                <h3>Professional Applications Across Disciplines</h3>
+                <p>The ability to distill complex information and combine ideas from multiple sources is valuable in virtually every profession. Here's how these skills translate to different fields:</p>
+
+                <div class="career-grid">
+                    <div class="career-card">
+                        <h4><i class="fas fa-heartbeat"></i> Healthcare &amp; Nursing</h4>
+                        <ul>
+                            <li>Summarizing complex patient histories for medical teams</li>
+                            <li>Synthesizing clinical research for evidence-based practice</li>
+                            <li>Creating concise shift reports during nursing handoffs</li>
+                        </ul>
+                        <p><strong>Example:</strong> A nurse synthesizes information from vital signs, lab results, and medication records to create a comprehensive summary for physicians.</p>
+                    </div>
+
+                    <div class="career-card">
+                        <h4><i class="fas fa-cogs"></i> Engineering &amp; Technology</h4>
+                        <ul>
+                            <li>Summarizing complex data from experiments and tests</li>
+                            <li>Synthesizing research to identify promising technical approaches</li>
+                            <li>Combining technical specs with budget considerations in proposals</li>
+                        </ul>
+                        <p><strong>Example:</strong> An engineer summarizes failure analyses and synthesizes them with material science research to recommend design improvements.</p>
+                    </div>
+
+                    <div class="career-card">
+                        <h4><i class="fas fa-chart-line"></i> Business &amp; Management</h4>
+                        <ul>
+                            <li>Creating executive summaries of lengthy reports</li>
+                            <li>Synthesizing market data from multiple sources to inform strategy</li>
+                            <li>Combining research and projections into compelling business plans</li>
+                        </ul>
+                        <p><strong>Example:</strong> A marketing manager synthesizes customer feedback, sales data, and social metrics to summarize campaign effectiveness.</p>
+                    </div>
+
+                    <div class="career-card">
+                        <h4><i class="fas fa-gavel"></i> Law &amp; Public Policy</h4>
+                        <ul>
+                            <li>Summarizing case law and synthesizing precedents for legal arguments</li>
+                            <li>Combining economic data, research, and stakeholder input for policy analysis</li>
+                            <li>Distilling complex legal information into clear advice for clients</li>
+                        </ul>
+                        <p><strong>Example:</strong> A policy analyst synthesizes data from economic reports, demographic studies, and impact assessments to summarize potential policy effects.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Transferable Skills for Any Career:</strong> Regardless of your field, summary and synthesis skills help you save time, make better decisions, communicate effectively, demonstrate critical thinking, and establish credibility.</p>
+                </div>
+
+                <div class="interactive-element">
+                    <h3><i class="fas fa-clipboard-check"></i> Self-Evaluation Checklist</h3>
+                    <p>Use this checklist to evaluate your summary and synthesis skills:</p>
+                    
+                    <div style="margin-top: 15px;">
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> I can distinguish between summary and paraphrase
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> I consistently identify the main argument in sources
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> I can write concise summaries without personal bias
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> I look for connections between different sources
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> I use transitional language to weave sources together
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> I explain how combined evidence supports my claims
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="key-takeaway">
+                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+                    <p>Mastering summary and synthesis will not only improve your grades but also make you a more critical reader, more efficient researcher, and more persuasive writer in both academic and professional contexts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let sectionStates = {};
+
+        // Load saved preferences
+        function loadPreferences() {
+            const darkMode = localStorage.getItem('darkMode') === 'true';
+            const savedStates = localStorage.getItem('sectionStates');
+            
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('darkModeToggle').querySelector('i').className = 'fas fa-sun';
+            }
+            
+            if (savedStates) {
+                sectionStates = JSON.parse(savedStates);
+                Object.keys(sectionStates).forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (section && sectionStates[sectionId]) {
+                        section.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        // Save preferences
+        function savePreferences() {
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            localStorage.setItem('sectionStates', JSON.stringify(sectionStates));
+        }
+
+        // Enhanced Sidebar functionality
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarClose = document.getElementById('sidebarClose');
+
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburgerMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Auto-close sidebar on mobile when selecting chapter
+        function autoCloseSidebarOnMobile() {
+            if (window.innerWidth <= 768) {
+                closeSidebar();
+            }
+        }
+
+        hamburgerMenu.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Add auto-close to all chapter links
+        document.querySelectorAll('.sidebar-link[href*="chapter"]').forEach(link => {
+            link.addEventListener('click', autoCloseSidebarOnMobile);
+        });
+
+        // Touch gestures for sidebar
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 100;
+            const swipeDistance = touchEndX - touchStartX;
+            
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0 && touchStartX < 50) {
+                    // Swipe right from left edge - open sidebar
+                    openSidebar();
+                } else if (swipeDistance < 0 && sidebar.classList.contains('active')) {
+                    // Swipe left when sidebar is open - close sidebar
+                    closeSidebar();
+                }
+            }
+        }
+
+        // Escape key handling
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            }
+        });
+
+        // Enhanced section toggling with state persistence
+        function toggleSection(header) {
+            const section = header.parentNode;
+            const sectionId = section.id;
+            
+            section.classList.toggle('active');
+            sectionStates[sectionId] = section.classList.contains('active');
+            savePreferences();
+            
+            if (section.classList.contains('active')) {
+                // Smooth scroll to section with offset for navbar
+                const yOffset = -80;
+                const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+                
+                // Update URL hash
+                history.replaceState(null, null, '#' + sectionId);
+            }
+        }
+
+        // Enhanced scroll progress with color transition
+        function updateScrollProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            // Update progress bar width
+            const progressBar = document.getElementById("progressBar");
+            progressBar.style.width = scrolled + "%";
+            
+            // Calculate color transition (blue to orange)
+            const orangePercentage = Math.min(scrolled / 100, 1);
+            const bluePercentage = 1 - orangePercentage;
+            
+            // Create gradient with color transition
+            progressBar.style.background = 
+                `linear-gradient(to right, 
+                var(--primary) 0%, 
+                color-mix(in srgb, var(--primary) ${bluePercentage * 100}%, var(--secondary) ${orangePercentage * 100}%) ${scrolled}%, 
+                var(--secondary) 100%)`;
+            
+            // Update quick nav active states
+            updateQuickNavActiveStates();
+            
+            // Show/hide back to top button
+            const backToTop = document.getElementById('backToTop');
+            if (winScroll > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+
+        // Quick navigation active states
+        function updateQuickNavActiveStates() {
+            const sections = document.querySelectorAll('.section');
+            const quickNavLinks = document.querySelectorAll('.quick-nav a');
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const isInView = rect.top <= 100 && rect.bottom >= 100;
+                
+                if (isInView) {
+                    quickNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('data-section') === section.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        // Enhanced dark mode toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('darkModeToggle').querySelector('i');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+            
+            savePreferences();
+        }
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const yOffset = -80;
+                        const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({top: y, behavior: 'smooth'});
+                        
+                        // Expand section if it's collapsed
+                        if (target.classList.contains('section') && !target.classList.contains('active')) {
+                            target.classList.add('active');
+                            sectionStates[target.id] = true;
+                            savePreferences();
+                        }
+                    }
+                });
+            });
+        }
+
+        // Skills progress tracker
+        function updateSkillsProgress() {
+            const checkboxes = document.querySelectorAll('.skill-checkbox');
+            let checked = 0;
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) checked++;
+            });
+            
+            // Save progress
+            localStorage.setItem('skillsProgress', checked);
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPreferences();
+            
+            // Initialize first section as active if no saved state
+            if (Object.keys(sectionStates).length === 0) {
+                const firstSection = document.querySelector('.section');
+                if (firstSection) {
+                    firstSection.classList.add('active');
+                    sectionStates[firstSection.id] = true;
+                }
+            }
+            
+            // Handle URL hash
+            if (window.location.hash) {
+                const targetSection = document.querySelector(window.location.hash);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    sectionStates[targetSection.id] = true;
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    }, 100);
+                }
+            }
+            
+            // Set up event listeners
+            window.addEventListener('scroll', updateScrollProgress);
+            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+            
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', scrollToTop);
+            }
+            
+            // Set up checkbox event listeners
+            document.querySelectorAll('.skill-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', updateSkillsProgress);
+            });
+            
+            // Initialize other features
+            initSmoothScrolling();
+            updateScrollProgress();
+            
+            console.log('Scholar\'s Compass - Chapter 3 Enhanced Edition Loaded! 🧭');
+        });
+
+        // Performance optimization - throttle scroll events
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollProgress);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            requestTick();
+            ticking = false;
+        });
+    </script>
+
+
+</body></html>
