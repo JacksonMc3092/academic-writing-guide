@@ -1,0 +1,2285 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting Powerful Thesis Statements - Scholar's Compass</title>
+    <meta name="description" content="Master the art of building strong thesis statements using the Topic-to-Thesis framework and proven templates.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --primary-dark: #345280;
+            --primary-light: #6a8ec7;
+            --secondary: #ff8c42;
+            --secondary-light: #ffab70;
+            --accent: #6a7fdb;
+            --light: #f8f9fa;
+            --dark: #222;
+            --dark-secondary: #333;
+            --dark-text: #f0f0f0;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --dark-gray: #444;
+            --orange-glow: rgba(255, 140, 66, 0.15);
+            --orange-hover: rgba(255, 140, 66, 0.8);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-quick: all 0.15s ease-out;
+            --shadow-soft: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-medium: 0 5px 25px rgba(0,0,0,0.15);
+            --border-radius: 8px;
+            --min-touch-target: 44px;
+            --citation-color: #fff3cd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--dark);
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            background-image: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            min-height: 100vh;
+            transition: var(--transition-smooth);
+            padding-top: 70px;
+            opacity: 0;
+            animation: fadeInPage 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInPage {
+            to { opacity: 1; }
+        }
+
+        body.dark-mode {
+            background-color: var(--dark);
+            color: var(--dark-text);
+            background-image: linear-gradient(to bottom, #222, #333);
+        }
+
+        /* Progress Bar at very top */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Enhanced Navigation Styles */
+        .navbar {
+            position: fixed;
+            top: 5px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            padding: 15px 0;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .navbar {
+            background: rgba(51, 51, 51, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-menu {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: var(--border-radius);
+            transition: var(--transition-smooth);
+            min-width: var(--min-touch-target);
+            min-height: var(--min-touch-target);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .hamburger-menu:hover {
+            background-color: var(--orange-glow);
+            box-shadow: 0 0 15px var(--orange-glow);
+        }
+
+        .hamburger-menu:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        body.dark-mode .hamburger-menu:hover {
+            background-color: var(--dark-gray);
+        }
+
+        .hamburger-menu .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition-smooth);
+            border-radius: 1px;
+        }
+
+        body.dark-mode .hamburger-menu .bar {
+            background-color: var(--primary-light);
+        }
+
+        .hamburger-menu.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .hamburger-menu.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: var(--transition-smooth);
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+        }
+
+        .navbar-brand:hover {
+            color: var(--secondary);
+            text-decoration: none;
+            background-color: var(--orange-glow);
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        body.dark-mode .navbar-brand {
+            color: var(--primary-light);
+        }
+
+        body.dark-mode .navbar-brand:hover {
+            color: var(--secondary-light);
+        }
+
+        .navbar-brand i {
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Enhanced Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -350px;
+            width: 350px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: 2px 0 20px rgba(0,0,0,0.15);
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode .sidebar {
+            background: rgba(51, 51, 51, 0.98);
+            box-shadow: 2px 0 20px rgba(0,0,0,0.3);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1002;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: var(--border-radius);
+            transition: var(--transition-smooth);
+            min-width: var(--min-touch-target);
+            min-height: var(--min-touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-close:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        .sidebar-content {
+            padding: 20px 0;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section h3 {
+            padding: 0 20px 10px;
+            color: var(--gray);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--light-gray);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        body.dark-mode .sidebar-section h3 {
+            color: #aaa;
+            border-bottom-color: #444;
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 15px 20px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            border-left: 3px solid transparent;
+            position: relative;
+            min-height: var(--min-touch-target);
+            display: flex;
+            align-items: center;
+        }
+
+        body.dark-mode .sidebar-link {
+            color: var(--dark-text);
+        }
+
+        .sidebar-link:hover {
+            background-color: var(--orange-glow);
+            color: var(--secondary);
+            text-decoration: none;
+            border-left-color: var(--secondary);
+            transform: translateX(5px);
+            box-shadow: inset 0 0 20px var(--orange-glow);
+        }
+
+        body.dark-mode .sidebar-link:hover {
+            background-color: var(--dark-gray);
+            color: var(--secondary-light);
+        }
+
+        .sidebar-link.current {
+            background-color: var(--orange-glow);
+            color: var(--secondary);
+            border-left-color: var(--secondary);
+            font-weight: 600;
+            box-shadow: inset 0 0 15px var(--orange-glow);
+        }
+
+        body.dark-mode .sidebar-link.current {
+            background-color: var(--dark-gray);
+            color: var(--secondary-light);
+            border-left-color: var(--secondary-light);
+        }
+
+        .sidebar-link i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .reading-time {
+            font-size: 0.75em;
+            color: var(--gray);
+            opacity: 0.8;
+            margin-left: auto;
+            padding-left: 10px;
+        }
+
+        /* Enhanced Overlay */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(3px);
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Enhanced Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .container {
+            background-color: var(--dark-secondary);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent), var(--secondary));
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            transition: var(--transition-smooth);
+        }
+
+        h1:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        body.dark-mode h1 {
+            color: var(--primary-light);
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        h1:hover::after {
+            width: 120px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .subtitle {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray);
+            font-size: 1.2em;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .subtitle {
+            color: #aaa;
+        }
+
+        /* Enhanced Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: var(--light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 25px 0;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+        }
+
+        .stats-bar:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+
+        body.dark-mode .stats-bar {
+            background: var(--dark-gray);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .stat {
+            text-align: center;
+            transition: var(--transition-smooth);
+            padding: 10px;
+            border-radius: var(--border-radius);
+        }
+
+        .stat:hover {
+            background-color: var(--orange-glow);
+            transform: scale(1.05);
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        body.dark-mode .stat-label {
+            color: var(--primary-light);
+        }
+
+        /* Enhanced Sections */
+        .section {
+            margin-bottom: 25px;
+            background: #fff;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .section {
+            background: var(--dark-secondary);
+            border-color: #444;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--orange-hover);
+        }
+
+        body.dark-mode .section:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .section-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.3em;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,140,66,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .section-header:hover::before {
+            left: 100%;
+        }
+
+        .section-header:hover {
+            background-color: var(--secondary);
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        .section-icon {
+            transition: var(--transition-smooth);
+            font-size: 1.2em;
+        }
+
+        .section.active .section-icon {
+            transform: rotate(90deg);
+            color: var(--secondary-light);
+        }
+
+        .section-content {
+            padding: 25px;
+            font-size: 1.1em;
+            line-height: 1.7;
+            transition: var(--transition-smooth);
+            display: none;
+        }
+
+        .section.active .section-content {
+            display: block;
+            animation: fadeInContent 0.5s ease-out;
+        }
+
+        @keyframes fadeInContent {
+            from { 
+                opacity: 0; 
+                transform: translateY(10px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        body.dark-mode .section-content {
+            color: var(--dark-text);
+        }
+
+        .section-content p {
+            margin: 0 0 15px 0;
+        }
+        
+        .section-content ul, .section-content ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        .section-content li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        /* Enhanced Interactive Elements */
+        .example-box, .highlight-box, .tools-note, .practice-item, .key-takeaway {
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .example-box:hover, .highlight-box:hover, .tools-note:hover, .practice-item:hover, .key-takeaway:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .example-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .example-box {
+            background-color: #2a4365;
+            color: #e3f2fd;
+            border-left-color: var(--primary-light);
+        }
+
+        .example-box::before {
+            content: "Example";
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-style: normal;
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .example-box:hover::before {
+            background: var(--secondary);
+        }
+
+        body.dark-mode .example-box::before {
+            background: var(--primary-light);
+        }
+
+        .example-box strong {
+            color: #1565c0;
+            font-style: normal;
+        }
+
+        body.dark-mode .example-box strong {
+            color: #90cdf4;
+        }
+
+        .highlight-box {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            border: 1px solid #bee5eb;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .highlight-box {
+            background-color: #1c3a4f;
+            color: #d1ecf1;
+            border-color: #2c5282;
+        }
+
+        .highlight-box::before {
+            content: "Research Insight";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .highlight-box:hover::before {
+            background: var(--secondary);
+        }
+
+        .tools-note {
+            background-color: #d4edda;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            border-left: 3px solid var(--success);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .tools-note {
+            background-color: #1d3a2d;
+            color: #d4edda;
+            border-left-color: #38a169;
+        }
+
+        .tools-note::before {
+            content: "Toolkit";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--success);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .tools-note:hover::before {
+            background: var(--secondary);
+        }
+
+        .practice-item {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            border-left: 4px solid var(--warning);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .practice-item {
+            background-color: #5a4a1f;
+            color: #ffeaa7;
+            border-left-color: #f9c74f;
+        }
+
+        .practice-item::before {
+            content: "Practice";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--warning);
+            color: #333;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .practice-item:hover::before {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .practice-item strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        body.dark-mode .practice-item strong {
+            color: #f9c74f;
+        }
+
+        .key-takeaway {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .key-takeaway {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+
+        .key-takeaway h4 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .key-takeaway:hover h4 {
+            color: var(--secondary);
+        }
+
+        .key-takeaway h4 i {
+            margin-right: 10px;
+        }
+
+        /* Enhanced Interactive Elements */
+        .interactive-element {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px dashed var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        .interactive-element:hover {
+            border-color: var(--secondary);
+            background-color: var(--orange-glow);
+            box-shadow: var(--shadow-medium);
+        }
+
+        body.dark-mode .interactive-element {
+            background: var(--dark-gray);
+            border-color: var(--primary-light);
+        }
+
+        .interactive-element h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .interactive-element:hover h3 {
+            color: var(--secondary);
+        }
+
+        body.dark-mode .interactive-element h3 {
+            color: var(--primary-light);
+        }
+
+        .interactive-element h3 i {
+            margin-right: 10px;
+        }
+
+        /* Enhanced Buttons */
+        .btn, .video-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            min-height: var(--min-touch-target);
+            position: relative;
+            overflow: hidden;
+            margin: 5px;
+        }
+
+        .btn::before, .video-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn:hover::before, .video-link:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover, .video-link:hover {
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        .video-link {
+            margin-top: 15px;
+        }
+
+        .video-link i, .btn i {
+            margin-right: 8px;
+        }
+
+        /* Enhanced Quick Navigation */
+        .quick-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            padding: 15px 10px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .quick-nav {
+            background: rgba(51, 51, 51, 0.95);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+        }
+
+        .quick-nav a {
+            display: block;
+            text-align: center;
+            margin: 8px 0;
+            color: var(--primary);
+            font-size: 1.5em;
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition-smooth);
+            padding: 8px;
+            border-radius: var(--border-radius);
+            min-width: var(--min-touch-target);
+            min-height: var(--min-touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quick-nav a:hover {
+            color: var(--secondary);
+            background-color: var(--orange-glow);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--orange-glow);
+        }
+
+        .quick-nav a.active {
+            color: var(--secondary);
+            background-color: var(--orange-glow);
+            box-shadow: 0 0 10px var(--orange-glow);
+        }
+
+        body.dark-mode .quick-nav a {
+            color: var(--primary-light);
+        }
+
+        .quick-nav a span {
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--dark);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.6em;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            pointer-events: none;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+
+        body.dark-mode .quick-nav a span {
+            background: var(--dark-text);
+            color: var(--dark);
+        }
+
+        .quick-nav a:hover span {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-5px);
+        }
+
+        /* Enhanced Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-soft);
+            z-index: 999;
+            transition: var(--transition-smooth);
+            border: none;
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--secondary);
+            transform: scale(1.1) rotate(180deg);
+            box-shadow: 0 0 25px var(--orange-glow);
+        }
+
+        .dark-mode-toggle:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 3px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-soft);
+            z-index: 999;
+            transition: var(--transition-smooth);
+            opacity: 0;
+            visibility: hidden;
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 0 20px var(--orange-glow);
+        }
+
+        /* Enhanced Difficulty Labels */
+        .difficulty-label {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .difficulty-easy {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .difficulty-easy:hover {
+            background-color: var(--success);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .difficulty-medium {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .difficulty-medium:hover {
+            background-color: var(--warning);
+            color: #333;
+            transform: scale(1.05);
+        }
+
+        .difficulty-hard {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .difficulty-hard:hover {
+            background-color: var(--danger);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            box-shadow: var(--shadow-soft);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .comparison-table:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        body.dark-mode .comparison-table {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 15px 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 12px 10px;
+            border: 1px solid #ddd;
+            background-color: #f8f9fa;
+            transition: var(--transition-quick);
+        }
+
+        body.dark-mode .comparison-table td {
+            background-color: var(--dark-gray);
+            border-color: #555;
+            color: var(--dark-text);
+        }
+
+        .comparison-table td:hover {
+            background-color: var(--orange-glow);
+            cursor: default;
+            transform: scale(1.02);
+        }
+
+        body.dark-mode .comparison-table td:hover {
+            background-color: #2a4365;
+        }
+
+        /* Thesis framework visualization */
+        .thesis-framework {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .framework-step {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background: #e9ecef;
+            transition: var(--transition-smooth);
+            position: relative;
+            z-index: 2;
+        }
+
+        .framework-step:hover {
+            background: var(--orange-glow);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        body.dark-mode .framework-step {
+            background: #4a5568;
+        }
+
+        body.dark-mode .framework-step:hover {
+            background: #2a4365;
+        }
+
+        .framework-step-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .framework-step:hover .framework-step-number {
+            background: var(--secondary);
+            transform: scale(1.1);
+        }
+
+        .framework-step-content {
+            flex-grow: 1;
+        }
+
+        .framework-arrow {
+            position: absolute;
+            left: 30px;
+            height: 20px;
+            width: 2px;
+            background: var(--primary);
+            z-index: 1;
+        }
+
+        .framework-step:nth-child(1) .framework-arrow {
+            top: 60px;
+            height: 25px;
+        }
+
+        .framework-step:nth-child(2) .framework-arrow {
+            top: 60px;
+            height: 25px;
+        }
+
+        .framework-step:nth-child(3) .framework-arrow {
+            top: 60px;
+            height: 25px;
+        }
+
+        .framework-step:nth-child(4) .framework-arrow {
+            top: 60px;
+            height: 25px;
+        }
+
+        /* Thesis builder interactive tool */
+        .thesis-builder {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 2px solid var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        .thesis-builder:hover {
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-medium);
+        }
+
+        body.dark-mode .thesis-builder {
+            background: #2d3748;
+            border-color: var(--primary-light);
+        }
+
+        .thesis-builder h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .thesis-builder h3 {
+            color: var(--primary-light);
+        }
+
+        .builder-step {
+            margin-bottom: 20px;
+        }
+
+        .builder-step label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .builder-step label {
+            color: var(--primary-light);
+        }
+
+        .builder-step input, .builder-step textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1em;
+            transition: var(--transition-smooth);
+        }
+
+        .builder-step input:focus, .builder-step textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px var(--orange-glow);
+        }
+
+        body.dark-mode .builder-step input, 
+        body.dark-mode .builder-step textarea {
+            background: #3a4356;
+            border-color: #555;
+            color: #f0f0f0;
+        }
+
+        .thesis-preview {
+            background: white;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            min-height: 100px;
+            transition: var(--transition-smooth);
+        }
+
+        body.dark-mode .thesis-preview {
+            background: #3a4356;
+            border-left-color: #6a7fdb;
+        }
+
+        /* Responsive Design - Mobile First */
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+                padding-top: 65px;
+            }
+            
+            .navbar {
+                padding: 8px 0;
+                top: 5px;
+            }
+            
+            .navbar-content {
+                padding: 0 15px;
+            }
+            
+            .sidebar {
+                width: 280px;
+                left: -280px;
+            }
+            
+            .container {
+                padding: 15px;
+                margin: 10px;
+                width: auto;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .quick-nav {
+                display: none;
+            }
+
+            .dark-mode-toggle {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .back-to-top {
+                bottom: 75px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .thesis-framework {
+                gap: 20px;
+            }
+            
+            .framework-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .framework-step-number {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .framework-arrow {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) and (min-width: 481px) {
+            .sidebar {
+                width: 320px;
+                left: -320px;
+            }
+
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+
+        /* Touch gestures for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .section-header, .sidebar-link, .btn, .framework-step {
+                -webkit-tap-highlight-color: rgba(255, 140, 66, 0.3);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .navbar, .sidebar, .sidebar-overlay, .dark-mode-toggle, .quick-nav, .video-link, .btn, .back-to-top, .progress-container {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+                padding-top: 0 !important;
+                font-size: 12pt !important;
+            }
+            
+            .container {
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            .section-header {
+                background: #ddd !important;
+                color: black !important;
+                page-break-after: avoid;
+            }
+            
+            .section-content {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+
+            .example-box, .highlight-box, .tools-note, .practice-item {
+                page-break-inside: avoid;
+                border: 1px solid #ddd !important;
+            }
+
+            .thesis-builder {
+                border: 1px solid #000 !important;
+                background: white !important;
+                color: black !important;
+            }
+        }
+
+        /* Accessibility Enhancements */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary: #0000cc;
+                --secondary: #ff6600;
+                --light-gray: #cccccc;
+                --dark-gray: #333333;
+            }
+        }
+
+        /* Focus visible for better keyboard navigation */
+        *:focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body>
+    <!-- Progress Bar at very top -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-compass"></i>Scholar's Compass
+            </a>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-compass me-2"></i>Navigation</h2>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h3>Main</h3>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>Home
+                    <span class="reading-time">2 min</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Chapters</h3>
+                <a href="chapter-1.html" class="sidebar-link">
+                    <i class="fas fa-highlighter"></i>1. Annotating Your Way to Greatness
+                    <span class="reading-time">15 min</span>
+                </a>
+                <a href="chapter-2.html" class="sidebar-link">
+                    <i class="fas fa-book-reader"></i>2. Active Reading Strategies
+                    <span class="reading-time">12 min</span>
+                </a>
+                <a href="chapter-3.html" class="sidebar-link">
+                    <i class="fas fa-clipboard-list"></i>3. Summarizing Your Way to Synthesis
+                    <span class="reading-time">10 min</span>
+                </a>
+                <a href="chapter-4.html" class="sidebar-link">
+                    <i class="fas fa-comments"></i>4. Argumentation: Joining the Academic Conversation
+                    <span class="reading-time">18 min</span>
+                </a>
+                <a href="chapter-5.html" class="sidebar-link">
+                    <i class="fas fa-link"></i>5. Source Integration for Success!
+                    <span class="reading-time">14 min</span>
+                </a>
+                <a href="chapter-6.html" class="sidebar-link">
+                    <i class="fas fa-project-diagram"></i>6. Analysis and Synthesis
+                    <span class="reading-time">16 min</span>
+                </a>
+                <a href="chapter-7.html" class="sidebar-link current">
+                    <i class="fas fa-bullseye"></i>7. Crafting Powerful Thesis Statements
+                    <span class="reading-time">11 min</span>
+                </a>
+                <a href="chapter-8.html" class="sidebar-link">
+                    <i class="fas fa-align-left"></i>8. Designing Effective Paragraphs
+                    <span class="reading-time">13 min</span>
+                </a>
+                <a href="chapter-9.html" class="sidebar-link">
+                    <i class="fas fa-pen-fancy"></i>9. Strategies for Getting Started
+                    <span class="reading-time">9 min</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="quick-nav" id="quickNav">
+        <a href="#section1" title="Introduction" data-section="section1"><span>Introduction</span><i class="fas fa-info-circle"></i></a>
+        <a href="#section2" title="Framework" data-section="section2"><span>Framework</span><i class="fas fa-project-diagram"></i></a>
+        <a href="#section3" title="Templates" data-section="section3"><span>Templates</span><i class="fas fa-clipboard-list"></i></a>
+        <a href="#section4" title="Application" data-section="section4"><span>Application</span><i class="fas fa-rocket"></i></a>
+        <a href="#section5" title="Practice" data-section="section5"><span>Practice</span><i class="fas fa-pencil-alt"></i></a>
+        <a href="#section6" title="Checklist" data-section="section6"><span>Checklist</span><i class="fas fa-tasks"></i></a>
+    </div>
+
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-bullseye"></i> Crafting Powerful Thesis Statements</h1>
+            <p class="subtitle">Your Guide to Building Arguments from the Ground Up</p>
+            
+            <div style="margin-top: 20px;">
+                <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">Stronger Arguments!</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Clearer Thinking!</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Better Grades!</span>
+            </div>
+        </div>
+
+        <div class="section active" id="section1">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-info-circle"></i> I. Introduction: Your Argument's Foundation</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>You've got a writing assignment and a head full of ideas, but how do you turn them into a powerful, central argument? This guide will walk you through a powerful framework to build your thesis from the ground up.</p>
+                
+                <div class="highlight-box">
+                    <p>A thesis statement is <strong>one or two sentences</strong> that presents your essay's <strong>main argument, claim, or central idea.</strong> It tells your reader what to expect and guides the structure of your entire paper.</p>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>By the end of this guide, you will be able to:</strong></p>
+                    <ul>
+                        <li>Apply the Topic-to-Thesis framework to develop arguments</li>
+                        <li>Distinguish between strong and weak thesis statements</li>
+                        <li>Use templates to craft effective thesis statements</li>
+                        <li>Apply the framework to both writing and critical reading</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section2">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-project-diagram"></i> II. The Topic-to-Thesis Framework: Your Blueprint</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>A strong thesis isn't just plucked from thin air; it's built. Follow this roadmap to develop yours:</p>
+                
+                <div class="thesis-framework">
+                    <div class="framework-step">
+                        <div class="framework-step-number">1</div>
+                        <div class="framework-step-content">
+                            <strong>Topic:</strong> The broad subject area (e.g., "Education," "Social Media," "Climate Change")
+                        </div>
+                        <div class="framework-arrow"></div>
+                    </div>
+                    
+                    <div class="framework-step">
+                        <div class="framework-step-number">2</div>
+                        <div class="framework-step-content">
+                            <strong>Problem/Issue/Observation:</strong> A specific challenge, controversy, or puzzle within that topic
+                        </div>
+                        <div class="framework-arrow"></div>
+                    </div>
+                    
+                    <div class="framework-step">
+                        <div class="framework-step-number">3</div>
+                        <div class="framework-step-content">
+                            <strong>Questions:</strong> The queries that your problem raises to guide your research
+                        </div>
+                        <div class="framework-arrow"></div>
+                    </div>
+                    
+                    <div class="framework-step">
+                        <div class="framework-step-number">4</div>
+                        <div class="framework-step-content">
+                            <strong>Research:</strong> The process of investigating your questions to find answers and evidence
+                        </div>
+                        <div class="framework-arrow"></div>
+                    </div>
+                    
+                    <div class="framework-step">
+                        <div class="framework-step-number">5</div>
+                        <div class="framework-step-content">
+                            <strong>Thesis/Argument:</strong> Your informed, debatable claim that addresses the original problem
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <strong>From Blueprint to Paragraph: An Example</strong><br><br>
+                    The <strong>topic</strong> of `urban sustainability` is vast, but a critical <strong>problem</strong> in many cities is the `"urban heat island" effect`, where metropolitan areas become significantly warmer than their rural surroundings. This <strong>observation raises important questions</strong>: What are the primary causes of this phenomenon? And what are the most effective strategies to mitigate it? <strong>Preliminary research</strong> points to the prevalence of dark, heat-absorbing surfaces like asphalt and the lack of vegetation as key factors. Therefore, this paper will <strong>argue</strong> that `mandating the implementation of green roofs and cool pavements represents the most viable and immediate strategy for cities to combat the urban heat island effect, reduce energy consumption, and protect vulnerable populations.`
+                </div>
+
+                <div class="key-takeaway">
+                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+                    <p>A strong thesis is the destination of a research journey that begins with a broad topic and narrows to a specific, researchable problem.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section3">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-clipboard-list"></i> III. Thesis Templates &amp; Examples</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>These templates can help you structure your thesis statement effectively:</p>
+                
+                <div class="tools-note">
+                    <p><strong>The "Although... I Argue..." Approach</strong></p>
+                    <p><strong>Although</strong> readers might assume `[common or obvious idea]`, <strong>I argue that</strong> `[your surprising and insightful claim]`.</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> Although many believe that social media primarily harms teenage mental health, I argue that when used intentionally, it can provide valuable spaces for identity exploration and community support.
+                    </div>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>The "By Examining..." Approach</strong></p>
+                    <p><strong>By examining</strong> `[topic/approach]`, <strong>we can see</strong> `[your surprising claim]`, <strong>which is important because</strong> `[the significance of your claim]`.</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> By examining the policy history of renewable energy subsidies, we can see that direct investment in R&amp;D has been far more effective than consumer tax credits, which is important because it provides a model for designing more effective climate policy.
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <strong>Try It Yourself:</strong>
+                    <p>Select a template and try filling in the blanks with your own topic:</p>
+                    <div class="interactive-element">
+                        <select id="templateSelect" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+                            <option value="although">Although... I argue that...</option>
+                            <option value="examining">By examining... we can see...</option>
+                        </select>
+                        <textarea id="templatePractice" style="width: 100%; height: 100px; padding: 10px; border-radius: 5px;" placeholder="Type your thesis statement here..."></textarea>
+                        <button class="btn" style="margin-top: 10px;" onclick="analyzeThesis()">Analyze My Thesis</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section4">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-rocket"></i> IV. Application: As Reader &amp; Writer</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>The Topic-to-Thesis framework is versatile—use it both to build your own arguments and to analyze others'.</p>
+                
+                <div class="tools-note">
+                    <p><strong>For Writing: Build Your Argument</strong></p>
+                    <p>Use the framework from start to finish to develop your own unique, research-driven claim.</p>
+                    <ol>
+                        <li>Narrow your <strong>Topic</strong> to a specific <strong>Problem</strong></li>
+                        <li>Let the problem generate research <strong>Questions</strong></li>
+                        <li><strong>Research</strong> to find answers</li>
+                        <li>Formulate your <strong>Thesis</strong> as your evidence-based answer</li>
+                    </ol>
+                </div>
+
+                <div class="tools-note">
+                    <p><strong>For Active Reading: Reverse-Engineer Arguments</strong></p>
+                    <p>Use the framework to deconstruct articles and books. This is the key to writing strong, argument-focused summaries.</p>
+                    <ol>
+                        <li>Find the author's <strong>Thesis</strong> (their main argument)</li>
+                        <li>Identify the <strong>Research/Evidence</strong> they use to support it</li>
+                        <li>Deduce the <strong>Questions</strong> their research answers</li>
+                        <li>Discover the core <strong>Problem/Observation</strong> that motivated the article</li>
+                    </ol>
+                </div>
+
+                <div class="example-box">
+                    <strong>Example: Reverse-Engineering a Summary</strong><br><br>
+                    <strong>Original Source Paragraph:</strong> "While many point to individual dietary choices as the driver of the obesity epidemic, a deeper analysis reveals the significant role of 'food deserts'—urban areas where fresh, affordable produce is scarce but fast-food outlets are abundant. A longitudinal study of five major U.S. cities found a strong correlation between the number of fast-food restaurants per capita in a zip code and rates of obesity and diabetes, even when controlling for income. This suggests that public health policy must shift its focus from blaming individuals to addressing these systemic environmental factors."<br><br>
+                    
+                    <strong>Strong Summary Using the Framework:</strong> "In their analysis of the <strong>topic</strong> of public health nutrition, the authors identify the <strong>problem</strong> of the obesity epidemic. They <strong>argue</strong> that policy must shift from focusing on individual responsibility to addressing systemic issues like food deserts. This <strong>thesis</strong> is supported by <strong>research</strong> citing a longitudinal study that found a direct correlation between the density of fast-food outlets and rates of obesity and diabetes in urban areas."
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section5">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-pencil-alt"></i> V. Practice: Build Your Thesis</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>Use this interactive builder to develop your own thesis statement step by step:</p>
+                
+                <div class="thesis-builder">
+                    <h3><i class="fas fa-tools"></i> Thesis Statement Builder</h3>
+                    
+                    <div class="builder-step">
+                        <label for="topic">1. Topic:</label>
+                        <input type="text" id="topic" placeholder="Enter your broad topic (e.g., Higher Education)">
+                    </div>
+                    
+                    <div class="builder-step">
+                        <label for="problem">2. Problem/Issue/Observation:</label>
+                        <input type="text" id="problem" placeholder="What specific problem have you identified?">
+                    </div>
+                    
+                    <div class="builder-step">
+                        <label for="questions">3. Research Questions:</label>
+                        <textarea id="questions" placeholder="What questions does this problem raise?"></textarea>
+                    </div>
+                    
+                    <div class="builder-step">
+                        <label for="research">4. Research Findings:</label>
+                        <textarea id="research" placeholder="What evidence have you found?"></textarea>
+                    </div>
+                    
+                    <div class="builder-step">
+                        <label for="thesis">5. Thesis Statement:</label>
+                        <textarea id="thesis" placeholder="Your evidence-based argument"></textarea>
+                    </div>
+                    
+                    <button class="btn" onclick="generateThesis()"><i class="fas fa-magic"></i> Generate Thesis</button>
+                    
+                    <div class="thesis-preview">
+                        <p id="thesisOutput">Your thesis will appear here...</p>
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <span class="difficulty-label difficulty-medium">Exercise: Thesis Analysis</span>
+                    <strong>Analyze the following thesis statements. Which ones are strong? Which are weak? Why?</strong>
+                    <ol type="A">
+                        <li>Social media has both positive and negative effects on teenagers.</li>
+                        <li>This paper will discuss the causes of the Civil War.</li>
+                        <li>While social media platforms are often criticized for promoting superficial connections, they actually enable marginalized youth to find community and support that may be unavailable in their physical environments.</li>
+                        <li>Climate change is a real problem that affects everyone.</li>
+                    </ol>
+                    <div class="interactive-element">
+                        <h3><i class="fas fa-tasks"></i> Your Analysis:</h3>
+                        <textarea style="width: 100%; height: 150px; margin-top: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ddd;" placeholder="Type your analysis here..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="section6">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-tasks"></i> VI. Checklist: Test Your Thesis</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p>Put your draft thesis to the test! A strong thesis statement:</p>
+                
+                <div class="interactive-element">
+                    <h3><i class="fas fa-clipboard-check"></i> Self-Evaluation Checklist</h3>
+                    
+                    <div style="margin-top: 15px;">
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> Is specific, not vague
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> Makes an arguable claim, not just a statement of fact
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> Can be supported with evidence from sources
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> Answers the "So what?" question—why does it matter?
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> Passes the "Although... I argue..." test
+                        </label>
+                        <label style="display: block; margin-bottom: 10px;">
+                            <input type="checkbox" class="skill-checkbox"> Is appropriate in scope for the assignment length
+                        </label>
+                    </div>
+                </div>
+
+                <div class="key-takeaway">
+                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+                    <p>Remember that your first thesis is a <strong>working thesis</strong>. It's a starting point. As you research and write, you may find new evidence that requires you to refine, narrow, or even completely change your argument. This is a normal and important part of the writing process!</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Avoid These Common Thesis Pitfalls:</strong></p>
+                    <ul>
+                        <li><strong>The Vague Statement:</strong> "This paper is about social media."</li>
+                        <li><strong>The Announcement:</strong> "In this essay, I will discuss the effects of pollution."</li>
+                        <li><strong>The Factual Statement:</strong> "Water boils at 100 degrees Celsius."</li>
+                        <li><strong>The Moral Judgment:</strong> "Animal testing is cruel and inhumane."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let sectionStates = {};
+
+        // Load saved preferences
+        function loadPreferences() {
+            const darkMode = localStorage.getItem('darkMode') === 'true';
+            const savedStates = localStorage.getItem('sectionStates');
+            
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('darkModeToggle').querySelector('i').className = 'fas fa-sun';
+            }
+            
+            if (savedStates) {
+                sectionStates = JSON.parse(savedStates);
+                Object.keys(sectionStates).forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (section && sectionStates[sectionId]) {
+                        section.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        // Save preferences
+        function savePreferences() {
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            localStorage.setItem('sectionStates', JSON.stringify(sectionStates));
+        }
+
+        // Enhanced Sidebar functionality
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarClose = document.getElementById('sidebarClose');
+
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburgerMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Auto-close sidebar on mobile when selecting chapter
+        function autoCloseSidebarOnMobile() {
+            if (window.innerWidth <= 768) {
+                closeSidebar();
+            }
+        }
+
+        hamburgerMenu.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Add auto-close to all chapter links
+        document.querySelectorAll('.sidebar-link[href*="chapter"]').forEach(link => {
+            link.addEventListener('click', autoCloseSidebarOnMobile);
+        });
+
+        // Touch gestures for sidebar
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 100;
+            const swipeDistance = touchEndX - touchStartX;
+            
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0 && touchStartX < 50) {
+                    // Swipe right from left edge - open sidebar
+                    openSidebar();
+                } else if (swipeDistance < 0 && sidebar.classList.contains('active')) {
+                    // Swipe left when sidebar is open - close sidebar
+                    closeSidebar();
+                }
+            }
+        }
+
+        // Escape key handling
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            }
+        });
+
+        // Enhanced section toggling with state persistence
+        function toggleSection(header) {
+            const section = header.parentNode;
+            const sectionId = section.id;
+            
+            section.classList.toggle('active');
+            sectionStates[sectionId] = section.classList.contains('active');
+            savePreferences();
+            
+            if (section.classList.contains('active')) {
+                // Smooth scroll to section with offset for navbar
+                const yOffset = -80;
+                const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+                
+                // Update URL hash
+                history.replaceState(null, null, '#' + sectionId);
+            }
+        }
+
+        // Enhanced scroll progress with color transition
+        function updateScrollProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            // Update progress bar width
+            const progressBar = document.getElementById("progressBar");
+            progressBar.style.width = scrolled + "%";
+            
+            // Calculate color transition (blue to orange)
+            const orangePercentage = Math.min(scrolled / 100, 1);
+            const bluePercentage = 1 - orangePercentage;
+            
+            // Create gradient with color transition
+            progressBar.style.background = 
+                `linear-gradient(to right, 
+                var(--primary) 0%, 
+                color-mix(in srgb, var(--primary) ${bluePercentage * 100}%, var(--secondary) ${orangePercentage * 100}%) ${scrolled}%, 
+                var(--secondary) 100%)`;
+            
+            // Update quick nav active states
+            updateQuickNavActiveStates();
+            
+            // Show/hide back to top button
+            const backToTop = document.getElementById('backToTop');
+            if (winScroll > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+
+        // Quick navigation active states
+        function updateQuickNavActiveStates() {
+            const sections = document.querySelectorAll('.section');
+            const quickNavLinks = document.querySelectorAll('.quick-nav a');
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const isInView = rect.top <= 100 && rect.bottom >= 100;
+                
+                if (isInView) {
+                    quickNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('data-section') === section.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        // Enhanced dark mode toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('darkModeToggle').querySelector('i');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+            
+            savePreferences();
+        }
+
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const yOffset = -80;
+                        const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({top: y, behavior: 'smooth'});
+                        
+                        // Expand section if it's collapsed
+                        if (target.classList.contains('section') && !target.classList.contains('active')) {
+                            target.classList.add('active');
+                            sectionStates[target.id] = true;
+                            savePreferences();
+                        }
+                    }
+                });
+            });
+        }
+
+        // ========== CHAPTER-SPECIFIC FUNCTIONS ==========
+
+        // Thesis generation function
+        function generateThesis() {
+            const topic = document.getElementById('topic').value;
+            const problem = document.getElementById('problem').value;
+            const questions = document.getElementById('questions').value;
+            const research = document.getElementById('research').value;
+            const thesis = document.getElementById('thesis').value;
+            
+            let output = "";
+            
+            if (thesis.trim() !== "") {
+                output = `<strong>Your Thesis:</strong> ${thesis}`;
+            } else if (problem.trim() !== "" && research.trim() !== "") {
+                // Generate a basic thesis based on the inputs
+                output = `<strong>Generated Thesis:</strong> This paper argues that ${problem}, based on research showing that ${research}.`;
+            } else {
+                output = "Please fill in at least the Problem and Research fields to generate a thesis.";
+            }
+            
+            document.getElementById('thesisOutput').innerHTML = output;
+            
+            // Save to localStorage
+            localStorage.setItem('thesisBuilderData', JSON.stringify({
+                topic, problem, questions, research, thesis
+            }));
+        }
+
+        // Simple thesis analysis
+        function analyzeThesis() {
+            const thesisText = document.getElementById('templatePractice').value;
+            if (thesisText.trim() === "") {
+                alert("Please enter a thesis statement to analyze.");
+                return;
+            }
+            
+            // Simple analysis based on length and content
+            let feedback = "";
+            
+            if (thesisText.length < 20) {
+                feedback = "Your thesis might be too short. Try to make it more specific.";
+            } else if (thesisText.length > 200) {
+                feedback = "Your thesis might be too long or complex. Try to simplify it to one clear main idea.";
+            } else {
+                feedback = "Good length! Now check if your thesis is arguable and specific.";
+            }
+            
+            // Check for argument indicators
+            if (thesisText.includes("although") || thesisText.includes("while") || thesisText.includes("however")) {
+                feedback += " You're using good transitional words to show complexity.";
+            }
+            
+            if (thesisText.includes("I argue") || thesisText.includes("this paper argues") || thesisText.includes("contends")) {
+                feedback += " Good use of argumentative language!";
+            }
+            
+            alert(feedback);
+            
+            // Save to localStorage
+            localStorage.setItem('templatePractice', thesisText);
+        }
+
+        // Update skills progress
+        function updateSkillsProgress() {
+            const checkboxes = document.querySelectorAll('.skill-checkbox');
+            let checked = 0;
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) checked++;
+            });
+            
+            // Save progress
+            const progressData = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('chapter7Progress', JSON.stringify(progressData));
+        }
+
+        // Load saved data
+        function loadSavedData() {
+            // Load thesis builder data
+            const savedThesisData = localStorage.getItem('thesisBuilderData');
+            if (savedThesisData) {
+                const data = JSON.parse(savedThesisData);
+                document.getElementById('topic').value = data.topic || '';
+                document.getElementById('problem').value = data.problem || '';
+                document.getElementById('questions').value = data.questions || '';
+                document.getElementById('research').value = data.research || '';
+                document.getElementById('thesis').value = data.thesis || '';
+                
+                if (data.thesis) {
+                    generateThesis();
+                }
+            }
+            
+            // Load template practice
+            const savedTemplate = localStorage.getItem('templatePractice');
+            if (savedTemplate) {
+                document.getElementById('templatePractice').value = savedTemplate;
+            }
+            
+            // Load progress
+            const savedProgress = localStorage.getItem('chapter7Progress');
+            if (savedProgress) {
+                const progressData = JSON.parse(savedProgress);
+                const checkboxes = document.querySelectorAll('.skill-checkbox');
+                checkboxes.forEach((checkbox, index) => {
+                    if (progressData[index]) {
+                        checkbox.checked = true;
+                    }
+                });
+            }
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPreferences();
+            
+            // Initialize first section as active if no saved state
+            if (Object.keys(sectionStates).length === 0) {
+                const firstSection = document.querySelector('.section');
+                if (firstSection) {
+                    firstSection.classList.add('active');
+                    sectionStates[firstSection.id] = true;
+                }
+            }
+            
+            // Handle URL hash
+            if (window.location.hash) {
+                const targetSection = document.querySelector(window.location.hash);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    sectionStates[targetSection.id] = true;
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    }, 100);
+                }
+            }
+            
+            // Set up event listeners
+            window.addEventListener('scroll', updateScrollProgress);
+            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+            
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', scrollToTop);
+            }
+            
+            // Set up checkbox event listeners
+            document.querySelectorAll('.skill-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', updateSkillsProgress);
+            });
+            
+            // Initialize other features
+            initSmoothScrolling();
+            loadSavedData();
+            updateScrollProgress();
+            
+            console.log('Scholar\'s Compass - Chapter 7 Enhanced Edition Loaded! 🧭');
+        });
+
+        // Performance optimization - throttle scroll events
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollProgress);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            requestTick();
+            ticking = false;
+        });
+    </script>
+
+
+</body></html>
