@@ -96,16 +96,6 @@
       container.appendChild(a);
     });
   }
-
-function loadPageScript() {
-    var body = document.body;
-    if (!body) return;
-    var page = body.getAttribute('data-page') || '';
-    // Fall back to filename if data-page is missing
-    if (!page) {
-      var path = (window.location.pathname || '').split('/').pop() || 'index.html';
-      page = path.replace(/\.html$/i, '');
-    }
     var src = page + '.js';
     // Avoid double-loading if the page already includes its own script.
     var existing = document.querySelector('script[src="' + src + '"]');
@@ -117,10 +107,75 @@ function loadPageScript() {
     document.head.appendChild(s);
   }
 
+  function initCommon() {
+    // Sidebar / hamburger
+    var hamburger = document.getElementById('hamburgerMenu');
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('sidebarOverlay');
+    var closeBtn = document.getElementById('sidebarClose');
+
+    function openSidebar() {
+      if (sidebar) sidebar.classList.add('active');
+      if (overlay) overlay.classList.add('active');
+      document.body.classList.add('sidebar-open');
+    }
+    function closeSidebar() {
+      if (sidebar) sidebar.classList.remove('active');
+      if (overlay) overlay.classList.remove('active');
+      document.body.classList.remove('sidebar-open');
+    }
+
+    if (hamburger) hamburger.addEventListener('click', openSidebar);
+    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+    if (overlay) overlay.addEventListener('click', closeSidebar);
+
+    // Dark mode toggle
+    var toggleBtn = document.getElementById('darkModeToggle');
+    function applyDarkMode(isDark) {
+      if (isDark) document.body.classList.add('dark-mode');
+      else document.body.classList.remove('dark-mode');
+
+      // Swap icon if present
+      if (toggleBtn) {
+        var icon = toggleBtn.querySelector('i');
+        if (icon) {
+          icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+      }
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('scholarsCompassDarkMode'); } catch(e) {}
+    var isDark = saved === 'true';
+    applyDarkMode(isDark);
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function () {
+        isDark = !document.body.classList.contains('dark-mode');
+        applyDarkMode(isDark);
+        try { localStorage.setItem('scholarsCompassDarkMode', String(isDark)); } catch(e) {}
+      });
+    }
+
+    // Back to top button
+    var backToTop = document.getElementById('backToTop');
+    function updateBackToTop() {
+      if (!backToTop) return;
+      if (window.scrollY > 300) backToTop.classList.add('visible');
+      else backToTop.classList.remove('visible');
+    }
+    if (backToTop) {
+      backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      window.addEventListener('scroll', updateBackToTop, { passive: true });
+      updateBackToTop();
+    }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { buildChaptersNav(); loadPageScript(); });
+    document.addEventListener('DOMContentLoaded', function () { buildChaptersNav(); initCommon(); });
   } else {
     buildChaptersNav();
-    loadPageScript();
+    initCommon();
   }
 })();
