@@ -14315,3 +14315,47 @@ body.dark-mode .progress-card {
         padding: 6px 10px;
     }
 }
+
+/* ===================== v4 Fixes ===================== */
+/* Only chapter headers use white text; index header stays dark-on-light */
+body[data-page^="chapter"] .header h1,
+body[data-page^="chapter"] .header h1 i {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+body[data-page^="chapter"] .header .subtitle {
+  color: rgba(255,255,255,0.85) !important;
+  opacity: 1 !important;
+}
+
+body[data-page="index"] .header h1,
+body[data-page="index"] .header h1 i {
+  color: var(--primary) !important;
+  opacity: 1 !important;
+}
+body[data-page="index"] .header .subtitle {
+  color: var(--medium-gray) !important;
+  opacity: 1 !important;
+}
+
+/* Navbar: hard-stop the hamburger/logo collision across all pages */
+.navbar .navbar-content {
+  position: relative !important;
+  justify-content: center !important;
+}
+.navbar .hamburger-menu {
+  position: absolute !important;
+  left: 16px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 2000 !important;
+}
+.navbar .navbar-brand {
+  position: static !important;
+  left: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+@media (max-width: 520px) {
+  .navbar .hamburger-menu { left: 12px !important; }
+}
