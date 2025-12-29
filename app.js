@@ -3,70 +3,26 @@
    - Theme toggle (persistent)
    - Back-to-top
    - Sidebar / hamburger
-   - Scroll progress
+   - Scroll progress (top bars)
    - Chapters list (single array)
    - Quick-nav active highlight
+   - Chapter section expand/collapse (toggleSection)
 */
 
 (function () {
   'use strict';
 
   var CHAPTERS = [
-  {
-    "href": "chapter-1.html",
-    "icon": "fas fa-highlighter",
-    "title": "1. Annotating Your Way to Greatness",
-    "readingTime": "15 min"
-  },
-  {
-    "href": "chapter-2.html",
-    "icon": "fas fa-book-reader",
-    "title": "2. Active Reading Strategies",
-    "readingTime": "12 min"
-  },
-  {
-    "href": "chapter-3.html",
-    "icon": "fas fa-clipboard-list",
-    "title": "3. Summarizing Your Way to Synthesis",
-    "readingTime": "10 min"
-  },
-  {
-    "href": "chapter-4.html",
-    "icon": "fas fa-comments",
-    "title": "4. Argumentation: Joining the Academic Conversation",
-    "readingTime": "18 min"
-  },
-  {
-    "href": "chapter-5.html",
-    "icon": "fas fa-link",
-    "title": "5. Source Integration for Success!",
-    "readingTime": "14 min"
-  },
-  {
-    "href": "chapter-6.html",
-    "icon": "fas fa-project-diagram",
-    "title": "6. Analysis and Synthesis",
-    "readingTime": "16 min"
-  },
-  {
-    "href": "chapter-7.html",
-    "icon": "fas fa-bullseye",
-    "title": "7. Crafting Powerful Thesis Statements",
-    "readingTime": "11 min"
-  },
-  {
-    "href": "chapter-8.html",
-    "icon": "fas fa-align-left",
-    "title": "8. Designing Effective Paragraphs",
-    "readingTime": "13 min"
-  },
-  {
-    "href": "chapter-9.html",
-    "icon": "fas fa-pen-fancy",
-    "title": "9. Strategies for Getting Started",
-    "readingTime": "9 min"
-  }
-];
+    { href: 'chapter-1.html', icon: 'fas fa-highlighter', title: '1. Annotating Your Way to Greatness', readingTime: '15 min' },
+    { href: 'chapter-2.html', icon: 'fas fa-book-reader', title: '2. Active Reading Strategies', readingTime: '12 min' },
+    { href: 'chapter-3.html', icon: 'fas fa-clipboard-list', title: '3. Summarizing Your Way to Synthesis', readingTime: '10 min' },
+    { href: 'chapter-4.html', icon: 'fas fa-comments', title: '4. Argumentation: Joining the Academic Conversation', readingTime: '18 min' },
+    { href: 'chapter-5.html', icon: 'fas fa-link', title: '5. Source Integration for Success!', readingTime: '14 min' },
+    { href: 'chapter-6.html', icon: 'fas fa-project-diagram', title: '6. Analysis and Synthesis', readingTime: '16 min' },
+    { href: 'chapter-7.html', icon: 'fas fa-bullseye', title: '7. Crafting Powerful Thesis Statements', readingTime: '11 min' },
+    { href: 'chapter-8.html', icon: 'fas fa-align-left', title: '8. Designing Effective Paragraphs', readingTime: '13 min' },
+    { href: 'chapter-9.html', icon: 'fas fa-pen-fancy', title: '9. Strategies for Getting Started', readingTime: '9 min' }
+  ];
 
   function ready(fn) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
@@ -80,6 +36,21 @@
 
   function qs(sel) { return document.querySelector(sel); }
   function qsa(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+
+  // ---- Chapter section expand/collapse
+  // Many chapter pages use inline onclick="toggleSection(this)".
+  // Provide a stable global implementation.
+  window.toggleSection = function (headerEl) {
+    if (!headerEl) return;
+    var section = headerEl.closest ? headerEl.closest('.section') : null;
+    if (!section) {
+      var p = headerEl.parentElement;
+      while (p && !(p.classList && p.classList.contains('section'))) p = p.parentElement;
+      section = p;
+    }
+    if (!section) return;
+    section.classList.toggle('active');
+  };
 
   // ---- Theme
   function isDarkPreferred() {
@@ -96,7 +67,6 @@
     if (isDark) document.body.classList.add('dark-mode');
     else document.body.classList.remove('dark-mode');
 
-    // Persist in both keys to stay compatible with earlier versions
     localStorage.setItem('darkMode', isDark ? 'true' : 'false');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
@@ -118,16 +88,12 @@
   }
 
   // ---- Back-to-top
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   function initBackToTop() {
     var btn = qs('#backToTop');
     if (!btn) return;
     btn.addEventListener('click', function (e) {
       e.preventDefault();
-      scrollToTop();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
@@ -169,7 +135,7 @@
       if (e.key === 'Escape' && sidebar.classList.contains('active')) closeSidebar();
     });
 
-    // Touch swipe (open from left edge; close when open)
+    // Touch swipe
     var touchStartX = 0;
     var touchEndX = 0;
 
@@ -294,7 +260,6 @@
     });
   }
 
-  // ---- Init
   ready(function () {
     buildChaptersNav();
     initSidebar();

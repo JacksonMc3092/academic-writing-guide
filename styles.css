@@ -505,8 +505,7 @@
             text-decoration: none;
             color: inherit;
         }
-        
-        .progress-container {
+        .progress-card {
             background: white;
             border-radius: 12px;
             padding: 20px;
@@ -515,13 +514,12 @@
             border-left: 4px solid var(--secondary);
             transition: box-shadow 0.3s, transform 0.3s;
         }
-
-        .progress-container:hover {
+        .progress-card:hover {
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             transform: translateY(-2px);
         }
 
-        body.dark-mode .progress-container {
+        body.dark-mode .progress-card {
             background: var(--dark-secondary);
             color: var(--dark-text);
         }
@@ -14227,3 +14225,53 @@
         }
     
 
+
+/* ===================== Fixes (Stabilization Patch) ===================== */
+/* Footer should not inherit the card-style .container background */
+.footer .container {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+.footer .container::before { display: none !important; }
+
+/* Index progress card uses its own class to avoid conflict with top scroll bar */
+body[data-page="index"] .progress-card {
+  position: relative !important;
+}
+
+/* ===================== Stabilization overrides (Phase A) ===================== */
+/* Footer should not inherit the chapter "card" container styling */
+.footer .container {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+.footer .container::before { display: none !important; }
+
+/* Index progress module uses .progress-card to avoid collision with top scroll bar styles */
+.progress-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin: 30px 0;
+    border-left: 4px solid var(--secondary);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.progress-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+}
+body.dark-mode .progress-card {
+    background: var(--dark-secondary);
+    color: var(--dark-text);
+}
