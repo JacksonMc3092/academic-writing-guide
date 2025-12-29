@@ -14348,3 +14348,34 @@ body[data-page="index"] .header .subtitle {
 @media (max-width: 520px) {
   .navbar .hamburger-menu { left: 12px !important; }
 }
+
+/* ===================== v5 Patch: index hero text + navbar collision ===================== */
+/* Fix: index hero subtitle/description were inheriting white text (white-on-white in some layouts) */
+body[data-page="index"] .header p.lead,
+body[data-page="index"] .header p.mt-3,
+body[data-page="index"] .header p {
+  color: var(--medium-gray) !important;
+  opacity: 1 !important;
+}
+body[data-page="index"] .header p.lead {
+  color: var(--primary) !important; /* slightly stronger for the tagline line */
+}
+
+/* Fix: hard stop hamburger/brand overlap on narrow widths */
+.navbar .navbar-content{
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding-left: 70px !important;  /* reserve room for hamburger */
+  padding-right: 70px !important; /* keeps brand visually centered */
+}
+.navbar .navbar-brand{
+  max-width: calc(100% - 140px) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+@media (max-width: 520px){
+  .navbar .navbar-content{ padding-left: 60px !important; padding-right: 60px !important; }
+  .navbar .navbar-brand{ max-width: calc(100% - 120px) !important; }
+}
