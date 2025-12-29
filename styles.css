@@ -14275,3 +14275,13 @@ body.dark-mode .progress-card {
     background: var(--dark-secondary);
     color: var(--dark-text);
 }
+
+/* Header text readability: keep chapter titles/subtitles high-contrast on the dark gradient header */
+.header h1,
+.header h1 i {
+    color: #ffffff !important;
+}
+
+.header .subtitle {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
