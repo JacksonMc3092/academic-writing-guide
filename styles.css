@@ -790,13 +790,42 @@
         }
 
         .navbar-content {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: relative;
         }
+
+        .navbar-content .hamburger-menu {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Reserve space so the centered brand can’t collide with the hamburger */
+        .navbar-content {
+            padding-left: 70px;
+            padding-right: 20px;
+        }
+
+        .navbar-brand {
+            max-width: calc(100% - 90px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        @media (max-width: 520px) {
+            .navbar-content { padding-left: 60px; padding-right: 16px; }
+            .navbar-brand { max-width: calc(100% - 80px); }
+        }
+
 
         .hamburger-menu {
             background: none;
@@ -14240,9 +14269,7 @@
 .footer .container::before { display: none !important; }
 
 /* Index progress card uses its own class to avoid conflict with top scroll bar */
-body[data-page="index"] .progress-card {
-  position: relative !important;
-}
+
 
 /* ===================== Stabilization overrides (Phase A) ===================== */
 /* Footer should not inherit the chapter "card" container styling */
@@ -14316,15 +14343,7 @@ body[data-page^="chapter"] .header .subtitle {
   opacity: 1 !important;
 }
 
-body[data-page="index"] .header h1,
-body[data-page="index"] .header h1 i {
-  color: var(--primary) !important;
-  opacity: 1 !important;
-}
-body[data-page="index"] .header .subtitle {
-  color: var(--medium-gray) !important;
-  opacity: 1 !important;
-}
+
 
 /* Navbar: hard-stop the hamburger/logo collision across all pages */
 .navbar .navbar-content {
@@ -14347,35 +14366,4 @@ body[data-page="index"] .header .subtitle {
 }
 @media (max-width: 520px) {
   .navbar .hamburger-menu { left: 12px !important; }
-}
-
-/* ===================== v5 Patch: index hero text + navbar collision ===================== */
-/* Fix: index hero subtitle/description were inheriting white text (white-on-white in some layouts) */
-body[data-page="index"] .header p.lead,
-body[data-page="index"] .header p.mt-3,
-body[data-page="index"] .header p {
-  color: var(--medium-gray) !important;
-  opacity: 1 !important;
-}
-body[data-page="index"] .header p.lead {
-  color: var(--primary) !important; /* slightly stronger for the tagline line */
-}
-
-/* Fix: hard stop hamburger/brand overlap on narrow widths */
-.navbar .navbar-content{
-  width: 100% !important;
-  box-sizing: border-box !important;
-  padding-left: 70px !important;  /* reserve room for hamburger */
-  padding-right: 70px !important; /* keeps brand visually centered */
-}
-.navbar .navbar-brand{
-  max-width: calc(100% - 140px) !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
-  text-align: center !important;
-}
-@media (max-width: 520px){
-  .navbar .navbar-content{ padding-left: 60px !important; padding-right: 60px !important; }
-  .navbar .navbar-brand{ max-width: calc(100% - 120px) !important; }
 }
