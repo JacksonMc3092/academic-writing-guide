@@ -14276,18 +14276,6 @@ body.dark-mode .progress-card {
     color: var(--dark-text);
 }
 
-/* Header text readability: keep chapter titles/subtitles high-contrast on the dark gradient header */
-.header h1,
-.header h1 i {
-    color: #ffffff !important;
-    opacity: 1 !important;
-}
-
-.header .subtitle {
-    color: rgba(255, 255, 255, 0.85) !important;
-    opacity: 1 !important;
-}
-
 /* Navbar: prevent hamburger/brand overlap.
    We keep the brand centered while positioning the hamburger on the left. */
 .navbar-content {
@@ -14342,6 +14330,7 @@ body[data-page="index"] .header .subtitle {
 .navbar .navbar-content {
   position: relative !important;
   justify-content: center !important;
+  width: 100% !important;
 }
 .navbar .hamburger-menu {
   position: absolute !important;
