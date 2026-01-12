@@ -14367,3 +14367,78 @@ body[data-page^="chapter"] .header .subtitle {
 @media (max-width: 520px) {
   .navbar .hamburger-menu { left: 12px !important; }
 }
+/* ===================== v9 Patch (2026-01-11): hero banner + rotating compass + mobile hamburger ===================== */
+
+/* 1) Force the HOME hero to use the same dark blue banner treatment */
+body[data-page="index"] .header{
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+  color: #fff !important;
+  padding: 60px 0 40px !important;
+  margin-bottom: 30px !important;
+  border-radius: 0 0 20px 20px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+body.dark-mode[data-page="index"] .header{
+  background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark) 100%) !important;
+}
+
+/* Keep home hero text readable on the dark banner */
+body[data-page="index"] .header h1,
+body[data-page="index"] .header p{
+  color: #fff !important;
+  opacity: 1 !important;
+}
+body[data-page="index"] .header p{
+  color: rgba(255,255,255,0.9) !important;
+}
+
+/* 2) Restore the “slowly rotating compass” feel site-wide */
+/* (We animate any Font Awesome compass icon in key nav/header contexts.) */
+.navbar-brand .fa-compass,
+.sidebar-header .fa-compass,
+.header .fa-compass{
+  display: inline-block;
+  animation: spin 20s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+/* 3) Mobile hamburger: ensure it’s always clickable and never covered */
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 3000; /* above content + overlays */
+}
+
+.navbar .navbar-content{
+  width: 100% !important;
+  position: relative !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 72px !important;  /* reserves space for hamburger */
+  padding-right: 72px !important; /* keeps brand centered */
+  box-sizing: border-box !important;
+}
+
+.navbar .hamburger-menu{
+  position: absolute !important;
+  left: 16px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 4000 !important; /* above brand */
+}
+
+.navbar .navbar-brand{
+  max-width: calc(100% - 144px) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 520px){
+  .navbar .navbar-content{ padding-left: 64px !important; padding-right: 64px !important; }
+  .navbar .navbar-brand{ max-width: calc(100% - 128px) !important; }
+  .navbar .hamburger-menu{ left: 12px !important; }
+}
