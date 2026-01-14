@@ -71,6 +71,23 @@
             background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark) 100%);
         }
 
+/* Hero Header for Index Page */
+.hero-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 60px 0 40px;
+    margin-bottom: 30px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-mode .hero-header {
+    background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark) 100%);
+}
+
+
         .main-title-container {
             display: flex;
             align-items: center;
