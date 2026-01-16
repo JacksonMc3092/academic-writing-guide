@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var CHAPTERS = [
+    var CHAPTERS_1010 = [
     { href: 'chapter-1.html', icon: 'fas fa-highlighter', title: '1. Annotating Your Way to Greatness', readingTime: '15 min' },
     { href: 'chapter-2.html', icon: 'fas fa-book-reader', title: '2. Active Reading Strategies', readingTime: '12 min' },
     { href: 'chapter-3.html', icon: 'fas fa-clipboard-list', title: '3. Summarizing Your Way to Synthesis', readingTime: '10 min' },
@@ -23,6 +23,41 @@
     { href: 'chapter-8.html', icon: 'fas fa-align-left', title: '8. Designing Effective Paragraphs', readingTime: '13 min' },
     { href: 'chapter-9.html', icon: 'fas fa-pen-fancy', title: '9. Strategies for Getting Started', readingTime: '9 min' }
   ];
+
+  var CHAPTERS_1020 = [
+    { href: 'chapter-1.html', icon: 'fas fa-book-open', title: '1. Active Reading for Literature', readingTime: '10–15 min' },
+    { href: 'chapter-2.html', icon: 'fas fa-highlighter', title: '2. Annotation for Close Reading', readingTime: '10–15 min' },
+    { href: 'chapter-3.html', icon: 'fas fa-pen-fancy', title: '3. Getting Started: Prewriting for Literary Analysis', readingTime: '10–15 min' },
+    { href: 'chapter-4.html', icon: 'fas fa-magnifying-glass', title: '4. Close Reading: From Passage to Claim', readingTime: '10–15 min' },
+    { href: 'chapter-5.html', icon: 'fas fa-feather-pointed', title: '5. Fiction Toolkit: Narrative Craft + Character', readingTime: '10–15 min' },
+    { href: 'chapter-6.html', icon: 'fas fa-music', title: '6. Poetry Toolkit: Reading What’s on the Line', readingTime: '10–15 min' },
+    { href: 'chapter-7.html', icon: 'fas fa-masks-theater', title: '7. Drama Toolkit: Scenes, Staging, and Subtext', readingTime: '10–15 min' },
+    { href: 'chapter-8.html', icon: 'fas fa-comments', title: '8. Argumentation in Literary Studies', readingTime: '10–15 min' },
+    { href: 'chapter-9.html', icon: 'fas fa-search', title: '9. Finding and Evaluating Secondary Sources', readingTime: '10–15 min' },
+    { href: 'chapter-10.html', icon: 'fas fa-glasses', title: '10. Working with Literary Criticism: Lens, Not Crutch', readingTime: '10–15 min' },
+    { href: 'chapter-11.html', icon: 'fas fa-quote-left', title: '11. Quoting, Paraphrasing, and Signal Phrases', readingTime: '10–15 min' },
+    { href: 'chapter-12.html', icon: 'fas fa-link', title: '12. Using Sources in Your Argument', readingTime: '10–15 min' },
+    { href: 'chapter-13.html', icon: 'fas fa-bullseye', title: '13. Crafting Powerful Thesis Statements', readingTime: '10–15 min' },
+    { href: 'chapter-14.html', icon: 'fas fa-align-left', title: '14. Designing Effective Literary Analysis Paragraphs', readingTime: '10–15 min' },
+    { href: 'chapter-15.html', icon: 'fas fa-pen-to-square', title: '15. Revision: From Draft to Final', readingTime: '10–15 min' }
+  ];
+
+  function getCourse() {
+    var p = (window.location.pathname || '').toLowerCase();
+    if (p.indexOf('/1020/') !== -1) return '1020';
+    if (p.indexOf('/1010/') !== -1) return '1010';
+    // fallback to body attribute if present
+    var b = document.body;
+    if (b && b.getAttribute) {
+      var c = b.getAttribute('data-course');
+      if (c) return String(c);
+    }
+    return '1010';
+  }
+
+  function getChapters() {
+    return getCourse() === '1020' ? CHAPTERS_1020 : CHAPTERS_1010;
+  }
 
   function ready(fn) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
@@ -162,7 +197,7 @@
     container.innerHTML = '';
     var here = currentFile().toLowerCase();
 
-    CHAPTERS.forEach(function (ch) {
+    getChapters().forEach(function (ch) {
       var a = document.createElement('a');
       a.href = ch.href;
       a.className = 'sidebar-link';

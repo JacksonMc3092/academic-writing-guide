@@ -21,7 +21,25 @@
             --min-touch-target: 44px;
         }
         
-        body {
+        
+/* ===================== COURSE THEME OVERRIDES ===================== */
+
+body[data-course="1020"] {
+    /* Subtle ENG 1020 palette shift (shares same layout + components) */
+    --primary: #5a4fa3;
+    --primary-dark: #3b2f7a;
+    --secondary: #d99a2b;
+    --accent: #7aa8ff;
+    --orange-glow: rgba(217, 154, 43, 0.14);
+}
+
+/* Optional: slightly different hero icon vibe in 1020 */
+body[data-course="1020"] .compass-icon-large {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* ===================== END COURSE THEME OVERRIDES ===================== */
+body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             background-color: #f5f7fa;
