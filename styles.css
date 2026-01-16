@@ -26,9 +26,9 @@
 
 body[data-course="1020"] {
     /* Subtle ENG 1020 palette shift (shares same layout + components) */
-    /* Slate gray theme requested */
-    --primary: #708090;
-    --primary-dark: #556270;
+    /* Seagreen theme requested */
+    --primary: #2E8B57;
+    --primary-dark: #1F6F46;
     --secondary: #d99a2b;
     --accent: #7aa8ff;
     --orange-glow: rgba(217, 154, 43, 0.14);
