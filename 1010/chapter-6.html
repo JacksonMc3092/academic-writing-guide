@@ -1,457 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chapter 6: Finding and Evaluating Sources | ENG 1010 | Scholar’s Compass</title>
-  <meta name="description" content="A practical workflow for finding credible, useful sources and tracking them with a source log. Includes SIFT, Google Scholar moves, and MLA basics." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finding and Evaluating Sources - Scholar's Compass</title>
+  <meta name="description" content="A practical workflow for finding credible, useful sources (databases, Google Scholar, and the open web), evaluating with SIFT, and tracking research with a source log. MLA basics included." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../styles.css?v=17" />
 
-  <!-- Shared site styles -->
-  <link rel="stylesheet" href="/styles.css" />
-
-  <!-- Page-only helpers (kept minimal) -->
   <style>
-    /* MLA-style hanging indent for Works Consulted modeling */
-    .works-consulted { list-style: none; padding-left: 0; margin-left: 0; }
-    .works-consulted li { padding-left: 1.75em; text-indent: -1.75em; margin-bottom: 0.85rem; }
-    .mini { font-size: 0.95em; opacity: 0.9; }
-    .callout { border-left: 4px solid currentColor; padding: 0.9rem 1rem; margin: 1rem 0; border-radius: 10px; }
-    .callout strong { display: inline-block; margin-bottom: 0.25rem; }
-    .checklist { margin: 0.5rem 0 0.25rem 1.25rem; }
-    .checklist li { margin: 0.35rem 0; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { border: 1px solid rgba(0,0,0,0.12); padding: 0.65rem; vertical-align: top; }
-    th { text-align: left; }
-    .note { font-style: italic; }
-    .toc a { text-decoration: none; }
-    .toc ul { margin: 0.5rem 0 0.25rem 1.1rem; }
-    .nav-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
-    .nav-buttons a { text-decoration: none; }
-    .hr { height: 1px; background: rgba(0,0,0,0.12); margin: 1.25rem 0; }
+    /* Small, self-contained formatting for MLA model entries (hanging indent). */
+    .mla-hanging p { margin: 0.65rem 0; text-indent: -1.5em; margin-left: 1.5em; }
   </style>
 </head>
+<body data-page="chapter-6" data-course="1010">
+  <div class="progress-container-top">
+    <div class="progress-bar-top" id="scrollProgress"></div>
+  </div>
 
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav class="navbar">
+    <div class="navbar-content">
+      <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand" aria-label="Scholar's Compass home">
+        <i class="fas fa-compass"></i>Scholar's Compass
+      </a>
+    </div>
+  </nav>
 
-  <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar" aria-label="Course navigation">
-      <div class="sidebar-inner">
-        <div class="site-block">
-          <a class="site-title" href="/1010/">Scholar’s Compass</a>
-          <div class="mini">ENG 1010 • Composition</div>
-        </div>
-
-        <div class="nav-buttons">
-          <a class="btn" href="/1010/">1010 Home</a>
-          <a class="btn secondary" href="/index.html">Course Hub</a>
-        </div>
-
-        <div class="hr"></div>
-
-        <nav class="toc" aria-label="Chapter sections">
-          <div class="mini"><strong>On this page</strong></div>
-          <ul>
-            <li><a href="#introduction">I. Introduction</a></li>
-            <li><a href="#starting-right">II. Starting Right</a></li>
-            <li><a href="#where-to-search">III. Where to Search</a></li>
-            <li><a href="#evaluate">IV. Evaluating Sources</a></li>
-            <li><a href="#manage-cite">V. Managing &amp; Citing</a></li>
-            <li><a href="#practice">VI. Practice</a></li>
-            <li><a href="#checklist">Checklist</a></li>
-            <li><a href="#works-consulted">Works Consulted</a></li>
-          </ul>
-        </nav>
-
-        <div class="hr"></div>
-
-        <nav aria-label="Chapters">
-          <div class="mini"><strong>Chapters</strong></div>
-          <ul>
-            <li><a href="/1010/chapter-1.html">1. Annotating &amp; Active Reading</a></li>
-            <li><a href="/1010/chapter-2.html">2. Summary &amp; Response</a></li>
-            <li><a href="/1010/chapter-3.html">3. Rhetorical Analysis</a></li>
-            <li><a href="/1010/chapter-4.html">4. Academic Voice</a></li>
-            <li><a href="/1010/chapter-5.html">5. Prewriting &amp; Planning</a></li>
-            <li><a aria-current="page" href="/1010/chapter-6.html">6. Finding &amp; Evaluating Sources</a></li>
-            <li><a href="/1010/chapter-7.html">7. Quoting, Paraphrasing, Signal Phrases</a></li>
-            <li><a href="/1010/chapter-8.html">8. Using Sources in Your Argument</a></li>
-            <li><a href="/1010/chapter-9.html">9. Thesis Statements</a></li>
-            <li><a href="/1010/chapter-10.html">10. Drafting &amp; Structure</a></li>
-            <li><a href="/1010/chapter-11.html">11. Revision</a></li>
-            <li><a href="/1010/chapter-12.html">12. Editing &amp; Proofreading</a></li>
-          </ul>
-        </nav>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2><i class="fas fa-compass me-2"></i>Chapters</h2>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-section" id="sidebarChapters">
+        <h3>Chapters</h3>
+        <div id="chaptersList"></div>
       </div>
-    </aside>
+    </div>
+  </nav>
 
-    <!-- Main -->
-    <main id="main-content" class="content">
-      <header class="chapter-hero">
-        <div class="mini">Chapter 6</div>
-        <h1>Finding and Evaluating Sources</h1>
-        <p class="subtitle">
-          Research is not “collecting quotes.” It’s finding the best conversation partners for your question
-          — and keeping track of what you find so you can use it responsibly.
-        </p>
+  <div class="quick-nav" id="quickNav">
+    <a href="#section1" title="Introduction" data-section="section1"><span>Intro</span><i class="fas fa-info-circle"></i></a>
+    <a href="#section2" title="Starting Right" data-section="section2"><span>Start</span><i class="fas fa-compass-drafting"></i></a>
+    <a href="#section3" title="Where to Search" data-section="section3"><span>Search</span><i class="fas fa-database"></i></a>
+    <a href="#section4" title="Evaluate" data-section="section4"><span>Evaluate</span><i class="fas fa-filter"></i></a>
+    <a href="#section5" title="Log & MLA" data-section="section5"><span>Log+MLA</span><i class="fas fa-clipboard-list"></i></a>
+    <a href="#section6" title="Practice" data-section="section6"><span>Practice</span><i class="fas fa-tasks"></i></a>
+    <a href="#section7" title="Works Consulted" data-section="section7"><span>Works</span><i class="fas fa-book"></i></a>
+  </div>
 
-        <div class="nav-buttons" aria-label="Page actions">
-          <button class="btn secondary" type="button" id="pdfBtn">Save as PDF</button>
-          <a class="btn" href="/index.html">Course Hub</a>
-        </div>
-      </header>
+  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-      <section id="introduction" aria-labelledby="intro-title">
-        <h2 id="intro-title">I. Introduction: Why research exists</h2>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-search"></i> Finding and Evaluating Sources</h1>
+      <p class="subtitle">A workflow for finding credible sources and deciding what belongs in your paper</p>
 
-        <p>
-          Research exists because none of us can know everything firsthand. Academic writing asks you to build
-          a claim that can survive contact with reality — evidence, context, and other informed viewpoints.
-          A strong source is not just “credible.” It’s also <em>useful</em> for the specific job your paper is doing.
-        </p>
+      <div style="margin-top: 20px;">
+        <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+        <a class="btn" href="../index.html" aria-label="Back to course hub"><i class="fas fa-home"></i> Course Hub</a>
+      </div>
+    </div>
 
-        <div class="callout">
-          <strong>Your goal in this chapter</strong>
-          <ul class="checklist">
-            <li>Start with a <strong>working question</strong> (not a vague topic).</li>
-            <li>Search in smart places (not just one place).</li>
-            <li>Evaluate quickly and realistically using <strong>SIFT</strong> (Stop, Investigate, Find better coverage, Trace).</li>
-            <li>Track what you find using a <strong>source log</strong>.</li>
-            <li>Begin MLA basics now — then deepen in Chapter 7 and Chapter 8.</li>
+    <div class="stats-bar">
+      <div class="stat"><span class="stat-label">Question-first research</span></div>
+      <div class="stat"><span class="stat-label">SIFT evaluation</span></div>
+      <div class="stat"><span class="stat-label">Source log system</span></div>
+    </div>
+
+    <div class="section active" id="section1">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-info-circle"></i> I. Introduction: Why research exists</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p>Research is how you join a conversation you didn’t start. It helps you move from a general topic to a focused claim with real evidence behind it.</p>
+
+        <div class="tools-note">
+          <p><strong>By the end of this chapter, you will be able to:</strong></p>
+          <ul>
+            <li>Turn a topic into a workable research question</li>
+            <li>Search efficiently in databases, Google Scholar, and the open web</li>
+            <li>Evaluate credibility quickly using the SIFT method</li>
+            <li>Decide whether a source is <em>useful</em> for your purpose (not just “credible”)</li>
+            <li>Track sources with a source log and begin MLA citation basics</li>
           </ul>
         </div>
 
-        <div class="callout">
-          <strong>Bridge to Chapter 9 (Topic → Thesis)</strong>
-          <p>
-            Think of your <strong>working question</strong> as your steering wheel. It keeps your research from turning into
-            random browsing. Later, when you move into the <strong>topic → working thesis</strong> work in Chapter 9, your question
-            becomes the fuel for a claim: what you learned, what’s at stake, and what you want your reader to believe.
-            (See Chapter 9: <a href="/1010/chapter-9.html">Crafting Powerful Thesis Statements</a>.)
-          </p>
+        <div class="key-takeaway">
+          <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+          <p>Good research is not “collecting quotes.” It is choosing strong conversation partners for your question — and keeping an evidence trail your reader can follow.</p>
         </div>
-      </section>
 
-      <section id="starting-right" aria-labelledby="start-title">
-        <h2 id="start-title">II. Starting Right: Question first, then keywords</h2>
+        <div class="highlight-box">
+          <p><strong>Bridge to Chapter 9 (Topic → Thesis):</strong> Think of your <strong>working question</strong> as your steering wheel. It keeps research from turning into random browsing.
+          When you move into the <strong>topic → working thesis</strong> work in Chapter 9, what you discover here becomes the foundation for a claim: what’s at stake, what patterns you see, and what you want your reader to accept.
+          (See <a href="chapter-9.html">Chapter 9: Crafting Powerful Thesis Statements</a>.)</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="section" id="section2">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-compass-drafting"></i> II. Starting Right: Question first, then keywords</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
         <h3>1) Turn a topic into a working question</h3>
-        <p>
-          A topic is a territory. A working question is a route. It tells you what to look for and how to decide
-          whether a source actually helps.
-        </p>
+        <p>A topic is a territory. A working question is a route. It tells you what to look for, what to ignore, and what “good evidence” would even count as.</p>
 
-        <div class="callout">
-          <strong>Topic → Working Question examples</strong>
-          <ul class="checklist">
-            <li><strong>Topic:</strong> Social media and mental health<br />
-              <strong>Working question:</strong> How does heavy social media use affect anxiety in first-year college students, and what interventions show evidence of helping?</li>
-            <li><strong>Topic:</strong> AI in school writing<br />
-              <strong>Working question:</strong> When students use generative AI for drafting, what changes in learning outcomes are documented, and what policies reduce harm without banning tools outright?</li>
-            <li><strong>Topic:</strong> Food deserts<br />
-              <strong>Working question:</strong> Which solutions measurably improve fresh-food access: new grocery stores, mobile markets, or transportation support — and under what conditions?</li>
+        <div class="example-box">
+          <strong>Topic → Working question examples</strong><br><br>
+          <strong>Topic:</strong> Social media and mental health<br>
+          <strong>Working question:</strong> How does heavy social media use affect anxiety in first-year college students, and what interventions show evidence of helping?<br><br>
+
+          <strong>Topic:</strong> AI in school writing<br>
+          <strong>Working question:</strong> When students use generative AI for drafting, what changes in learning outcomes are documented, and what policies reduce harm without banning tools outright?<br><br>
+
+          <strong>Topic:</strong> Food deserts<br>
+          <strong>Working question:</strong> Which solutions measurably improve fresh-food access: new grocery stores, mobile markets, or transportation support — and under what conditions?
+        </div>
+
+        <h3>2) Build keyword “families” (not one perfect search phrase)</h3>
+        <p>Most students search once, get weak results, and assume the topic is “hard.” Better move: create keyword families you can swap in and out.</p>
+
+        <div class="highlight-box">
+          <p><strong>Keyword family template</strong></p>
+          <ul>
+            <li><strong>Core terms:</strong> your main topic words</li>
+            <li><strong>Synonyms:</strong> alternate words people might use</li>
+            <li><strong>Academic terms:</strong> discipline language (often learned from abstracts and subject terms)</li>
+            <li><strong>Limiters:</strong> population / place / time (e.g., “first-year,” “United States,” “2020–2026”)</li>
+          </ul>
+          <p class="mb-0"><em>Tip:</em> your keywords should improve as you read. That’s not failure — it’s the process working.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section3">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-database"></i> III. Where to Search: Three lanes that work</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p>You’re not choosing between “library” and “Google.” You’re choosing the right lane for the job. Strong research often uses all three.</p>
+
+        <div class="interactive-element">
+          <h3><i class="fas fa-road"></i> The three-lane search model</h3>
+          <ul>
+            <li><strong>Lane 1: Library databases</strong> (best for peer-reviewed scholarship and academic books)</li>
+            <li><strong>Lane 2: Google Scholar</strong> (best for citation trails: “Cited by,” “Related articles,” and “All versions”)</li>
+            <li><strong>Lane 3: The open web</strong> (best for government data, reputable journalism, nonprofit reports, primary documents)</li>
           </ul>
         </div>
 
-        <h3>2) Build keyword “families” (not one magic phrase)</h3>
-        <p>
-          Most students search like this: one phrase, one time, hope for miracles. Instead, build keyword families you can swap in and out.
-        </p>
+        <h3>Lane 1: Library databases</h3>
+        <ul>
+          <li>Start broad, then narrow using filters (date range, peer-reviewed, subject terms).</li>
+          <li>Use abstracts to decide quickly: keep / maybe / no.</li>
+          <li>Save the strongest items immediately (PDF + citation info + link).</li>
+        </ul>
 
-        <div class="callout">
-          <strong>Keyword family template</strong>
-          <ul class="checklist">
-            <li><strong>Core terms:</strong> the main topic words (e.g., “social media,” “anxiety”)</li>
-            <li><strong>Synonyms:</strong> alternate words (e.g., “Instagram,” “stress,” “mental health”)</li>
-            <li><strong>Academic terms:</strong> discipline language (e.g., “problematic use,” “generalized anxiety disorder”)</li>
-            <li><strong>Limiters:</strong> population/place/time (e.g., “first-year,” “college,” “United States,” “2020–2026”)</li>
-          </ul>
-          <p class="note">Tip: your keywords get better as you read. Research is allowed to be iterative. (That’s the point.)</p>
+        <h3>Lane 2: Google Scholar (use it like a map)</h3>
+        <p>Google Scholar’s own help page encourages using features like citation links and alerts to get better results and track new work (see Google Scholar Search Help).</p>
+        <ul>
+          <li><strong>Cited by</strong> = newer work that references the item you found</li>
+          <li><strong>Related articles</strong> = a fast way to widen the conversation</li>
+          <li><strong>All versions</strong> = alternate locations (sometimes including free PDFs)</li>
+          <li><strong>Cite</strong> = a starting point for citations (use as a draft; always check details)</li>
+        </ul>
+
+        <div class="tools-note">
+          <p><strong>Fast reality check:</strong> Google Scholar is powerful, but it includes many kinds of materials. Your job is to evaluate what you found — not assume it’s automatically scholarly.</p>
         </div>
-      </section>
 
-      <section id="where-to-search" aria-labelledby="search-title">
-        <h2 id="search-title">III. Where to Search: Three lanes that work</h2>
-
-        <p>
-          You’re not choosing between “library” and “Google.” You’re choosing the right lane for the job.
-          Most strong research blends all three.
-        </p>
-
-        <h3>Lane 1: Library databases (best for peer-reviewed scholarship)</h3>
-        <ul class="checklist">
-          <li>Use when you need: scholarly articles, academic books/chapters, credible reports.</li>
-          <li>Best move: start broad, then narrow using subject terms, filters, and date ranges.</li>
-          <li>Reality check: you may need 1–2 scholarly sources plus other credible sources (policy, journalism, data) depending on your assignment.</li>
+        <h3>Lane 3: The open web</h3>
+        <ul>
+          <li>Good targets: .gov, reputable nonprofits, established news outlets, policy organizations, major institutions.</li>
+          <li>Use a quick evaluation method (SIFT) before you invest time in close reading.</li>
         </ul>
+      </div>
+    </div>
 
-        <h3>Lane 2: Google Scholar (best for citation trails)</h3>
-        <p>
-          Google Scholar is powerful because it shows you a network: newer work that cites something, related work, and multiple versions.
-          Scholar itself recommends using “Cited by,” “Related articles,” and “All versions” to keep exploring efficiently (Google Scholar Search Help).
-        </p>
-        <ul class="checklist">
-          <li><strong>“Cited by”</strong> = newer work that references the item you found.</li>
-          <li><strong>“Related articles”</strong> = similar work (a fast way to expand).</li>
-          <li><strong>“All versions”</strong> = alternate locations, sometimes including free PDFs.</li>
-          <li><strong>Library links</strong> = connect to your college subscriptions (if configured).</li>
-        </ul>
+    <div class="section" id="section4">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-filter"></i> IV. Evaluating Sources: Credible isn’t enough — it must be useful</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <h3>1) Use SIFT for a fast credibility check</h3>
+        <p>SIFT is a practical method developed by Mike Caulfield to help readers verify online information quickly: <strong>Stop</strong>, <strong>Investigate the source</strong>, <strong>Find better coverage</strong>, and <strong>Trace</strong> claims back to the original context.</p>
 
-        <div class="callout">
-          <strong>Important warning about auto-generated citations</strong>
-          <p>
-            Tools that generate citations (including Scholar’s “Cite” button) are helpful, but not perfect. Use them as a draft,
-            then check your details against MLA rules (MLA Style Center; Purdue OWL).
+        <div class="citation-adapted">
+          <p><strong>Learn SIFT from:</strong>
+            <a href="https://depts.washington.edu/learncip/sift/" target="_blank" rel="noopener">UW Center for an Informed Public</a>
+            and
+            <a href="https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082322" target="_blank" rel="noopener">University of Chicago Library guide</a>.
           </p>
         </div>
 
-        <h3>Lane 3: The open web (best for context, policy, and credible public sources)</h3>
-        <ul class="checklist">
-          <li>Use when you need: government data, nonprofit reports, reputable journalism, organizational statements, primary documents.</li>
-          <li>Best move: evaluate quickly using lateral reading/SIFT before you commit time to close reading.</li>
-        </ul>
-      </section>
-
-      <section id="evaluate" aria-labelledby="evaluate-title">
-        <h2 id="evaluate-title">IV. Evaluating Sources: Credible isn’t enough — it must also be useful</h2>
-
-        <h3>1) Use SIFT for a fast credibility check</h3>
-        <p>
-          SIFT is designed to help you evaluate sources quickly and avoid getting trapped by polished design or confident tone.
-          The Center for an Informed Public describes SIFT as a four-step method developed by Mike Caulfield: <strong>Stop</strong>, <strong>Investigate</strong>,
-          <strong>Find better coverage</strong>, and <strong>Trace</strong> claims/media back to the original (Center for an Informed Public).
-        </p>
-
-        <div class="callout">
-          <strong>SIFT in student-language</strong>
-          <ul class="checklist">
-            <li><strong>Stop:</strong> Pause when you feel pulled in. Strong emotion is a signal to slow down.</li>
-            <li><strong>Investigate the source:</strong> Who are they? What’s their mission? What do reliable places say about them?</li>
-            <li><strong>Find better coverage:</strong> Is this claim supported by more trustworthy outlets or research?</li>
+        <div class="highlight-box">
+          <p><strong>SIFT in student-language</strong></p>
+          <ul>
+            <li><strong>Stop:</strong> Pause. If you feel instantly convinced or outraged, slow down.</li>
+            <li><strong>Investigate:</strong> Who is behind this? What’s their track record?</li>
+            <li><strong>Find better coverage:</strong> Are reliable sources confirming this claim?</li>
             <li><strong>Trace:</strong> Follow the claim to the original study, document, quote, or dataset.</li>
           </ul>
         </div>
 
-        <h3>2) Why “lateral reading” beats close reading at the start</h3>
-        <p>
-          When people evaluate a source by staying on the page (scrolling, checking the About page, admiring the logo), they often get fooled.
-          Research on expert fact-checkers shows they “read laterally”: they leave the site quickly and open new tabs to check what other sources say
-          (Wineburg and McGrew; Caulfield).
-        </p>
+        <h3>2) Why “lateral reading” works</h3>
+        <p>Instead of staying on one page and judging by design, experts often leave the page to see what trusted sources say elsewhere. Wineburg and McGrew describe this as <em>lateral reading</em>: opening new tabs to investigate a source’s credibility and context.</p>
 
-        <h3>3) The usefulness check (with a concrete example)</h3>
-        <p>
-          A source can be credible and still be wrong for your paper. Before you adopt a source, run four quick questions:
-        </p>
+        <h3>3) The usefulness check (separate from credibility)</h3>
+        <p>A source can be credible and still be wrong for your paper. Before you commit, ask:</p>
+        <ul>
+          <li><strong>Fit:</strong> Does it address my working question?</li>
+          <li><strong>Level:</strong> Is it too general or too specialized for what I need right now?</li>
+          <li><strong>Role:</strong> What job will it do (background, evidence, counterargument, definition, example, method)?</li>
+          <li><strong>Conversation:</strong> Does it help me enter an ongoing discussion rather than repeat obvious points? (See the ACRL Framework.)</li>
+        </ul>
 
-        <div class="callout">
-          <strong>Usefulness check</strong>
-          <ul class="checklist">
-            <li><strong>Fit:</strong> Does it actually address my working question?</li>
-            <li><strong>Level:</strong> Is it too general or too specialized for what I need right now?</li>
-            <li><strong>Role:</strong> What job will it do in my paper (background, evidence, counterargument, definition, method, example)?</li>
-            <li><strong>Conversation:</strong> Does it help me join a real discussion (not just repeat a point)? (ACRL Framework)</li>
-          </ul>
+        <div class="example-box">
+          <strong>Mini example: usefulness in action</strong><br><br>
+          <em>Working question:</em> How does heavy social media use affect anxiety in first-year college students?<br><br>
+          <strong>Source A:</strong> A credible article about teen anxiety and TikTok. Useful as background, but the population may not match your question.<br>
+          <strong>Source B:</strong> A peer-reviewed study on college students and anxiety with clear methods and findings. Strong candidate for core evidence.<br>
+          <strong>Source C:</strong> An opinion piece from a tech executive. Useful as a stakeholder viewpoint, not as research evidence.
         </div>
+      </div>
+    </div>
 
-        <div class="callout">
-          <strong>Mini example (usefulness in action)</strong>
-          <p>
-            Let’s say your working question is: <em>“How does social media use affect anxiety in first-year college students?”</em>
-          </p>
-          <ul class="checklist">
-            <li>You find a credible article about teen anxiety and TikTok. It’s interesting, but your population is different. That might become <strong>background context</strong>, not your core evidence.</li>
-            <li>You find a peer-reviewed study on <strong>college students</strong> and anxiety that includes a clear method and findings. That’s a strong candidate for <strong>evidence</strong>.</li>
-            <li>You find an opinion piece from a tech CEO. It may be relevant as a <strong>stakeholder viewpoint</strong>, but it isn’t research evidence.</li>
-          </ul>
-          <p class="note">Same topic, different jobs. Usefulness is about rhetorical purpose, not vibes.</p>
-        </div>
-      </section>
-
-      <section id="manage-cite" aria-labelledby="manage-title">
-        <h2 id="manage-title">V. Managing &amp; Citing: Source logs + MLA basics (with a preview of Chapter 7)</h2>
-
+    <div class="section" id="section5">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-clipboard-list"></i> V. Managing &amp; Citing: Source logs + MLA basics (preview)</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
         <h3>1) Use a source log so your research doesn’t vanish</h3>
-        <p>
-          A source log is a simple system for tracking what you found, why it matters, and how you’ll use it.
-          It keeps you from “PDF hoarding” and makes drafting faster.
-        </p>
+        <p>A source log is a simple system for tracking what you found, why it matters, and how you’ll use it. It keeps your drafting process fast and your citations accurate.</p>
 
-        <div class="callout">
-          <strong>Source log template (copy/paste and reuse)</strong>
-          <div class="mini">Pro tip: fill this out while you search, not after you forget everything.</div>
+        <div class="interactive-element">
+          <h3><i class="fas fa-table"></i> Source log template (copy and reuse)</h3>
+          <p class="mb-2">Fill this out while you search. Don’t wait until the night before the draft.</p>
+          <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">MLA Works Cited draft</th>
+                  <th scope="col">Lane</th>
+                  <th scope="col">Credibility notes (SIFT)</th>
+                  <th scope="col">Usefulness notes</th>
+                  <th scope="col">Key passage / data</th>
+                  <th scope="col">How I’ll use this</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>[Paste your draft citation]</td>
+                  <td>Database / Scholar / Web</td>
+                  <td>Who is behind it? Better coverage? Original traced?</td>
+                  <td>Answers which part of my question? Any limits?</td>
+                  <td>Quote, statistic, or finding (page/section if available)</td>
+                  <td>Background / Evidence / Counter / Definition / Example</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <table aria-label="Source log template">
-          <thead>
-            <tr>
-              <th scope="col">Full citation (MLA draft)</th>
-              <th scope="col">Lane</th>
-              <th scope="col">Credibility notes (SIFT)</th>
-              <th scope="col">Usefulness notes</th>
-              <th scope="col">Key passage / data</th>
-              <th scope="col">How I’ll use this</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>[Paste your draft Works Cited entry here]</td>
-              <td>Database / Scholar / Web</td>
-              <td>Who published it? What do other sources say? Original source traced?</td>
-              <td>Answers my question? What part? Any limitations?</td>
-              <td>Quote, statistic, or finding (include page/section if available)</td>
-              <td>Background / Evidence / Counter / Definition / Example</td>
-            </tr>
-          </tbody>
-        </table>
+        <h3>2) MLA basics (starter version)</h3>
+        <p>MLA is an author-page citation system: you cite sources in the sentence and list full details on the Works Cited page (see Purdue OWL and MLA Style Center).</p>
+        <ul>
+          <li>If you name the author in your sentence, include the page number in parentheses: <em>Smith argues that… (42).</em></li>
+          <li>If you do not name the author in the sentence: <em>…in college writing (Smith 42).</em></li>
+          <li>If there is no page number (common on web pages), your instructor will show you the preferred approach for your course (MLA Style Center has guidance).</li>
+        </ul>
 
-        <h3>2) MLA basics: in-text citations + Works Cited</h3>
-        <p>
-          MLA is not just formatting. It’s how your reader sees your evidence trail. The basic rule is:
-          <strong>when you use someone else’s words or ideas, you cite them in the sentence and in your Works Cited</strong>.
-          Purdue OWL describes MLA as an author-page in-text citation system (Purdue OWL).
-        </p>
-
-        <div class="callout">
-          <strong>In-text citation basics (MLA)</strong>
-          <ul class="checklist">
-            <li>If you name the author in the sentence, put the page number in parentheses: <br />
-              <em>Smith argues that … (42).</em></li>
-            <li>If you don’t name the author in the sentence, include the author and page: <br />
-              <em>… in college writing (Smith 42).</em></li>
-            <li>If there’s no page number (common on web pages), MLA has alternate approaches — your instructor will tell you what to prioritize. (Start with MLA Style Center.)</li>
-          </ul>
+        <div class="tools-note">
+          <p><strong>What happens next:</strong> Chapter 7 teaches quoting, paraphrasing, and signal phrases (the “sentence-level” integration moves). Chapter 8 teaches how to use sources rhetorically and synthesize them into your argument.</p>
         </div>
+      </div>
+    </div>
 
-        <div class="callout">
-          <strong>Preview: Chapter 7 and Chapter 8</strong>
-          <p>
-            Chapter 6 gets you the sources. Chapter 7 helps you integrate them cleanly (signal phrases, quoting, paraphrasing, citation placement).
-            Chapter 8 helps you use sources rhetorically — not as “supporting decorations,” but as part of your argument and synthesis.
-          </p>
-        </div>
-      </section>
+    <div class="section" id="section6">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-tasks"></i> VI. Practice: One research sprint (start to finish)</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p>This practice is designed to feel like real research: a focused sprint that produces usable sources and a clean record.</p>
 
-      <section id="practice" aria-labelledby="practice-title">
-        <h2 id="practice-title">VI. Practice: A complete research sprint (one workflow, start to finish)</h2>
-
-        <p>
-          This practice is designed to feel like real research: a short, focused sprint that produces a usable set of sources and a clean record.
-          Use a timer if that helps. Your future self will thank you.
-        </p>
-
-        <div class="callout">
+        <div class="practice-item">
           <strong>Research Sprint (45–60 minutes)</strong>
           <ol>
-            <li><strong>Write a working question</strong> (1–2 sentences). Make it specific enough to guide searching.</li>
-            <li><strong>Create two keyword families</strong> (core terms + synonyms + academic terms).</li>
+            <li><strong>Write a working question</strong> (1–2 sentences).</li>
+            <li><strong>Create two keyword families</strong> (core + synonyms + academic terms + limiters).</li>
             <li><strong>Find one source in each lane</strong>:
-              <ul class="checklist">
+              <ul>
                 <li>1 scholarly source (database)</li>
                 <li>1 scholarly source (Google Scholar)</li>
-                <li>1 credible public source (open web: gov/nonprofit/reputable journalism)</li>
+                <li>1 credible public source (open web)</li>
               </ul>
             </li>
-            <li><strong>Run SIFT</strong> on the open web source (at minimum), and any source that feels questionable.</li>
-            <li><strong>Fill out your source log</strong> for all 3 sources.</li>
+            <li><strong>Run SIFT</strong> on the open web source (minimum) and any source that feels questionable.</li>
+            <li><strong>Complete your source log</strong> for all three sources.</li>
             <li><strong>Write 2 sentences of synthesis</strong>:
-              <ul class="checklist">
+              <ul>
                 <li>Sentence 1: what your sources agree on (or what seems most established).</li>
-                <li>Sentence 2: where they differ, or what question remains unresolved.</li>
+                <li>Sentence 2: where they differ, or what remains unresolved.</li>
               </ul>
             </li>
-            <li><strong>Draft one MLA in-text citation</strong> and one Works Cited entry (draft is fine).</li>
+            <li><strong>Draft</strong> one MLA in-text citation and one MLA Works Cited entry.</li>
+            <li><strong>Optional bridge to Chapter 9:</strong> write a one-sentence <em>working thesis</em> based on what your strongest sources suggest so far.</li>
           </ol>
         </div>
 
-        <div class="callout">
-          <strong>Exit ticket (fast reflection)</strong>
-          <ul class="checklist">
-            <li>What keyword change improved my results most?</li>
-            <li>Which lane gave me the most useful source — and why?</li>
-            <li>What claim am I currently leaning toward (a possible working thesis)?</li>
+        <div class="key-takeaway">
+          <h4><i class="fas fa-check-circle"></i> Exit Ticket</h4>
+          <ul class="mb-0">
+            <li>What keyword change improved your results most?</li>
+            <li>Which lane produced your most useful source — and why?</li>
+            <li>What claim are you leaning toward (a possible working thesis)?</li>
           </ul>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section id="checklist" aria-labelledby="checklist-title">
-        <h2 id="checklist-title">Checklist</h2>
-        <ul class="checklist">
-          <li>I can state a working question that guides my search.</li>
-          <li>I can generate keyword families and revise them as I learn.</li>
-          <li>I can use databases, Google Scholar, and the open web strategically.</li>
-          <li>I can use SIFT and lateral reading to evaluate credibility.</li>
-          <li>I can explain why a source is useful for my purpose (not just “credible”).</li>
-          <li>I can keep a source log that supports drafting and citation.</li>
-          <li>I can produce a draft MLA in-text citation and Works Cited entry.</li>
-        </ul>
+    <div class="section" id="section7">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-book"></i> Works Consulted (MLA model)</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p class="mb-2">These entries are formatted as a model. In your own projects, your Works Cited should include only sources you actually use.</p>
 
-        <div class="nav-buttons" aria-label="Chapter navigation">
-          <a class="btn secondary" href="/1010/chapter-5.html">← Chapter 5</a>
-          <a class="btn" href="/1010/chapter-7.html">Chapter 7 →</a>
+        <div class="mla-hanging">
+          <p>Association of College and Research Libraries. <em>Framework for Information Literacy for Higher Education</em>. American Library Association, 2 Feb. 2015, https://www.ala.org/sites/default/files/acrl/content/issues/infolit/Framework_ILHE.pdf. Accessed 16 Jan. 2026.</p>
+
+          <p>Caulfield, Mike. <em>Web Literacy for Student Fact-Checkers</em>. Pressbooks, 8 Jan. 2017, https://pressbooks.pub/webliteracy/. Accessed 16 Jan. 2026.</p>
+
+          <p>"Google Scholar Search Help." <em>Google Scholar</em>, https://scholar.google.com/intl/en/scholar/help.html. Accessed 16 Jan. 2026.</p>
+
+          <p>"MLA In-Text Citations: The Basics." <em>Purdue OWL</em>, Purdue University, https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_in_text_citations_the_basics.html. Accessed 16 Jan. 2026.</p>
+
+          <p>"The SIFT Method." <em>Evaluating Resources and Misinformation</em>, University of Chicago Library, 30 June 2025, https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082322. Accessed 16 Jan. 2026.</p>
+
+          <p>"SIFT." <em>Center for an Informed Public</em>, University of Washington, https://depts.washington.edu/learncip/sift/. Accessed 16 Jan. 2026.</p>
+
+          <p>"Works Cited: A Quick Guide." <em>MLA Style Center</em>, Modern Language Association of America, https://style.mla.org/works-cited/works-cited-a-quick-guide/. Accessed 16 Jan. 2026.</p>
+
+          <p>Wineburg, Sam, and Sarah McGrew. "Lateral Reading: Reading Less and Learning More When Evaluating Digital Information." <em>SSRN</em>, 6 Oct. 2017, https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3048994. Accessed 16 Jan. 2026.</p>
+
+          <p>"Crafting Powerful Thesis Statements." <em>Scholar's Compass</em>, https://scholarscompass.org/1010/chapter-9.html. Accessed 16 Jan. 2026.</p>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section id="works-consulted" aria-labelledby="wc-title">
-        <h2 id="wc-title">Works Consulted (MLA model)</h2>
-        <p class="mini">
-          These entries are formatted as a model. In your own projects, your Works Cited should include only sources you actually used.
-        </p>
-
-        <ul class="works-consulted">
-          <li>
-            Association of College and Research Libraries. <em>Framework for Information Literacy for Higher Education</em>. American Library Association, 2015,
-            www.ala.org/sites/default/files/acrl/content/issues/infolit/framework1.pdf. Accessed 16 Jan. 2026.
-          </li>
-          <li>
-            Caulfield, Mike. <em>Web Literacy for Student Fact-Checkers</em>. Pressbooks, 8 Jan. 2017, pressbooks.pub/webliteracy/. Accessed 16 Jan. 2026.
-          </li>
-          <li>
-            Caulfield, Mike. “What ‘Reading Laterally’ Means.” <em>Web Literacy for Student Fact-Checkers</em>, Pressbooks,
-            pressbooks.pub/webliteracy/chapter/what-reading-laterally-means/. Accessed 16 Jan. 2026.
-          </li>
-          <li>
-            Center for an Informed Public. “SIFT.” <em>University of Washington</em>, depts.washington.edu/learncip/sift/. Accessed 16 Jan. 2026.
-          </li>
-          <li>
-            “Google Scholar Search Help.” <em>Google Scholar</em>, scholar.google.com/intl/en/scholar/help.html. Accessed 16 Jan. 2026.
-          </li>
-          <li>
-            “MLA In-Text Citations: The Basics.” <em>Purdue OWL</em>, Purdue University,
-            owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_in_text_citations_the_basics.html. Accessed 16 Jan. 2026.
-          </li>
-          <li>
-            “Works Cited: A Quick Guide.” <em>MLA Style Center</em>, Modern Language Association,
-            style.mla.org/works-cited/works-cited-a-quick-guide/. Accessed 16 Jan. 2026.
-          </li>
-          <li>
-            Wineburg, Sam, and Sarah McGrew. “Lateral Reading: Reading Less and Learning More When Evaluating Digital Information.” <em>SSRN</em>, 6 Oct. 2017,
-            papers.ssrn.com/sol3/papers.cfm?abstract_id=3048994. Accessed 16 Jan. 2026.
-          </li>
-          <li>
-            “Crafting Powerful Thesis Statements.” <em>Scholar’s Compass</em>, scholarscompass.org/1010/chapter-9.html. Accessed 16 Jan. 2026.
-          </li>
-        </ul>
-      </section>
-
-      <footer class="site-footer">
-        <div class="mini">
-          The Scholar’s Compass is an interactive educational resource for academic writing. Content is designed for ENG 1010/1020 and may be adapted for other courses.
-        </div>
-      </footer>
-    </main>
   </div>
 
-  <!-- Shared site script -->
-  <script src="/app.js"></script>
+  <div class="footer">
+    <div class="container text-center">
+      <h3>The Scholar's Compass</h3>
+      <p class="mb-0">Interactive educational content for developing strong academic writing skills</p>
+    </div>
+  </div>
 
-  <!-- PDF button fallback (in case app.js doesn’t bind it on this page) -->
-  <script>
-    (function () {
-      const btn = document.getElementById("pdfBtn");
-      if (btn) btn.addEventListener("click", () => window.print());
-    })();
-  </script>
+  <script src="../app.js?v=17"></script>
 </body>
 </html>
