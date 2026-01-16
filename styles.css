@@ -26,8 +26,9 @@
 
 body[data-course="1020"] {
     /* Subtle ENG 1020 palette shift (shares same layout + components) */
-    --primary: #5a4fa3;
-    --primary-dark: #3b2f7a;
+    /* Slate gray theme requested */
+    --primary: #708090;
+    --primary-dark: #556270;
     --secondary: #d99a2b;
     --accent: #7aa8ff;
     --orange-glow: rgba(217, 154, 43, 0.14);
@@ -14391,12 +14392,13 @@ body.dark-mode .progress-card {
 
 /* ===================== v4 Fixes ===================== */
 /* Only chapter headers use white text; index header stays dark-on-light */
-body[data-page^="chapter"] .header h1,
-body[data-page^="chapter"] .header h1 i {
+/* Match both ENG 1010 (chapter-*) and ENG 1020 (1020-chapter-*) pages */
+body[data-page*="chapter"] .header h1,
+body[data-page*="chapter"] .header h1 i {
   color: #fff !important;
   opacity: 1 !important;
 }
-body[data-page^="chapter"] .header .subtitle {
+body[data-page*="chapter"] .header .subtitle {
   color: rgba(255,255,255,0.85) !important;
   opacity: 1 !important;
 }
