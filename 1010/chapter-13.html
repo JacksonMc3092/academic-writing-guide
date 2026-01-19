@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Rhetoric: The Art of Persuasion - Scholar's Compass</title>
+  <meta name="description" content="Learn how ethos, pathos, logos, kairos, and the rhetorical situation shape persuasion—and how to analyze arguments ethically." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../styles.css?v=17" />
+</head>
+
+<body data-page="chapter-13" data-course="1010">
+  <div class="progress-container-top">
+    <div class="progress-bar-top" id="scrollProgress"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-content">
+      <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand" aria-label="Scholar's Compass home">
+        <i class="fas fa-compass"></i>Scholar's Compass
+      </a>
+    </div>
+  </nav>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2><i class="fas fa-compass me-2"></i>Chapters</h2>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-section" id="sidebarChapters">
+        <h3>Chapters</h3>
+        <div id="chaptersList"></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="quick-nav" id="quickNav">
+    <a href="#section1" title="Overview" data-section="section1"><span>Overview</span><i class="fas fa-info-circle"></i></a>
+    <a href="#section2" title="Rhetorical Situation" data-section="section2"><span>Situation</span><i class="fas fa-sitemap"></i></a>
+    <a href="#section3" title="The Appeals" data-section="section3"><span>Appeals</span><i class="fas fa-scale-balanced"></i></a>
+    <a href="#section4" title="Kairos" data-section="section4"><span>Kairos</span><i class="fas fa-clock"></i></a>
+    <a href="#section5" title="Analyze" data-section="section5"><span>Analyze</span><i class="fas fa-magnifying-glass"></i></a>
+    <a href="#section6" title="Practice" data-section="section6"><span>Practice</span><i class="fas fa-pencil-alt"></i></a>
+    <a href="#section7" title="Media Literacy" data-section="section7"><span>Media</span><i class="fas fa-newspaper"></i></a>
+    <a href="#section8" title="Attribution" data-section="section8"><span>Sources</span><i class="fas fa-scroll"></i></a>
+  </div>
+
+  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-bullhorn"></i> Understanding Rhetoric: The Art of Persuasion</h1>
+      <p class="subtitle">How ethos, pathos, logos, and kairos shape arguments in real life</p>
+
+      <div style="margin-top: 20px;">
+        <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+        <a class="btn" href="../index.html" aria-label="Back to course hub"><i class="fas fa-home"></i> Course Hub</a>
+      </div>
+    </div>
+
+    <div class="section active" id="section1">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-info-circle"></i> I. Overview: What is Rhetoric?</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p><strong>Rhetoric</strong> is the art of effective communication. It’s how we use language (and visuals, and tone, and structure) to persuade, inform, or move an audience.</p>
+
+        <div class="highlight-box">
+          <p><strong>Important clarification:</strong> People sometimes use “rhetoric” to mean empty or misleading speech. That’s a modern misuse. Rhetoric itself is neutral—it’s a toolkit. You can use a toolkit to build a house… or to throw the hammer. (Please don’t throw the hammer.)</p>
+        </div>
+
+        <p>Rhetoric shows up everywhere: essays, social media posts, speeches, advertisements, classroom discussions, and even text messages. The ancient Greek philosopher Aristotle described three “appeals” writers and speakers use to persuade:</p>
+        <ul>
+          <li><strong>Ethos</strong> (credibility)</li>
+          <li><strong>Pathos</strong> (emotion)</li>
+          <li><strong>Logos</strong> (logic)</li>
+        </ul>
+
+        <p>He also emphasized <strong>kairos</strong> (timing) and the importance of understanding the <strong>rhetorical situation</strong> (the context in which communication happens).</p>
+
+        <div class="example-box">
+          <strong>Why rhetoric matters:</strong>
+          <ul style="margin-top: 10px;">
+            <li>It helps you communicate more effectively and persuasively.</li>
+            <li>It helps you analyze arguments you encounter every day.</li>
+            <li>It helps you spot manipulation and weak reasoning.</li>
+            <li>It supports college writing, career communication, and civic participation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section2">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-sitemap"></i> II. The Rhetorical Situation</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p>All communication happens inside a <strong>rhetorical situation</strong>: the set of circumstances that shapes what someone says and how they say it.</p>
+
+        <div class="tools-note">
+          <p><strong>Quick idea:</strong> When you’re confused by a text, don’t start with “Do I agree?” Start with “What situation produced this?”</p>
+        </div>
+
+        <h3>Key elements</h3>
+        <ul>
+          <li><strong>Author/Speaker:</strong> Who created the message? What expertise, values, background, or stake do they have?</li>
+          <li><strong>Audience:</strong> Who is the message for? What do they value? How open are they to the author?</li>
+          <li><strong>Purpose:</strong> What does the author want to achieve—inform, persuade, inspire, entertain, define?</li>
+          <li><strong>Context/Setting:</strong> When/where was it created? What events or debates shape its meaning?</li>
+          <li><strong>Text/Medium:</strong> Is it an essay, speech, TikTok, ad, meme? What does that medium enable or limit?</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Mini-example:</strong> An opinion piece about face masks published in March 2020 lands very differently than one published in March 2023. Same topic. Totally different context.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section3">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-scale-balanced"></i> III. The Three Classical Appeals</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p>Strong persuasion usually balances multiple appeals. Think of ethos, pathos, and logos as different ways to get an audience to say, “Okay… I’m listening.”</p>
+
+        <div class="highlight-box">
+          <p><strong>Balance reminder:</strong> A persuasive argument typically uses all three—credibility, emotion, and reasons—rather than leaning on only one.</p>
+        </div>
+
+        <h3><i class="fas fa-user-check"></i> Ethos: credibility and character</h3>
+        <p><strong>Ethos</strong> is the audience’s sense that the author is worth listening to—knowledgeable, fair-minded, and trustworthy.</p>
+        <ul>
+          <li><strong>Expertise:</strong> education, experience, or firsthand knowledge</li>
+          <li><strong>Trustworthiness:</strong> honesty, fairness, and concern for the audience</li>
+        </ul>
+
+        <div class="example-box">
+          <strong>Ethos in action:</strong>
+          <ul style="margin-top: 10px;">
+            <li>A doctor writing about vaccine safety references training and practice.</li>
+            <li>A student writing about work/school balance uses personal experience as credible testimony.</li>
+            <li>A research paper builds ethos through careful citations and clear explanations.</li>
+          </ul>
+        </div>
+
+        <p><strong>Watch out for faulty ethos</strong>: false authority, ad hominem attacks, and guilt by association.</p>
+
+        <h3><i class="fas fa-heart"></i> Pathos: emotion</h3>
+        <p><strong>Pathos</strong> is the emotional “hook”: making an audience feel something (sympathy, fear, pride, anger, hope) that shapes how they receive the argument.</p>
+        <ul>
+          <li>Personal stories and anecdotes</li>
+          <li>Vivid imagery and sensory detail</li>
+          <li>Emotion-laden word choice</li>
+          <li>Humor or shared values to build connection</li>
+        </ul>
+
+        <div class="tools-note">
+          <p><strong>Balance tip:</strong> Pathos is not “bad.” It becomes a problem when it replaces evidence—when feelings are used to hide weak logic.</p>
+        </div>
+
+        <p><strong>Watch out for faulty pathos</strong>: scare tactics, manipulative pity, and “argument by emotionally loaded language” without support.</p>
+
+        <h3><i class="fas fa-brain"></i> Logos: logic and reasons</h3>
+        <p><strong>Logos</strong> is the reasoning and evidence: facts, examples, data, and the structure that connects them to a claim.</p>
+        <ul>
+          <li>Credible evidence (data, studies, expert testimony, historical examples)</li>
+          <li>Clear organization and valid reasoning</li>
+          <li>Definitions that clarify key terms</li>
+          <li>Addressing counterarguments</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Common reasoning moves:</strong> deductive reasoning, inductive reasoning, cause/effect, comparison, exemplification.</p>
+        </div>
+
+        <p><strong>Watch out for faulty logos</strong>: hasty generalization, false dilemma, slippery slope, false cause, cherry-picking, red herring, straw man.</p>
+
+        <div class="practice-item">
+          <strong>Quick check: What’s the dominant appeal?</strong>
+          <p>Pick a recent message you saw (ad, post, speech, article headline). Which appeal does it lean on most—ethos, pathos, or logos? What makes you say that?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section4">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-clock"></i> IV. Kairos: Timing and Context</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p><strong>Kairos</strong> is the “right moment” for an argument—saying the right thing, at the right time, in the right way.</p>
+
+        <div class="example-box">
+          <strong>Kairos examples:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Asking for a favor right after you’ve helped out (good kairos).</li>
+            <li>Asking for a raise right after budget cuts are announced (poor kairos).</li>
+            <li>An article about voting rights published right before an election (strong kairos).</li>
+          </ul>
+        </div>
+
+        <h3>Kairos in writing</h3>
+        <ul>
+          <li>Where you place your thesis (lead with it vs. build up to it)</li>
+          <li>When you introduce your strongest evidence (start strong, end strong, or both)</li>
+          <li>How you create urgency (or intentionally avoid urgency)</li>
+          <li>How the medium affects timing (posting today vs. publishing later)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="section5">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-magnifying-glass"></i> V. Analyzing Rhetoric: Putting It All Together</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p>Rhetorical analysis means asking: <em>How</em> does a text work on an audience in a particular situation? You’re not just summarizing what it says—you’re explaining what it’s doing.</p>
+
+        <div class="highlight-box">
+          <p><strong>Think of it like a stool:</strong> ethos, pathos, and logos are the three legs. Kairos is the floor. If the floor is moving, even a sturdy stool gets wobbly.</p>
+        </div>
+
+        <h3>A process you can reuse</h3>
+        <ol>
+          <li><strong>Identify the rhetorical situation</strong> (author, audience, purpose, context, medium).</li>
+          <li><strong>Locate the appeals</strong> (ethos, pathos, logos, kairos).</li>
+          <li><strong>Evaluate effectiveness</strong> (appropriate? ethical? balanced? any fallacies?).</li>
+          <li><strong>Reflect on your response</strong> (what worked on you, and why?).</li>
+        </ol>
+
+        <div class="example-box">
+          <strong>Sample analysis: college recruitment brochure</strong>
+          <ul style="margin-top: 10px;">
+            <li><strong>Ethos:</strong> accreditation, graduation rates, alumni outcomes</li>
+            <li><strong>Pathos:</strong> photos of happy students and “belonging” testimonials</li>
+            <li><strong>Logos:</strong> job placement stats, scholarship info, program details</li>
+            <li><strong>Kairos:</strong> sent during junior/senior year when decisions are active</li>
+          </ul>
+          <p style="margin-top: 10px;"><strong>Critical note:</strong> A reader might notice cherry-picked stats or missing concerns (cost, class size, housing).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section6">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-pencil-alt"></i> VI. Exercises and Activities</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <div class="practice-item">
+          <strong>Activity 1: Identify the rhetorical situation (15 min)</strong>
+          <p>Choose one scenario and identify author, audience, purpose, context, and medium:</p>
+          <ol>
+            <li>A student emails a professor asking for an extension</li>
+            <li>A city council member proposes a new bike lane</li>
+            <li>A company posts an Instagram ad for a new product</li>
+            <li>A student writes a campus editorial about rising tuition</li>
+          </ol>
+        </div>
+
+        <div class="practice-item">
+          <strong>Activity 2: Scavenger hunt for appeals (20 min)</strong>
+          <p>Find an ad (commercial, poster, social media post). Then answer:</p>
+          <ul>
+            <li>What’s being “sold”?</li>
+            <li>Where do you see ethos, pathos, and logos?</li>
+            <li>How does kairos matter here?</li>
+            <li>Which appeal is strongest—and why might the creator have chosen that?</li>
+          </ul>
+        </div>
+
+        <div class="practice-item">
+          <strong>Activity 3: Analyze Apple ads (30 min)</strong>
+          <p>Watch three Apple ads (a specs-focused ad, the “1984” ad, and a creative/professional-use ad). For each:</p>
+          <ul>
+            <li>Which appeal is primary?</li>
+            <li>Who is the target audience?</li>
+            <li>How does kairos factor in (when released and why it mattered)?</li>
+          </ul>
+        </div>
+
+        <div class="practice-item">
+          <strong>Activity 4: Fallacy detective (15 min)</strong>
+          <p>Identify the fallacy in each statement:</p>
+          <ol>
+            <li>“If we let students use laptops in class, next they’ll want them during tests, and eventually no one will learn anything.”</li>
+            <li>“Everyone I know loves that restaurant, so it must be the best in town.”</li>
+            <li>“We should listen to this celebrity on climate change—they’re famous and successful.”</li>
+            <li>“My opponent wants to cut sports funding. Clearly they hate children.”</li>
+            <li>“You can’t trust Professor Martinez’s research—she never finished her PhD.”</li>
+          </ol>
+        </div>
+
+        <div class="practice-item">
+          <strong>Activity 5: Build your own argument (30–45 min)</strong>
+          <p>Choose a claim you want to argue (school policy, social media, public transportation, etc.). Then plan:</p>
+          <ul>
+            <li><strong>Ethos:</strong> How will you establish credibility?</li>
+            <li><strong>Pathos:</strong> What story/image/scenario makes your audience care?</li>
+            <li><strong>Logos:</strong> What three pieces of evidence support your claim?</li>
+            <li><strong>Kairos:</strong> Why is this timely right now?</li>
+          </ul>
+          <p>Finally, write one paragraph using at least three appeals.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section7">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-newspaper"></i> VII. Connection to Media Literacy</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p>Rhetorical awareness is a real-life skill. Every day, you see messages trying to persuade you—ads, headlines, social posts, political speeches, influencer content, and more.</p>
+
+        <div class="highlight-box">
+          <p><strong>Rhetorical literacy helps you:</strong></p>
+          <ul style="margin-top: 10px;">
+            <li>Recognize manipulation (fear-mongering, deceptive framing)</li>
+            <li>Evaluate credibility (who’s speaking, and with what expertise?)</li>
+            <li>Demand evidence (not just vibes)</li>
+            <li>Make better decisions as a citizen and consumer</li>
+          </ul>
+        </div>
+
+        <p>With AI-generated content and rapid information spread, the ability to analyze messages carefully is only getting more important.</p>
+
+        <div class="key-takeaway">
+          <h4><i class="fas fa-key"></i> Key Takeaway</h4>
+          <p>Rhetoric isn’t “empty speech.” It’s the structure of how persuasion works. If you can name the moves, you can decide whether to accept them.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section8">
+      <div class="section-header" onclick="toggleSection(this)">
+        <span><i class="fas fa-scroll"></i> VIII. Works Cited, Attributions, and License</span>
+        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+      </div>
+      <div class="section-content">
+        <p>This chapter synthesizes and adapts material from openly licensed sources. See the original list below for attribution.</p>
+
+        <div class="citation-adapted">
+          <p><strong>Works cited and attributions (adapted):</strong></p>
+          <ul>
+            <li>Eward-Mangione, Angela. “Rhetorical Appeals: An Overview.” <em>Understanding Literacy in Our Lives</em> (2018). CC BY-NC-ND 4.0.</li>
+            <li>Gagich, Melanie, and Emilie Zickel. “Using Rhetorical Appeals.” <em>ENGL 1020 Research &amp; Argumentative Writing</em> (2020). CC BY-NC-SA 4.0.</li>
+            <li>Gagich, Melanie, and Emilie Zickel. “Logical Fallacies.” <em>ENGL 1020 Research &amp; Argumentative Writing</em> (2020). CC BY-NC-SA 4.0.</li>
+            <li>Jeffrey, Robin, and Emilie Zickel. “Understanding the Rhetorical Situation.” <em>ENGL 1020 Research &amp; Argumentative Writing</em> (2020). CC BY-NC-SA 4.0.</li>
+            <li>Miller, Patricia Roberts. “Rhetoric is Just Empty Speech.” <em>Bad Ideas About Writing</em> (2017). CC BY-NC 4.0.</li>
+            <li>Palmer, Karen. “Fallacies.” <em>The Worry-Free Writer</em> (2019). CC BY-NC-SA.</li>
+            <li>Robinson, Michelle Bachelor, and Maria Jerskey (eds.). <em>Writing Guide with Handbook</em>. OpenStax (2021). CC BY 4.0.</li>
+            <li>Sylvia, J.J., IV. “Rhetorical Analysis.” <em>Introduction to Communication and Media Studies</em> (2024). CC BY-NC-SA 4.0.</li>
+            <li>Watts, Tracey, and Dorie LaRue. “Rhetorical Appeals: Logos, Pathos, and Ethos Defined.” <em>Rhetoric Matters</em> (2022). CC BY-NC-SA 4.0.</li>
+            <li>Zickel, Emilie, and Erica M. Stone. “Using Rhetorical Appeals.” <em>ENGL 1020 Research &amp; Argumentative Writing</em> (2020). CC BY-NC-SA 4.0.</li>
+          </ul>
+        </div>
+
+        <div class="tools-note">
+          <p><strong>License for this chapter:</strong> CC BY-NC-SA 4.0 (share and adapt for non-commercial use with attribution; share adaptations under the same license).</p>
+          <p style="margin-bottom: 0;"><strong>Recommended citation:</strong> “Understanding Rhetoric: The Art of Persuasion.” Adapted from multiple sources by [Your Name/Institution], 2026. CC BY-NC-SA 4.0.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../app.js?v=17"></script>
+</body>
+</html>
