@@ -1,103 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revision: From Draft to Final - Scholar's Compass</title>
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../styles.css?v=17" />
-</head>
-<body data-page="chapter-12" data-course="1010">
-  <div class="progress-container-top">
-    <div class="progress-bar-top" id="scrollProgress"></div>
-  </div>
-
-  <nav class="navbar">
-    <div class="navbar-content">
-      <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-      <a href="index.html" class="navbar-brand" aria-label="Scholar's Compass home">
-        <i class="fas fa-compass"></i>Scholar's Compass
-      </a>
-    </div>
-  </nav>
-
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <h2><i class="fas fa-compass me-2"></i>Chapters</h2>
-      <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="sidebar-content">
-      <div class="sidebar-section" id="sidebarChapters">
-        <h3>Chapters</h3>
-        <div id="chaptersList"></div>
-      </div>
-    </div>
-  </nav>
-
-  <div class="quick-nav" id="quickNav">
-    <a href="#section1" title="Handout (PDF)" data-section="section1"><span>Handout</span><i class="fas fa-file-pdf"></i></a>
-    <a href="#section2" title="Text Version" data-section="section2"><span>Text</span><i class="fas fa-align-left"></i></a>
-  </div>
-
-  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-
-  <div class="container">
-    <div class="header">
-      <h1><i class="fas fa-pen-to-square"></i> The Revision Companion: A Guide to Transforming Your Essay Drafts</h1>
-      <p class="subtitle">A practical guide for moving from draft to polished essay</p>
-
-      <div style="margin-top: 20px;">
-        <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
-        <a class="btn" href="../assets/revision-companion.pdf" target="_blank" rel="noopener" aria-label="Open the Revision Companion PDF in a new tab"><i class="fas fa-up-right-from-square"></i> Open Handout</a>
-        <a class="btn" href="../index.html" aria-label="Back to course hub"><i class="fas fa-home"></i> Course Hub</a>
-      </div>
-    </div>
-
-    <div class="section active" id="section1">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-file-pdf"></i> I. Handout (PDF)</span>
-        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-      </div>
-      <div class="section-content">
-        <p style="margin-bottom: 12px;">
-          <a class="btn" href="../assets/revision-companion.pdf" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download / Open the PDF</a>
-          <a class="btn" href="../assets/revision-companion.txt" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Open the plain-text version</a>
-        </p>
-
-        <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(127,127,127,.35);">
-          <iframe
-            src="../assets/revision-companion.pdf#view=FitH"
-            title="The Revision Companion PDF"
-            style="width: 100%; height: 80vh; border: 0;"
-            loading="lazy"></iframe>
-        </div>
-
-              </div>
-    </div>
-
-    <div class="section" id="section2">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-align-left"></i> II. Text Version (Copy/Paste Friendly)</span>
-        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-      </div>
-      <div class="section-content">
-        <div style="white-space: pre-wrap; line-height: 1.55; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 0.95rem;">The Revision Companion: A Guide to
+The Revision Companion: A Guide to
 Transforming Your Essay Drafts
 A practical guide for moving from draft to polished essay
 
 
   Getting Started: Shifting Your Mindset
-Before diving into your draft, remember that revision isn&#x27;t about fixing what&#x27;s &quot;wrong&quot;—it&#x27;s
+Before diving into your draft, remember that revision isn't about fixing what's "wrong"—it's
 about discovering what you really want to say and making sure your readers can follow your
 thinking. Professional writers often find their best ideas through the revision process itself.
 In fact, research shows that experienced writers spend 50% or more of their
-writing time on revision—it&#x27;s where the real work happens.
+writing time on revision—it's where the real work happens.
 
 
 
@@ -108,24 +19,24 @@ writing time on revision—it&#x27;s where the real work happens.
 
 
 
-                     Global Structure: Argument &amp; Organization
+                     Global Structure: Argument & Organization
 
 
 
                                                ↓
 
-                     Paragraph Flow: Development &amp; Coherence
+                     Paragraph Flow: Development & Coherence
 
 
 
                                                ↓
 
-                           Sentence Clarity: Grammar &amp; Style
+                           Sentence Clarity: Grammar & Style
 
 
    Figure 1: The revision hierarchy—start at the top with global structure, then move
    down through paragraph flow to sentence-level concerns
- Phase 1: The Big Picture Review (Global Revision)
+ Phase 1: The Big Picture Review (Global Revision)
 
 Questions to Ask Yourself
 
@@ -135,16 +46,16 @@ About Your Argument:
 
    Can I clearly state my thesis in one sentence?
 
-   Does my argument respond to something others have said? (What&#x27;s my &quot;they say&quot;?)
+   Does my argument respond to something others have said? (What's my "they say"?)
 
    Have I addressed the strongest objections to my position?
 
 
 
 
-  Try This: The &quot;Nutshell Exercise&quot;
+  Try This: The "Nutshell Exercise"
 
-  Write out this statement: &quot;What I&#x27;m really trying to argue is...&quot; If you can&#x27;t complete
+  Write out this statement: "What I'm really trying to argue is..." If you can't complete
   this in one clear sentence, your argument may need focusing.
 
 
@@ -153,24 +64,24 @@ About Your Argument:
  Thesis Examples: Weak vs. Strong
 
 
-   ❌ Weak: &quot;This paper will discuss                 ✓ Strong: &quot;While critics blame social
-   social media and teenagers.&quot;                     media for teen anxiety, the evidence
+   ❌ Weak: "This paper will discuss                 ✓ Strong: "While critics blame social
+   social media and teenagers."                     media for teen anxiety, the evidence
                                                     suggests that how teens use these
    Problem: No argument, just a topic               platforms matters more than how
-   announcement                                     much time they spend on them.&quot;
+   announcement                                     much time they spend on them."
 
 
                                                     Why it works: Takes a position,
                                                     acknowledges counterarguments,
                                                     makes a specific claim
-  🚩 Red Flags: Warning Signs of an Unfocused Argument
-     Your thesis contains phrases like &quot;many aspects&quot; or &quot;various factors&quot;
+  🚩 Red Flags: Warning Signs of an Unfocused Argument
+     Your thesis contains phrases like "many aspects" or "various factors"
 
-     You find yourself saying &quot;there are many reasons why...&quot;
+     You find yourself saying "there are many reasons why..."
 
      Your introduction is purely descriptive with no hint of your position
 
-     You can&#x27;t identify what you&#x27;re arguing against
+     You can't identify what you're arguing against
 
      Your conclusion introduces ideas not mentioned in your thesis
 
@@ -190,12 +101,12 @@ About Your Structure:
 
 About Your Evidence:
 
-   Do my examples actually support the points I&#x27;m making?
+   Do my examples actually support the points I'm making?
 
    Have I analyzed my evidence, or just described it?
 
    Am I spending too much time summarizing and not enough time analyzing?
-  Phase 2: Paragraph-Level Revision (Flow &amp;
+  Phase 2: Paragraph-Level Revision (Flow &
   Coherence)
 
 Check Each Paragraph
@@ -212,7 +123,7 @@ Development:
 
    Do you move from general claims to specific examples and back to analysis?
 
-   Are there gaps where readers might ask &quot;How so?&quot; or &quot;Why?&quot;
+   Are there gaps where readers might ask "How so?" or "Why?"
 
 Transitions:
 
@@ -223,7 +134,7 @@ Transitions:
 
 
 
-  Before &amp; After: Paragraph Revision
+  Before & After: Paragraph Revision
 
    Before (Weak Topic Sentence + Description Only):
    Social media affects teenagers. Many teens use Instagram and TikTok every day.
@@ -233,13 +144,13 @@ Transitions:
 
    After (Clear Topic Sentence + Analysis):
    Rather than time spent online, the type of engagement determines
-   social media&#x27;s impact on teen wellbeing. While passive scrolling correlates
+   social media's impact on teen wellbeing. While passive scrolling correlates
    with increased anxiety, active participation in creative communities shows positive
    effects. This distinction matters because it shifts the focus from simple time limits
    to encouraging meaningful digital interaction. For instance, teens who use
    platforms to share artwork or collaborate on projects report higher self-esteem
    than those who primarily consume content.
-Phase 2.5: Evidence Analysis
+Phase 2.5: Evidence Analysis
 
 
 
@@ -247,7 +158,7 @@ Phase 2.5: Evidence Analysis
 
   The Analysis Equation: Evidence + Interpretation + Connection to Thesis
 
-  It&#x27;s not enough to present evidence—you must explain what it means and why it
+  It's not enough to present evidence—you must explain what it means and why it
   matters to your argument.
 
 
@@ -256,16 +167,16 @@ Phase 2.5: Evidence Analysis
  Descriptive vs. Analytical Writing
 
 
-   Descriptive: &quot;In the study, 60% of        Analytical: &quot;The finding that 60% of
+   Descriptive: "In the study, 60% of        Analytical: "The finding that 60% of
    participants reported feeling anxious     participants reported anxiety
-   after using social media.&quot;                suggests that passive consumption,
+   after using social media."                suggests that passive consumption,
                                              rather than the medium itself, drives
                                              negative outcomes—a distinction that
                                              challenges calls for blanket
-                                             restrictions on teen social media use.&quot;
- Phase 3: The Reader Test
+                                             restrictions on teen social media use."
+ Phase 3: The Reader Test
 
-Put Yourself in Your Reader&#x27;s Shoes
+Put Yourself in Your Reader's Shoes
 
 
 
@@ -280,7 +191,7 @@ Put Yourself in Your Reader&#x27;s Shoes
 
       Read backwards paragraph by paragraph to disrupt familiarity
 
-      Read aloud to catch awkward phrasing you&#x27;d miss when reading silently
+      Read aloud to catch awkward phrasing you'd miss when reading silently
 
 
 
@@ -300,7 +211,7 @@ Read for comprehension:
 
   ☐ Undefined technical terms or jargon
 
-  ☐ Pronouns with unclear antecedents (&quot;this&quot; or &quot;it&quot; without clear reference)
+  ☐ Pronouns with unclear antecedents ("this" or "it" without clear reference)
 
   ☐ Unexplained connections between paragraphs
 
@@ -315,13 +226,13 @@ Read for engagement:
 
    Why should readers care about your argument?
 
-   Have you shown what&#x27;s at stake in your analysis?
-    Does your opening grab attention and clearly set up your purpose?
+   Have you shown what's at stake in your analysis?
+    Does your opening grab attention and clearly set up your purpose?
 
 
-The &quot;So What?&quot; Check
-After each major point, ask: &quot;So what? Why does this matter?&quot; If you can&#x27;t answer, your
-readers won&#x27;t be able to either.
+The "So What?" Check
+After each major point, ask: "So what? Why does this matter?" If you can't answer, your
+readers won't be able to either.
 
 
 
@@ -344,12 +255,12 @@ readers won&#x27;t be able to either.
 
 
 
-   Figure 2: The &quot;So What?&quot; Ladder—climb from observation to significance
-  Phase 4: Integrating Peer Feedback
+   Figure 2: The "So What?" Ladder—climb from observation to significance
+  Phase 4: Integrating Peer Feedback
 
 Understanding How Your Classmates Read vs. How Professors
 Read
-When you get feedback from classmates, remember that they&#x27;re reading as genuine readers
+When you get feedback from classmates, remember that they're reading as genuine readers
 —not as evaluators. This actually makes their feedback incredibly valuable in different ways
 than instructor feedback.
 
@@ -363,7 +274,7 @@ than instructor feedback.
          They notice where they get                    Looking for how well you meet
          confused or lose interest                     assignment expectations
 
-         They tell you what they                       Evaluating your argument&#x27;s
+         They tell you what they                       Evaluating your argument's
          understood vs. what they missed               sophistication and development
 
          They react as engaged readers,                Assessing your use of course
@@ -384,46 +295,46 @@ Making the Most of Peer Feedback
 
 When receiving peer feedback:
 
-  1. Listen for reader confusion - If multiple peers say they don&#x27;t understand
-    something, that&#x27;s valuable data about where your writing needs clarification.
+  1. Listen for reader confusion - If multiple peers say they don't understand
+    something, that's valuable data about where your writing needs clarification.
 
   2. Pay attention to engagement - Notice where peers say they got interested or bored.
     These are clues about which parts of your argument are working.
 
   3. Look for patterns - If two or three peers mention the same issue, prioritize
     addressing it.
- 4. Ask follow-up questions - &quot;When you say this paragraph was confusing, can you tell
-   me what you thought I was trying to say?&quot;
+ 4. Ask follow-up questions - "When you say this paragraph was confusing, can you tell
+   me what you thought I was trying to say?"
 
 When giving peer feedback:
 
- 1. Describe your experience as a reader - Instead of &quot;This is wrong,&quot; try &quot;I got
-   confused here because...&quot;
+ 1. Describe your experience as a reader - Instead of "This is wrong," try "I got
+   confused here because..."
 
- 2. Point to specifics - &quot;In paragraph 3, I couldn&#x27;t follow how this example supports your
-   main point.&quot;
+ 2. Point to specifics - "In paragraph 3, I couldn't follow how this example supports your
+   main point."
 
- 3. Ask questions - &quot;Are you arguing X or Y here? I couldn&#x27;t tell.&quot;
+ 3. Ask questions - "Are you arguing X or Y here? I couldn't tell."
 
- 4. Share your reactions - &quot;This example really convinced me, but I wanted to know
-   more about...&quot;
+ 4. Share your reactions - "This example really convinced me, but I wanted to know
+   more about..."
 
 
 
  Interpreting Peer Comments: Examples
 
- Peer says: &quot;I got lost in paragraph 3.&quot;
- This likely means: The topic sentence is unclear, the logic doesn&#x27;t follow, or you&#x27;re
+ Peer says: "I got lost in paragraph 3."
+ This likely means: The topic sentence is unclear, the logic doesn't follow, or you're
  introducing ideas without enough context.
 
- Peer says: &quot;This example was really interesting!&quot;
+ Peer says: "This example was really interesting!"
  This likely means: Keep this example and consider whether you could develop it
  further or use similar examples elsewhere.
 
- Peer says: &quot;I&#x27;m not sure what your main point is.&quot;
- This likely means: Your thesis needs to be more explicit, or it&#x27;s buried in your
+ Peer says: "I'm not sure what your main point is."
+ This likely means: Your thesis needs to be more explicit, or it's buried in your
  introduction rather than clearly stated.
-Integrating Different Types of Feedback
+Integrating Different Types of Feedback
 
 Use peer feedback to:
 
@@ -474,7 +385,7 @@ Use instructor feedback to:
 
 
 When Feedback Conflicts: Troubleshooting Guide
- What if peer feedback contradicts instructor feedback?
+ What if peer feedback contradicts instructor feedback?
 
  Prioritize instructor feedback for issues related to assignment requirements,
  argument sophistication, and disciplinary conventions. Use peer feedback for reader
@@ -482,14 +393,14 @@ When Feedback Conflicts: Troubleshooting Guide
 
  What if peers disagree with each other?
 
- Look for the underlying issue. If one peer says &quot;too much detail&quot; and another says
- &quot;needs more explanation,&quot; the real problem might be organization—some information
+ Look for the underlying issue. If one peer says "too much detail" and another says
+ "needs more explanation," the real problem might be organization—some information
  may be in the wrong place or not clearly connected to your point.
 
  What if feedback suggests changes that feel wrong?
 
- Trust your instincts, but investigate. Ask yourself: &quot;What problem is this feedback
- trying to solve?&quot; You don&#x27;t have to use the suggested solution, but you should address
+ Trust your instincts, but investigate. Ask yourself: "What problem is this feedback
+ trying to solve?" You don't have to use the suggested solution, but you should address
  the underlying issue.
 
 
@@ -509,24 +420,24 @@ Creating Your Revision Plan
 
  For the writer to ask peers:
 
-      &quot;What do you think my main argument is? Can you say it back to me?&quot;
+      "What do you think my main argument is? Can you say it back to me?"
 
-      &quot;Where did you get confused or need to re-read something?&quot;
+      "Where did you get confused or need to re-read something?"
 
-      &quot;Which of my examples was most convincing? Least convincing?&quot;
+      "Which of my examples was most convincing? Least convincing?"
 
-      &quot;What questions did this essay raise for you?&quot;
+      "What questions did this essay raise for you?"
 
-      &quot;As someone unfamiliar with this topic, what background info do I need?&quot;
+      "As someone unfamiliar with this topic, what background info do I need?"
 
  For peers to consider:
 
-      &quot;Where does the writer lose me as a reader?&quot;
+      "Where does the writer lose me as a reader?"
 
-      &quot;What&#x27;s the strongest part of this argument? What needs more support?&quot;
+      "What's the strongest part of this argument? What needs more support?"
 
-      &quot;If I had to explain this essay to someone else, what would I say?&quot;
- Phase 5: Source Integration (If Applicable)
+      "If I had to explain this essay to someone else, what would I say?"
+ Phase 5: Source Integration (If Applicable)
 
 Review Your Use of Sources
 
@@ -550,25 +461,25 @@ Voice Balance:
 
    Is your argument driving the essay, or are your sources taking over?
 
-   Can readers clearly distinguish your ideas from your sources&#x27; ideas?
+   Can readers clearly distinguish your ideas from your sources' ideas?
 
 
 
  Signal Phrase Examples
 
- Effective signal phrases help readers understand your source&#x27;s perspective and your
+ Effective signal phrases help readers understand your source's perspective and your
  relationship to it:
 
-      To introduce: &quot;According to X...&quot; / &quot;X argues that...&quot; / &quot;As X explains...&quot;
+      To introduce: "According to X..." / "X argues that..." / "As X explains..."
 
-      To show agreement: &quot;X convincingly demonstrates...&quot; / &quot;X&#x27;s research
-      supports...&quot;
+      To show agreement: "X convincingly demonstrates..." / "X's research
+      supports..."
 
-      To show disagreement: &quot;While X claims..., the evidence suggests...&quot; / &quot;X
-      overlooks...&quot;
+      To show disagreement: "While X claims..., the evidence suggests..." / "X
+      overlooks..."
 
-      To add nuance: &quot;X qualifies this by noting...&quot; / &quot;Building on X&#x27;s work...&quot;
-        Quote Drop         Paraphrase        Synthesis        Original Argument
+      To add nuance: "X qualifies this by noting..." / "Building on X's work..."
+        Quote Drop         Paraphrase        Synthesis        Original Argument
 
 
 
@@ -579,18 +490,18 @@ Voice Balance:
 
 
 
-Common Integration Mistakes (Before &amp; After)
+Common Integration Mistakes (Before & After)
 
 
    ❌ Quote Drop (No Integration):
-   Social media affects mental health. &quot;60% of teens report anxiety after social media
-   use&quot; (Smith 45). This is a problem.
+   Social media affects mental health. "60% of teens report anxiety after social media
+   use" (Smith 45). This is a problem.
 
 
 
    ✓ Integrated Source:
-   While critics often blame social media itself, Smith&#x27;s research complicates this
-   narrative: her finding that &quot;60% of teens report anxiety after social media use&quot;
+   While critics often blame social media itself, Smith's research complicates this
+   narrative: her finding that "60% of teens report anxiety after social media use"
    specifically correlates with passive scrolling rather than active engagement (45).
    This distinction suggests that how teens use platforms matters more than simply
    limiting screen time.
@@ -604,12 +515,12 @@ Common Integration Mistakes (Before &amp; After)
  Synthesis: Combining multiple sources to create new insights or showing
  relationships between ideas
 
- Example of synthesis: &quot;While Jones emphasizes external factors like algorithms (23),
- Martinez&#x27;s ethnographic work reveals that teens actively curate their feeds to manage
+ Example of synthesis: "While Jones emphasizes external factors like algorithms (23),
+ Martinez's ethnographic work reveals that teens actively curate their feeds to manage
  these influences (67), suggesting a more complex interaction between platform design
- and user agency.&quot;
-  Phase 6: Fine-Tuning (Sentence Clarity, Word
-  Choice &amp; Grammar)
+ and user agency."
+  Phase 6: Fine-Tuning (Sentence Clarity, Word
+  Choice & Grammar)
 
 Sentence-Level Improvements
 
@@ -625,22 +536,22 @@ Clarity:
 
   Sentence Revision Examples
 
-    Choppy: &quot;Social media is popular. Teens use it daily. It affects their mood.
-    Research shows this.&quot;
+    Choppy: "Social media is popular. Teens use it daily. It affects their mood.
+    Research shows this."
 
 
-    Combined: &quot;Research demonstrates that daily social media use, now nearly
-    universal among teens, significantly affects their mood and wellbeing.&quot;
+    Combined: "Research demonstrates that daily social media use, now nearly
+    universal among teens, significantly affects their mood and wellbeing."
 
 
 
-    Too Long: &quot;The study that was conducted by researchers at the university over a
+    Too Long: "The study that was conducted by researchers at the university over a
     period of three years involving over 500 participants who were between the ages of
-    13 and 18 found that social media use was correlated with anxiety.&quot;
+    13 and 18 found that social media use was correlated with anxiety."
 
 
-    Clearer: &quot;A three-year university study of 500 teenagers found that social media
-    use correlated with increased anxiety.&quot;
+    Clearer: "A three-year university study of 500 teenagers found that social media
+    use correlated with increased anxiety."
 
 
 
@@ -651,31 +562,31 @@ Word Choice:
     Can you eliminate unnecessary words or phrases?
 
     Do your word choices fit your audience and purpose?
-  Words and Phrases to Eliminate
+  Words and Phrases to Eliminate
 
-      &quot;In order to&quot; → &quot;to&quot;
+      "In order to" → "to"
 
-      &quot;Due to the fact that&quot; → &quot;because&quot;
+      "Due to the fact that" → "because"
 
-      &quot;At this point in time&quot; → &quot;now&quot;
+      "At this point in time" → "now"
 
-      &quot;It is important to note that&quot; → (usually unnecessary)
+      "It is important to note that" → (usually unnecessary)
 
-      &quot;The reason why is because&quot; → &quot;because&quot;
-
-
+      "The reason why is because" → "because"
 
 
-Grammar &amp; Mechanics:
+
+
+Grammar & Mechanics:
 
    Are there patterns of error that might distract readers?
 
    Have you proofread for the kinds of mistakes you tend to make?
 
    Does your formatting follow assignment guidelines?
-  Common Revision Strategies
+  Common Revision Strategies
 
-The &quot;Reverse Outline&quot;
+The "Reverse Outline"
 After writing your draft, create an outline of what you actually wrote (not what you
 planned). This helps you see:
 
@@ -708,7 +619,7 @@ planned). This helps you see:
 
   Sample Reverse Outline
 
-  Paragraph 1: Thesis: Social media&#x27;s impact depends on type of engagement, not time
+  Paragraph 1: Thesis: Social media's impact depends on type of engagement, not time
   spent
   Paragraph 2: Background on teen social media statistics
   Paragraph 3: Studies show passive scrolling increases anxiety
@@ -722,22 +633,22 @@ planned). This helps you see:
 
 
 
-The &quot;Last Paragraph First&quot; Check
-Sometimes your best thinking appears at the end. Ask:
+The "Last Paragraph First" Check
+Sometimes your best thinking appears at the end. Ask:
 
     Does my conclusion contain insights that should be in my introduction?
 
     Am I clearer about my argument by the end than I was at the beginning?
 
 
-  If your conclusion is more focused than your introduction, you may have &quot;written your
-  way&quot; to your real argument. Consider revising your introduction to reflect your final
+  If your conclusion is more focused than your introduction, you may have "written your
+  way" to your real argument. Consider revising your introduction to reflect your final
   clarity.
 
 
 
 
-The &quot;Friendly Reader&quot; Test
+The "Friendly Reader" Test
 Explain your main argument to a friend or classmate. Notice:
 
     What questions do they ask?
@@ -745,8 +656,8 @@ Explain your main argument to a friend or classmate. Notice:
     What seems unclear to them?
 
     What interests them most?
-Quick Reference: Revision Timelines
-                      Two-Week Revision Period
+Quick Reference: Revision Timelines
+                      Two-Week Revision Period
 
 
                                      Days 1-2
@@ -791,7 +702,7 @@ Quick Reference: Revision Timelines
 
 
 Figure 6: Sample two-week revision timeline—adjust based on your available time
-One-Week Revision (Condensed)
+One-Week Revision (Condensed)
 
 Days 1-2: Global + paragraph revision
 Day 3: Peer review
@@ -809,25 +720,25 @@ Hours 4-6: Improve weakest paragraphs
 Hours 6-8: Quick peer feedback if possible
 Hours 8-12: Integrate feedback, fix sentences
 Final hours: Proofread carefully
-  Creating Your Revision Plan
+  Creating Your Revision Plan
 Based on your analysis above, create a prioritized revision plan:
 
 
 Priority 1 (Must Address):
-What&#x27;s the most important global issue to tackle?
-Examples: &quot;Need to clarify my thesis&quot; or &quot;Paragraphs 3-5 don&#x27;t clearly support my
-argument&quot;
+What's the most important global issue to tackle?
+Examples: "Need to clarify my thesis" or "Paragraphs 3-5 don't clearly support my
+argument"
 
 
 Priority 2 (Should Address):
 What structural or development issues come next?
-Examples: &quot;Need better transitions&quot; or &quot;Need more analysis in paragraph 4&quot;
+Examples: "Need better transitions" or "Need more analysis in paragraph 4"
 
 
 Priority 3 (Could Address):
 What fine-tuning would strengthen the essay?
-Examples: &quot;Vary sentence structure&quot; or &quot;Strengthen introduction&quot;
-  Moving Forward: From Revision to Final Draft
+Examples: "Vary sentence structure" or "Strengthen introduction"
+  Moving Forward: From Revision to Final Draft
 
 Before You Finish
 
@@ -844,7 +755,7 @@ Final Check
 ☐ What did you discover through the revision process?
 
 ☐ How has your understanding of the topic deepened?
-  Questions for Reflection
+  Questions for Reflection
 After completing your revision:
 
   1. What was the most significant change you made, and why?
@@ -856,10 +767,10 @@ After completing your revision:
   4. What did you learn about yourself as a writer through this process?
 
   5. What will you focus on differently in your next essay?
-Appendix: Key Terms Glossary
+Appendix: Key Terms Glossary
 
-&quot;They Say/I Say&quot;: A framework for academic writing that emphasizes entering a
-conversation. &quot;They say&quot; refers to what others have argued; &quot;I say&quot; is your response or
+"They Say/I Say": A framework for academic writing that emphasizes entering a
+conversation. "They say" refers to what others have argued; "I say" is your response or
 position. This structure helps you position your argument in relation to existing
 discussions.
 
@@ -868,19 +779,19 @@ insights or understanding. Unlike summary (which restates what one source says),
 synthesis shows relationships between sources and creates original analysis.
 
 Signal Phrases: Words or phrases that introduce source material and indicate the
-relationship between your ideas and the source&#x27;s ideas (e.g., &quot;According to X,&quot; &quot;Smith
-argues that,&quot; &quot;As the data reveals&quot;).
+relationship between your ideas and the source's ideas (e.g., "According to X," "Smith
+argues that," "As the data reveals").
 
 Reverse Outline: An outline created after drafting by summarizing what each
 paragraph actually says. This helps you see your structure clearly and identify
 organizational problems.
 
 Topic Sentence: The sentence (usually first) in a paragraph that states the
-paragraph&#x27;s main point and connects it to the overall argument.
+paragraph's main point and connects it to the overall argument.
 
 Transition: Words, phrases, or sentences that show logical relationships between
-ideas and help readers follow your thinking (e.g., &quot;however,&quot; &quot;in addition,&quot; &quot;as a
-result&quot;).
+ideas and help readers follow your thinking (e.g., "however," "in addition," "as a
+result").
 
 Analysis: The process of explaining what evidence means, why it matters, and how it
 supports your argument—going beyond description to interpretation.
@@ -890,7 +801,7 @@ organization rather than sentence-level concerns.
 
 Local Revision: Sentence-level revision focusing on clarity, grammar, word choice,
 and mechanics.
-Top 5 Revision Mistakes to Avoid
+Top 5 Revision Mistakes to Avoid
 
 
 1. Starting with Grammar Instead of Ideas
@@ -905,29 +816,29 @@ polishing sentences.
 2. Ignoring Patterns in Feedback
 The Problem: Dismissing feedback when multiple readers identify the same issue.
 The Solution: If two or more readers mention the same problem, treat it as a priority
-—they&#x27;re identifying something that genuinely confuses readers.
+—they're identifying something that genuinely confuses readers.
 
 
 
 
 3. Revising Immediately After Drafting
-The Problem: You&#x27;re too close to your work to see it objectively.
+The Problem: You're too close to your work to see it objectively.
 The Solution: Wait at least 24 hours before revising if possible. Fresh eyes catch
-problems you&#x27;d miss when the draft is still fresh in your mind.
+problems you'd miss when the draft is still fresh in your mind.
 
 
 
 
 4. Accepting Vague Feedback Without Questions
-The Problem: Comments like &quot;unclear&quot; or &quot;needs work&quot; don&#x27;t tell you how to
+The Problem: Comments like "unclear" or "needs work" don't tell you how to
 improve.
-The Solution: Ask follow-up questions: &quot;What specifically was unclear?&quot; &quot;Can you
-tell me what you thought I was arguing?&quot;
-5. Treating Revision as One-and-Done
+The Solution: Ask follow-up questions: "What specifically was unclear?" "Can you
+tell me what you thought I was arguing?"
+5. Treating Revision as One-and-Done
 The Problem: Expecting one revision pass to fix everything.
 The Solution: Remember that revision is recursive. You might discover new ideas
-that require rethinking earlier sections. That&#x27;s normal and productive.
-Discipline-Specific Considerations
+that require rethinking earlier sections. That's normal and productive.
+Discipline-Specific Considerations
 
 
 Humanities Essays (Literature, History, Philosophy)
@@ -967,13 +878,13 @@ Key Revision Questions:
     Is my language precise and objective?
 
     Are my methods replicable based on my description?
-  Self-Assessment Checklist
+  Self-Assessment Checklist
 Use this checklist to evaluate your draft before seeking feedback:
 
 
 
 
-   Argument &amp; Structure
+   Argument & Structure
 
    ☐ I can state my thesis in one clear sentence
 
@@ -983,46 +894,46 @@ Use this checklist to evaluate your draft before seeking feedback:
 
    ☐ My paragraphs follow a logical order
 
-   ☐ I&#x27;ve addressed potential counterarguments
+   ☐ I've addressed potential counterarguments
    ☐ My conclusion shows why my argument matters
 
-   Development &amp; Evidence
+   Development & Evidence
 
    ☐ Each paragraph focuses on one main idea
 
    ☐ I provide specific examples or evidence for my claims
 
    ☐ I analyze my evidence rather than just describing it
-   ☐ I&#x27;ve explained how my evidence supports my argument
+   ☐ I've explained how my evidence supports my argument
 
    ☐ My paragraphs are adequately developed (not too thin)
 
-   Clarity &amp; Readability
+   Clarity & Readability
 
    ☐ My introduction clearly sets up my purpose
 
    ☐ Each paragraph has a clear topic sentence
    ☐ I use transitions to connect ideas
 
-   ☐ I&#x27;ve defined any technical terms or jargon
+   ☐ I've defined any technical terms or jargon
 
    ☐ My sentences are clear and readable
 
-   ☐ I&#x27;ve proofread for grammar and mechanical errors
+   ☐ I've proofread for grammar and mechanical errors
 
    Sources (if applicable)
-☐ I&#x27;ve introduced each source clearly
+☐ I've introduced each source clearly
 
 ☐ My sources support my argument rather than replacing it
 
-☐ I&#x27;ve cited all sources correctly
+☐ I've cited all sources correctly
 
-☐ I&#x27;ve represented sources fairly and accurately
+☐ I've represented sources fairly and accurately
 
 ☐ Readers can distinguish my ideas from source ideas
-  Final Thoughts
+  Final Thoughts
 Remember: Revision is where the real thinking happens. Every professional writer
-goes through multiple drafts—it&#x27;s not a sign of weakness but of commitment to clear
+goes through multiple drafts—it's not a sign of weakness but of commitment to clear
 communication and strong arguments. Your classmates are valuable allies in this process,
 offering you the gift of fresh eyes and genuine reader reactions.
 
@@ -1031,9 +942,9 @@ offering you the gift of fresh eyes and genuine reader reactions.
 
    The Reality of Professional Writing
    Published authors, journalists, and academics all revise extensively. The difference
-   between a rough draft and a polished piece isn&#x27;t talent—it&#x27;s the willingness to engage
+   between a rough draft and a polished piece isn't talent—it's the willingness to engage
    deeply with the revision process. By working through these phases systematically,
-   you&#x27;re developing the same practices that professional writers use every day.
+   you're developing the same practices that professional writers use every day.
 
 
 
@@ -1056,14 +967,6 @@ offering you the gift of fresh eyes and genuine reader reactions.
 
 
 
-                 &quot;I&#x27;m not a very good writer, but I&#x27;m an excellent rewriter.&quot;
+                 "I'm not a very good writer, but I'm an excellent rewriter."
                                      — James Michener
-</div>
-      </div>
-    </div>
-
-  </div>
-
-  <script src="../app.js?v=17"></script>
-</body>
-</html>
+
