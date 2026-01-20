@@ -1,93 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revision: From Draft to Final - Scholar's Compass</title>
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../styles.css?v=17" />
-</head>
-<body data-page="chapter-12" data-course="1010">
-  <div class="progress-container-top">
-    <div class="progress-bar-top" id="scrollProgress"></div>
-  </div>
-
-  <nav class="navbar">
-    <div class="navbar-content">
-      <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-      <a href="index.html" class="navbar-brand" aria-label="Scholar's Compass home">
-        <i class="fas fa-compass"></i>Scholar's Compass
-      </a>
-    </div>
-  </nav>
-
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <h2><i class="fas fa-compass me-2"></i>Chapters</h2>
-      <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="sidebar-content">
-      <div class="sidebar-section" id="sidebarChapters">
-        <h3>Chapters</h3>
-        <div id="chaptersList"></div>
-      </div>
-    </div>
-  </nav>
-
-  <div class="quick-nav" id="quickNav">
-    <a href="#section1" title="Handout (PDF)" data-section="section1"><span>Handout</span><i class="fas fa-file-pdf"></i></a>
-    <a href="#section2" title="Text Version" data-section="section2"><span>Text</span><i class="fas fa-align-left"></i></a>
-  </div>
-
-  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-
-  <div class="container">
-    <div class="header">
-      <h1><i class="fas fa-pen-to-square"></i> The Revision Companion: A Guide to Transforming Your Essay Drafts</h1>
-      <p class="subtitle">A practical guide for moving from draft to polished essay</p>
-
-      <div style="margin-top: 20px;">
-        <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
-        <a class="btn" href="../assets/revision-companion.pdf" target="_blank" rel="noopener" aria-label="Open the Revision Companion PDF in a new tab"><i class="fas fa-up-right-from-square"></i> Open Handout</a>
-        <a class="btn" href="../index.html" aria-label="Back to course hub"><i class="fas fa-home"></i> Course Hub</a>
-      </div>
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision: From Draft to Final - Scholar's Compass</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="description" content="Use The Revision Companion to revise essay drafts systematically—from global structure to sentence-level clarity.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css?v=17" /></head>
+<body data-page="chapter-12">
+    <!-- Progress Bar at very top -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <div class="section active" id="section1">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-file-pdf"></i> I. Handout (PDF)</span>
-        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-      </div>
-      <div class="section-content">
-        <p style="margin-bottom: 12px;">
-          <a class="btn" href="../assets/revision-companion.pdf" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download / Open the PDF</a>
-          <a class="btn" href="../assets/revision-companion.txt" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Open the plain-text version</a>
-        </p>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-compass"></i>Scholar's Compass
+            </a>
+        </div>
+    </nav>
 
-        <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(127,127,127,.35);">
-          <iframe
-            src="../assets/revision-companion.pdf#view=FitH"
-            title="The Revision Companion PDF"
-            style="width: 100%; height: 80vh; border: 0;"
-            loading="lazy"></iframe>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-compass me-2"></i>Navigation</h2>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h3>Main</h3>
+                <a href="index.html" class="sidebar-link">
+                    <i class="fas fa-home"></i>Home
+                    <span class="reading-time">2 min</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section" id="sidebarChapters">
+                <h3>Chapters</h3>
+                <div id="chaptersList"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="quick-nav" id="quickNav">
+        <a href="#section1" title="Handout (PDF)" data-section="section1"><span>Handout</span><i class="fas fa-file-pdf"></i></a>
+        <a href="#section2" title="Getting Started" data-section="section2"><span>Start</span><i class="fas fa-play-circle"></i></a>
+        <a href="#section3" title="Phase 1" data-section="section3"><span>Phase 1</span><i class="fas fa-sitemap"></i></a>
+        <a href="#section4" title="Phase 2 + Evidence" data-section="section4"><span>Phase 2</span><i class="fas fa-align-left"></i></a>
+        <a href="#section5" title="Phase 3" data-section="section5"><span>Phase 3</span><i class="fas fa-glasses"></i></a>
+        <a href="#section6" title="Phase 4" data-section="section6"><span>Phase 4</span><i class="fas fa-users"></i></a>
+        <a href="#section7" title="Sources + Fine-Tuning" data-section="section7"><span>Polish</span><i class="fas fa-wand-magic-sparkles"></i></a>
+        <a href="#section8" title="Strategies + Checklists" data-section="section8"><span>Tools</span><i class="fas fa-toolbox"></i></a>
+    </div>
+
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-pen-to-square"></i> Revision: From Draft to Final</h1>
+            <p class="subtitle">The Revision Companion: A Guide to Transforming Your Essay Drafts</p>
+            
+            <div style="margin-top: 20px;">
+                <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+                <a class="btn" href="../assets/revision-companion.pdf" target="_blank" rel="noopener" aria-label="Open the Revision Companion PDF in a new tab"><i class="fas fa-up-right-from-square"></i> Open Handout</a>
+                <a class="btn" href="../assets/revision-companion.txt" target="_blank" rel="noopener" aria-label="Open the plain-text version in a new tab"><i class="fas fa-file-lines"></i> Plain Text</a>
+                <a class="btn" href="../index.html" aria-label="Back to course hub"><i class="fas fa-home"></i> Course Hub</a>
+            </div>
         </div>
 
-              </div>
-    </div>
+        <div class="stats-bar">
+            <div class="stat"><span class="stat-label">Big Picture First!</span></div>
+            <div class="stat"><span class="stat-label">Read Like a Reader!</span></div>
+            <div class="stat"><span class="stat-label">Polish Last!</span></div>
+        </div>
 
-    <div class="section" id="section2">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-align-left"></i> II. Text Version (Copy/Paste Friendly)</span>
-        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-      </div>
-      <div class="section-content">
-        <div style="white-space: pre-wrap; line-height: 1.55; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 0.95rem;">The Revision Companion: A Guide to
+
+        <div class="section active" id="section1">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-file-pdf"></i> I. Handout (PDF)</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <p style="margin-bottom: 12px;">
+                    <a class="btn" href="../assets/revision-companion.pdf" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download / Open the PDF</a>
+                </p>
+                <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(127,127,127,.35);">
+                    <iframe src="../assets/revision-companion.pdf#view=FitH" title="The Revision Companion PDF" style="width: 100%; height: 80vh; border: 0;" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section" id="section2">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-play-circle"></i> II. Getting Started + Revision Hierarchy</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <div style="white-space: pre-wrap; line-height: 1.6; font-family: inherit; font-size: 1rem;">The Revision Companion: A Guide to
 Transforming Your Essay Drafts
 A practical guide for moving from draft to polished essay
 
@@ -125,7 +152,18 @@ writing time on revision—it&#x27;s where the real work happens.
 
    Figure 1: The revision hierarchy—start at the top with global structure, then move
    down through paragraph flow to sentence-level concerns
- Phase 1: The Big Picture Review (Global Revision)
+</div>
+            </div>
+        </div>
+
+
+        <div class="section" id="section3">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-sitemap"></i> III. Phase 1: The Big Picture Review</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <div style="white-space: pre-wrap; line-height: 1.6; font-family: inherit; font-size: 1rem;">Phase 1: The Big Picture Review (Global Revision)
 
 Questions to Ask Yourself
 
@@ -195,7 +233,18 @@ About Your Evidence:
    Have I analyzed my evidence, or just described it?
 
    Am I spending too much time summarizing and not enough time analyzing?
-  Phase 2: Paragraph-Level Revision (Flow &amp;
+</div>
+            </div>
+        </div>
+
+
+        <div class="section" id="section4">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-align-left"></i> IV. Phase 2: Paragraph-Level Revision + Evidence Analysis</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <div style="white-space: pre-wrap; line-height: 1.6; font-family: inherit; font-size: 1rem;">Phase 2: Paragraph-Level Revision (Flow &amp;
   Coherence)
 
 Check Each Paragraph
@@ -263,7 +312,18 @@ Phase 2.5: Evidence Analysis
                                              negative outcomes—a distinction that
                                              challenges calls for blanket
                                              restrictions on teen social media use.&quot;
- Phase 3: The Reader Test
+</div>
+            </div>
+        </div>
+
+
+        <div class="section" id="section5">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-glasses"></i> V. Phase 3: The Reader Test</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <div style="white-space: pre-wrap; line-height: 1.6; font-family: inherit; font-size: 1rem;">Phase 3: The Reader Test
 
 Put Yourself in Your Reader&#x27;s Shoes
 
@@ -345,7 +405,18 @@ readers won&#x27;t be able to either.
 
 
    Figure 2: The &quot;So What?&quot; Ladder—climb from observation to significance
-  Phase 4: Integrating Peer Feedback
+</div>
+            </div>
+        </div>
+
+
+        <div class="section" id="section6">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-users"></i> VI. Phase 4: Integrating Peer Feedback</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <div style="white-space: pre-wrap; line-height: 1.6; font-family: inherit; font-size: 1rem;">Phase 4: Integrating Peer Feedback
 
 Understanding How Your Classmates Read vs. How Professors
 Read
@@ -526,7 +597,18 @@ Creating Your Revision Plan
       &quot;What&#x27;s the strongest part of this argument? What needs more support?&quot;
 
       &quot;If I had to explain this essay to someone else, what would I say?&quot;
- Phase 5: Source Integration (If Applicable)
+</div>
+            </div>
+        </div>
+
+
+        <div class="section" id="section7">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-wand-magic-sparkles"></i> VII. Sources + Fine-Tuning</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <div style="white-space: pre-wrap; line-height: 1.6; font-family: inherit; font-size: 1rem;">Phase 5: Source Integration (If Applicable)
 
 Review Your Use of Sources
 
@@ -744,8 +826,18 @@ Explain your main argument to a friend or classmate. Notice:
 
     What seems unclear to them?
 
-    What interests them most?
-Quick Reference: Revision Timelines
+    What interests them most?</div>
+            </div>
+        </div>
+
+
+        <div class="section" id="section8">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span><i class="fas fa-toolbox"></i> VIII. Strategies + Checklists</span>
+                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="section-content">
+                <div style="white-space: pre-wrap; line-height: 1.6; font-family: inherit; font-size: 1rem;">Quick Reference: Revision Timelines
                       Two-Week Revision Period
 
 
@@ -1057,13 +1149,13 @@ offering you the gift of fresh eyes and genuine reader reactions.
 
 
                  &quot;I&#x27;m not a very good writer, but I&#x27;m an excellent rewriter.&quot;
-                                     — James Michener
-</div>
-      </div>
+                                     — James Michener</div>
+            </div>
+        </div>
+
+
     </div>
 
-  </div>
+    <script src="../app.js?v=17"></script>
 
-  <script src="../app.js?v=17"></script>
-</body>
-</html>
+</body></html>
