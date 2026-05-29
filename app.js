@@ -25,7 +25,8 @@
     { href: 'chapter-10.html', icon: 'fas fa-project-diagram', title: '10. Analysis and Synthesis', readingTime: '16 min' },
     { href: 'chapter-11.html', icon: 'fas fa-align-left', title: '11. Designing Effective Paragraphs', readingTime: '13 min' },
     { href: 'chapter-12.html', icon: 'fas fa-pen-to-square', title: '12. Revision: From Draft to Final', readingTime: '12 min' },
-    { href: 'chapter-13.html', icon: 'fas fa-bullhorn', title: '13. Understanding Rhetoric: The Art of Persuasion', readingTime: '18 min' }
+    { href: 'chapter-13.html', icon: 'fas fa-bullhorn', title: '13. Understanding Rhetoric: The Art of Persuasion', readingTime: '18 min' },
+    { href: 'chapter-14.html', icon: 'fas fa-layer-group', title: '14. Values, Assumptions, and Ideology', readingTime: '14 min' }
   ];
 
   var CHAPTERS_1020 = [
