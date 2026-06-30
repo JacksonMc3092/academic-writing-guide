@@ -14502,3 +14502,180 @@ body[data-page="index"] .header p{
   .navbar .navbar-brand{ max-width: calc(100% - 128px) !important; }
   .navbar .hamburger-menu{ left: 12px !important; }
 }
+/* ===================== 1010 Cohesive Chapter System ===================== */
+.chapter-map {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin: 20px 0;
+}
+
+.map-step {
+  border: 1px solid rgba(30, 64, 175, 0.18);
+  border-left: 5px solid var(--primary);
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 14px;
+}
+
+.map-step strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+
+.bluebook-box {
+  border: 2px solid #1e40af;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+  padding: 20px;
+  margin: 24px 0;
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.08);
+}
+
+.bluebook-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.bluebook-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #1e40af;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex: 0 0 auto;
+}
+
+.bluebook-header h3 {
+  margin: 0;
+  color: #1e3a8a;
+}
+
+.bluebook-kicker,
+.journal-note {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.bluebook-kicker {
+  margin: 0;
+}
+
+.journal-prompt {
+  border-left: 4px solid #60a5fa;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin: 14px 0;
+}
+
+.mini-template {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.template-line {
+  padding: 12px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.template-line strong {
+  color: var(--primary);
+}
+
+.writer-tool {
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.quick-draft {
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 12px;
+  font: inherit;
+  line-height: 1.5;
+  resize: vertical;
+  background: #ffffff;
+}
+
+.journal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.draft-status {
+  color: #475569;
+  min-height: 1.4em;
+}
+
+.hero-subtitle {
+  max-width: 780px;
+  margin: 0 auto 24px;
+}
+
+body.dark-mode .map-step,
+body.dark-mode .writer-tool,
+body.dark-mode .template-line {
+  background: #1e293b;
+  border-color: #475569;
+}
+
+body.dark-mode .bluebook-box,
+body.dark-mode .journal-prompt,
+body.dark-mode .quick-draft {
+  background: #0f172a;
+  color: #f1f5f9;
+  border-color: #60a5fa;
+}
+
+body.dark-mode .bluebook-header h3,
+body.dark-mode .template-line strong {
+  color: #93c5fd;
+}
+
+body.dark-mode .bluebook-kicker,
+body.dark-mode .journal-note,
+body.dark-mode .draft-status {
+  color: #cbd5e1;
+}
+
+@media (max-width: 640px) {
+  .bluebook-header {
+    align-items: flex-start;
+  }
+
+  .journal-actions .btn {
+    width: 100%;
+  }
+}
+
+@media print {
+  .quick-draft,
+  .journal-actions {
+    display: none;
+  }
+
+  .bluebook-box,
+  .writer-tool,
+  .map-step {
+    break-inside: avoid;
+  }
+}
