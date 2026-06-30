@@ -13,26 +13,20 @@
   'use strict';
 
     var CHAPTERS_1010 = [
-    { href: 'chapter-1.html', icon: 'fas fa-highlighter', title: '1. Annotating: Reading Like a Writer', readingTime: '12 min' },
-    { href: 'chapter-2.html', icon: 'fas fa-book-reader', title: '2. Active Reading: Reading With a Purpose', readingTime: '12 min' },
-    { href: 'chapter-3.html', icon: 'fas fa-bullhorn', title: '3. Understanding Rhetoric: The Art of Persuasion', readingTime: '15 min' },
-    { href: 'chapter-4.html', icon: 'fas fa-layer-group', title: '4. Values, Assumptions, and Ideology', readingTime: '14 min' },
-    { href: 'chapter-5.html', icon: 'fas fa-pen-fancy', title: '5. Strategies for Getting Started', readingTime: '10 min' },
-    { href: 'chapter-6.html', icon: 'fas fa-bullseye', title: '6. Crafting Powerful Thesis Statements', readingTime: '12 min' },
-    { href: 'chapter-7.html', icon: 'fas fa-align-left', title: '7. Designing Effective Paragraphs', readingTime: '12 min' },
-    { href: 'chapter-8.html', icon: 'fas fa-clipboard-list', title: '8. Summarizing Your Way to Synthesis', readingTime: '10 min' },
-    { href: 'chapter-9.html', icon: 'fas fa-project-diagram', title: '9. Analysis and Synthesis', readingTime: '15 min' },
-    { href: 'chapter-10.html', icon: 'fas fa-comments', title: '10. Argumentation: Joining the Academic Conversation', readingTime: '15 min' },
-    { href: 'chapter-11.html', icon: 'fas fa-images', title: '11. Reading Visual and Digital Texts', readingTime: '12 min' },
-    { href: 'chapter-12.html', icon: 'fas fa-clipboard-check', title: '12. Observation and Evidence Logs', readingTime: '12 min' },
-    { href: 'chapter-13.html', icon: 'fas fa-search', title: '13. Finding and Evaluating Sources', readingTime: '14 min' },
-    { href: 'chapter-14.html', icon: 'fas fa-quote-left', title: '14. Quoting, Paraphrasing, and Signal Phrases', readingTime: '12 min' },
-    { href: 'chapter-15.html', icon: 'fas fa-link', title: '15. Using Sources in Your Argument', readingTime: '14 min' },
-    { href: 'chapter-16.html', icon: 'fas fa-file-lines', title: '16. MLA and Formatting Survival Guide', readingTime: '12 min' },
-    { href: 'chapter-17.html', icon: 'fas fa-people-arrows', title: '17. Peer Review and Giving Useful Feedback', readingTime: '12 min' },
-    { href: 'chapter-18.html', icon: 'fas fa-route', title: '18. From Feedback to Revision Plan', readingTime: '10 min' },
-    { href: 'chapter-19.html', icon: 'fas fa-robot', title: '19. Using AI Responsibly in College Writing', readingTime: '12 min' },
-    { href: 'chapter-20.html', icon: 'fas fa-pen-to-square', title: '20. Revision: From Draft to Final', readingTime: '14 min' }
+    { href: 'chapter-1.html', icon: 'fas fa-highlighter', title: '1. Annotating Your Way to Greatness', readingTime: '15 min' },
+    { href: 'chapter-2.html', icon: 'fas fa-book-reader', title: '2. Active Reading Strategies', readingTime: '12 min' },
+    { href: 'chapter-3.html', icon: 'fas fa-pen-fancy', title: '3. Strategies for Getting Started', readingTime: '9 min' },
+    { href: 'chapter-4.html', icon: 'fas fa-clipboard-list', title: '4. Summarizing Your Way to Synthesis', readingTime: '10 min' },
+    { href: 'chapter-5.html', icon: 'fas fa-comments', title: '5. Argumentation: Joining the Academic Conversation', readingTime: '18 min' },
+    { href: 'chapter-6.html', icon: 'fas fa-search', title: '6. Finding and Evaluating Sources', readingTime: '12 min' },
+    { href: 'chapter-7.html', icon: 'fas fa-quote-left', title: '7. Quoting, Paraphrasing, and Signal Phrases', readingTime: '12 min' },
+    { href: 'chapter-8.html', icon: 'fas fa-link', title: '8. Using Sources in Your Argument', readingTime: '14 min' },
+    { href: 'chapter-9.html', icon: 'fas fa-bullseye', title: '9. Crafting Powerful Thesis Statements', readingTime: '11 min' },
+    { href: 'chapter-10.html', icon: 'fas fa-project-diagram', title: '10. Analysis and Synthesis', readingTime: '16 min' },
+    { href: 'chapter-11.html', icon: 'fas fa-align-left', title: '11. Designing Effective Paragraphs', readingTime: '13 min' },
+    { href: 'chapter-12.html', icon: 'fas fa-pen-to-square', title: '12. Revision: From Draft to Final', readingTime: '12 min' },
+    { href: 'chapter-13.html', icon: 'fas fa-bullhorn', title: '13. Understanding Rhetoric: The Art of Persuasion', readingTime: '18 min' },
+    { href: 'chapter-14.html', icon: 'fas fa-layer-group', title: '14. Values, Assumptions, and Ideology', readingTime: '14 min' }
   ];
 
   var CHAPTERS_1020 = [
@@ -306,54 +300,6 @@
     });
   }
 
-  // ---- Lightweight writing tools
-  // Chapter activities should remain useful as plain prompts, but these controls
-  // make it easy for students to draft and move text into a Blue Book, Blackboard,
-  // or another instructor-designated space.
-  function initQuickDraftTools() {
-    qsa('.writer-tool').forEach(function (tool) {
-      var draft = tool.querySelector('.quick-draft');
-      var copy = tool.querySelector('.copy-draft-btn');
-      var clear = tool.querySelector('.clear-draft-btn');
-      var status = tool.querySelector('.draft-status');
-
-      function setStatus(message) {
-        if (status) status.textContent = message;
-      }
-
-      if (copy && draft) {
-        copy.addEventListener('click', function () {
-          var text = (draft.value || '').trim();
-          if (!text) {
-            setStatus('Nothing to copy yet.');
-            return;
-          }
-
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(function () {
-              setStatus('Copied.');
-            }).catch(function () {
-              draft.select();
-              document.execCommand('copy');
-              setStatus('Copied.');
-            });
-          } else {
-            draft.select();
-            document.execCommand('copy');
-            setStatus('Copied.');
-          }
-        });
-      }
-
-      if (clear && draft) {
-        clear.addEventListener('click', function () {
-          draft.value = '';
-          setStatus('Draft cleared.');
-        });
-      }
-    });
-  }
-
   ready(function () {
     buildChaptersNav();
     initSidebar();
@@ -361,7 +307,6 @@
     initBackToTop();
     initScrollHandlers();
     initSmoothAnchors();
-    initQuickDraftTools();
   });
 
 })();

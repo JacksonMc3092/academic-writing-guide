@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crafting Powerful Thesis Statements - Scholar's Compass</title>
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <meta name="description" content="Build a focused, arguable claim that gives your essay direction.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../styles.css?v=18">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finding and Evaluating Sources - Scholar's Compass</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../styles.css?v=17" />
 </head>
 <body data-page="chapter-6" data-course="1010">
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
+  <div class="progress-container-top">
+    <div class="progress-bar-top" id="scrollProgress"></div>
   </div>
 
   <nav class="navbar">
     <div class="navbar-content">
       <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
-      <a href="index.html" class="navbar-brand">
+      <a href="index.html" class="navbar-brand" aria-label="Scholar's Compass home">
         <i class="fas fa-compass"></i>Scholar's Compass
       </a>
     </div>
@@ -31,19 +28,10 @@
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h2><i class="fas fa-compass me-2"></i>Navigation</h2>
-      <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu">
-        <i class="fas fa-times"></i>
-      </button>
+      <h2><i class="fas fa-compass me-2"></i>Chapters</h2>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu"><i class="fas fa-times"></i></button>
     </div>
     <div class="sidebar-content">
-      <div class="sidebar-section">
-        <h3>Main</h3>
-        <a href="index.html" class="sidebar-link">
-          <i class="fas fa-home"></i>Home
-          <span class="reading-time">2 min</span>
-        </a>
-      </div>
       <div class="sidebar-section" id="sidebarChapters">
         <h3>Chapters</h3>
         <div id="chaptersList"></div>
@@ -52,207 +40,79 @@
   </nav>
 
   <div class="quick-nav" id="quickNav">
-    <a href="#section1" title="Where It Fits" data-section="section1"><span>Where It Fits</span><i class="fas fa-map"></i></a>
-    <a href="#section2" title="Core Move" data-section="section2"><span>Core Move</span><i class="fas fa-bullseye"></i></a>
-    <a href="#section3" title="Questions" data-section="section3"><span>Questions</span><i class="fas fa-question-circle"></i></a>
-    <a href="#section4" title="Course Use" data-section="section4"><span>Course Use</span><i class="fas fa-compass"></i></a>
-    <a href="#section5" title="Practice" data-section="section5"><span>Practice</span><i class="fas fa-pencil-alt"></i></a>
-    <a href="#section6" title="Blue Book" data-section="section6"><span>Blue Book</span><i class="fas fa-book"></i></a>
+    <a href="#section1" title="Introduction" data-section="section1"><span>Introduction</span><i class="fas fa-info-circle"></i></a>
+    <a href="#section2" title="What Counts as a Source" data-section="section2"><span>What Counts</span><i class="fas fa-layer-group"></i></a>
+    <a href="#section3" title="Evaluating Credibility" data-section="section3"><span>Evaluate</span><i class="fas fa-filter"></i></a>
+    <a href="#section4" title="Practice" data-section="section4"><span>Practice</span><i class="fas fa-tasks"></i></a>
   </div>
 
-  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-    <i class="fas fa-moon"></i>
-  </button>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
   <div class="container">
     <div class="header">
-      <h1><i class="fas fa-bullseye"></i> Crafting Powerful Thesis Statements</h1>
-      <p class="subtitle">Build a focused, arguable claim that gives your essay direction.</p>
+      <h1><i class="fas fa-search"></i> Finding and Evaluating Sources</h1>
+      <p class="subtitle">Find credible material and decide what belongs in your paper</p>
+
       <div style="margin-top: 20px;">
         <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
         <a class="btn" href="../index.html" aria-label="Back to course hub"><i class="fas fa-home"></i> Course Hub</a>
       </div>
     </div>
 
-    <div class="stats-bar">
-      <div class="stat"><span class="stat-label">Chapter 6</span></div>
-      <div class="stat"><span class="stat-label">Blue Book Ready</span></div>
-      <div class="stat"><span class="stat-label">Essay Connected</span></div>
-    </div>
-
-
     <div class="section active" id="section1">
       <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-map"></i> 1. Where This Chapter Fits</span>
+        <span><i class="fas fa-info-circle"></i> I. Introduction</span>
         <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
       </div>
       <div class="section-content">
-
-        <p>Once you have a question, you need a working answer. That working answer becomes your thesis.</p>
-        <div class="chapter-map" aria-label="Chapter sequence map">
-          <div class="map-step">
-            <strong>Chapter 5</strong>
-            <span>Strategies for Getting Started</span>
-          </div>
-          <div class="map-step">
-            <strong>Chapter 6</strong>
-            <span>Crafting Powerful Thesis Statements</span>
-          </div>
-          <div class="map-step">
-            <strong>Chapter 7</strong>
-            <span>Designing Effective Paragraphs</span>
-          </div>
+        <div class="gatekeeper-note">
+          <h3><i class="fas fa-cone-striped"></i> Placeholder Chapter</h3>
+          <p>This chapter is intentionally a <strong>scaffold</strong>. We’ll add the full content next. For now, this page exists so the chapter order and navigation are correct.</p>
         </div>
-        <div class="key-takeaway">
-          <h4><i class="fas fa-key"></i> Key Takeaway</h4>
-          <p>Each chapter gives you one move you can carry into the next part of the writing process.</p>
-        </div>
+        <p>Goal: help students answer two questions quickly: <strong>Where do I find sources?</strong> and <strong>How do I decide if a source is credible and useful?</strong></p>
       </div>
     </div>
-
 
     <div class="section" id="section2">
       <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-bullseye"></i> 2. The Core Move</span>
+        <span><i class="fas fa-layer-group"></i> II. What Counts as a Source</span>
         <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
       </div>
       <div class="section-content">
-
-        <p>A thesis is not just a topic. It is a claim someone could reasonably question or debate.</p>
-        <div class="highlight-box">
-          <p><strong>Try this:</strong> Write the chapter move in your own words before you begin the practice activity.</p>
-        </div>
+        <p><em>Placeholder:</em> primary vs secondary sources, scholarly vs popular, databases vs open web, and what your assignment expects.</p>
       </div>
     </div>
-
 
     <div class="section" id="section3">
       <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-question-circle"></i> 3. Questions to Carry With You</span>
+        <span><i class="fas fa-filter"></i> III. Evaluating Credibility</span>
         <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
       </div>
       <div class="section-content">
-
-        <p>Use these questions while reading, drafting, reviewing, or revising.</p>
-        <div class="practice-item">
-          <span class="difficulty-label difficulty-medium">Question 1</span>
-          <strong>What question is my essay answering?</strong>
-        </div>
-        <div class="practice-item">
-          <span class="difficulty-label difficulty-medium">Question 2</span>
-          <strong>What is my current answer?</strong>
-        </div>
-        <div class="practice-item">
-          <span class="difficulty-label difficulty-medium">Question 3</span>
-          <strong>What evidence will help me prove it?</strong>
-        </div>
-        <div class="practice-item">
-          <span class="difficulty-label difficulty-medium">Question 4</span>
-          <strong>Why does this claim matter?</strong>
-        </div>
+        <p><em>Placeholder:</em> quick credibility checks (author, evidence, date, publication context, bias/agenda), plus “when it’s okay to use a non-scholarly source.”</p>
       </div>
     </div>
-
 
     <div class="section" id="section4">
       <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-compass"></i> 4. Use This in ENG 1010</span>
+        <span><i class="fas fa-tasks"></i> IV. Practice</span>
         <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
       </div>
       <div class="section-content">
-
-        <p>This chapter is part of the course's full writing arc, not a stand-alone lesson.</p>
-
-        <div class="table-container">
-          <table class="strategies-table">
-            <tbody>
-              <tr>
-                <th>Course Moment</th>
-                <th>How This Chapter Helps</th>
-              </tr>
-              <tr>
-                <td>Essay 1</td>
-                <td>Make a claim about how an ad persuades and what values or assumptions it promotes.</td>
-              </tr>
-              <tr>
-                <td>Essay 2</td>
-                <td>Make a claim about what should matter most when judging authenticity.</td>
-              </tr>
-              <tr>
-                <td>Essay 3</td>
-                <td>Make a claim about how a space, platform, routine, or representation shapes people.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="section" id="section5">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-pencil-alt"></i> 5. Practice the Move</span>
-        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-      </div>
-      <div class="section-content">
-
-        <p>Complete this short activity before moving to the next chapter or applying the skill to your current assignment.</p>
-        <ol>
-          <li>Write your topic.</li>
-          <li>Turn it into a real question.</li>
-          <li>Answer the question in one arguable sentence.</li>
-        </ol>
-        <div class="writer-tool" role="group" aria-labelledby="tool-title-6">
-          <h3 id="tool-title-6"><i class="fas fa-pen"></i> Quick Draft Space</h3>
-          <p>Use this box to test an idea. It is saved only in this page while it is open.</p>
-          <textarea class="quick-draft" aria-label="Quick draft space for Chapter 6" placeholder="Draft a quick response here..."></textarea>
-          <div class="journal-actions">
-            <button class="btn copy-draft-btn" type="button"><i class="fas fa-copy"></i> Copy Draft</button>
-            <button class="btn clear-draft-btn" type="button"><i class="fas fa-trash"></i> Clear</button>
-            <span class="draft-status" aria-live="polite"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="section" id="section6">
-      <div class="section-header" onclick="toggleSection(this)">
-        <span><i class="fas fa-book"></i> 6. Scholar&#x27;s Blue Book Journal</span>
-        <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-      </div>
-      <div class="section-content">
-
-        <div class="bluebook-box">
-          <div class="bluebook-header">
-            <div class="bluebook-icon"><i class="fas fa-book-open"></i></div>
-            <div>
-              <h3>Scholar's Blue Book Journal</h3>
-              <p class="bluebook-kicker">Write for 5-7 minutes. This is thinking practice, not a polished essay.</p>
-            </div>
-          </div>
-          <div class="journal-prompt">
-            <p><strong>Chapter 6 Prompt:</strong> What question is your essay trying to answer, and what is your current answer?</p>
-          </div>
-          <div class="mini-template">
-            <div class="template-line"><strong>My first thought is:</strong></div>
-            <div class="template-line"><strong>One example or piece of evidence is:</strong></div>
-            <div class="template-line"><strong>This matters because:</strong></div>
-          </div>
-          <p class="journal-note"><strong>Privacy note:</strong> This page does not submit or collect your writing. Write in your physical Blue Book Journal, Blackboard journal, or wherever your instructor asks you to keep entries.</p>
-        </div>
-        <div class="key-takeaway">
-          <h4><i class="fas fa-arrow-right"></i> What Comes Next</h4>
-          <p>Next, paragraph design helps you prove your thesis one claim at a time.</p>
-        </div>
+        <p><em>Placeholder:</em> a short source triage activity (keep / maybe / no) + a mini annotated bibliography starter.</p>
       </div>
     </div>
 
   </div>
 
-  <script src="../app.js?v=18"></script>
+  <div class="footer">
+    <div class="container text-center">
+      <h3>The Scholar's Compass</h3>
+      <p class="mb-0">Interactive educational content for developing strong academic writing skills</p>
+    </div>
+  </div>
+
+  <script src="../app.js?v=17"></script>
 </body>
 </html>
