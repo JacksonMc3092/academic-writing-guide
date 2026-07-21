@@ -1,0 +1,61 @@
+name: Publish Scholar's Compass
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Verify production entry points
+        run: |
+          test -f CNAME
+          test -f index.html
+          test -f 1010/index.html
+          test -f 1010/introduction.html
+          test -f 1010/chapter-14.html
+          test -f 1020/index.html
+          grep -q "Introduction: Writing as Conversation" 1010/index.html
+          grep -q "Active Reading Strategies" 1010/index.html
+          grep -q "Synthesis: Putting Sources into Conversation" 1010/index.html
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
