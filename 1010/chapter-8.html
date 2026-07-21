@@ -1,237 +1,324 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Using Sources in Your Argument - Scholar's Compass</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <meta name="description" content="Weave sources into your writing with clarity: quote sandwich, synthesis moves, and keeping your voice in control.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles.css?v=17" /></head>
-<body data-page="chapter-8">
-    <!-- Progress Bar at very top -->
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-    </div>
+<!DOCTYPE html>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar-content">
-            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open navigation menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <a href="index.html" class="navbar-brand">
-                <i class="fas fa-compass"></i>Scholar's Compass
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chapter 8: Crafting Powerful Thesis Statements - Scholar's Compass</title>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="Master the art of building strong thesis statements using the Topic-to-Thesis framework and proven templates." name="description"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../styles.css?v=19-rc2" rel="stylesheet"/><link data-sc-revision-round="2" href="../revision-round-2.css?v=1" rel="stylesheet"/></head>
+<body data-course="1010" data-page="chapter-8"><div aria-label="Reading progress" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="sc-reading-progress" role="progressbar"><div class="sc-reading-progress-bar" id="scrollProgress"></div></div>
+<!-- Progress Bar at very top -->
+<!-- Navigation Bar -->
+<nav class="navbar">
+<div class="navbar-content">
+<button aria-label="Open navigation menu" class="hamburger-menu" id="hamburgerMenu">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+<a class="navbar-brand" href="index.html">
+<i class="fas fa-compass"></i>Scholar's Compass
             </a>
-        </div>
-    </nav>
-
-    <!-- Sidebar Navigation -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2><i class="fas fa-compass me-2"></i>Navigation</h2>
-            <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="sidebar-content">
-            <div class="sidebar-section">
-                <h3>Main</h3>
-                <a href="index.html" class="sidebar-link">
-                    <i class="fas fa-home"></i>Home
+</div>
+</nav><div aria-hidden="true" class="sc-sticky-chapter">Chapter 8: Crafting Powerful Thesis Statements</div>
+<!-- Sidebar Navigation -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<nav class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<h2><i class="fas fa-compass me-2"></i>Navigation</h2>
+<button aria-label="Close navigation menu" class="sidebar-close" id="sidebarClose">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="sidebar-content">
+<div class="sidebar-section">
+<h3>Main</h3>
+<a class="sidebar-link" href="index.html">
+<i class="fas fa-home"></i>Home
                     <span class="reading-time">2 min</span>
-                </a>
-            </div>
-            
-            <div class="sidebar-section" id="sidebarChapters">
-                <h3>Chapters</h3>
-                <div id="chaptersList"></div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="quick-nav" id="quickNav">
-        <a href="#section1" title="Quote Sandwich" data-section="section1"><span>Quote Sandwich</span><i class="fas fa-hamburger"></i></a>
-        <a href="#section2" title="Weaving Sources" data-section="section2"><span>Weaving Sources</span><i class="fas fa-layer-group"></i></a>
-        <a href="#section3" title="Synthesis Moves" data-section="section3"><span>Synthesis Moves</span><i class="fas fa-project-diagram"></i></a>
-        <a href="#section4" title="Practice" data-section="section4"><span>Practice</span><i class="fas fa-pencil-alt"></i></a>
-    </div>
-
-    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-    </button>
-
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <div class="container">
-        <div class="header">
-            <h1><i class="fas fa-link"></i> Using Sources in Your Argument</h1>
-            <p class="subtitle">Master the art of incorporating sources like a pro</p>
-            
-            <div style="margin-top: 20px;">
-                <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
-                <a class="btn" href="../index.html" aria-label="Back to course hub"><i class="fas fa-home"></i> Course Hub</a>
-            </div>
-        </div>
-
-        <div class="stats-bar">
-            <div class="stat">
-                <span class="stat-label">Better Grades!</span>
-            </div>
-            <div class="stat">
-                <span class="stat-label">Improve Fast!</span>
-            </div>
-            <div class="stat">
-                <span class="stat-label">Find Your Voice!</span>
-            </div>
-        </div>
-
-        
-
-        <div class="section active" id="section1">
-            <div class="section-header" onclick="toggleSection(this)">
-                <span><i class="fas fa-hamburger"></i> I. The Quote Sandwich Method</span>
-                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-            </div>
-            <div class="section-content">
-                <p>The quote sandwich method ensures your quotes are properly contextualized and analyzed, rather than dropped into your text without explanation.</p>
-                
-                <div class="highlight-box">
-                    <p><strong>Structure:</strong></p>
-                    <ol>
-                        <li><strong>Top Bun</strong> – Introduce with a signal phrase and context that prepares your reader.</li>
-                        <li><strong>Meat</strong> – Present the quote with its proper in-text citation.</li>
-                        <li><strong>Bottom Bun</strong> – Explain, analyze, and connect the quote to your argument.</li>
-                    </ol>
+</a>
+</div>
+<div class="sidebar-section" id="sidebarChapters">
+<h3>Chapters</h3>
+<div id="chaptersList"></div>
+</div>
+</div>
+</nav>
+<div class="quick-nav" id="quickNav">
+<a data-section="section1" href="#section1" title="Introduction"><span>Introduction</span><i class="fas fa-info-circle"></i></a>
+<a data-section="section2" href="#section2" title="Framework"><span>Framework</span><i class="fas fa-project-diagram"></i></a>
+<a data-section="section3" href="#section3" title="Templates"><span>Templates</span><i class="fas fa-clipboard-list"></i></a>
+<a data-section="section4" href="#section4" title="Application"><span>Application</span><i class="fas fa-rocket"></i></a>
+<a data-section="section5" href="#section5" title="Practice"><span>Practice</span><i class="fas fa-pencil-alt"></i></a>
+<a data-section="section6" href="#section6" title="Checklist"><span>Checklist</span><i class="fas fa-tasks"></i></a>
+</div>
+<button aria-label="Toggle dark mode" class="dark-mode-toggle" id="darkModeToggle">
+<i class="fas fa-moon"></i>
+</button>
+<button aria-label="Back to top" class="back-to-top" id="backToTop">
+<i class="fas fa-arrow-up"></i>
+</button>
+<main class="container" id="main-content" tabindex="-1">
+<div class="header">
+<h1><i class="fas fa-bullseye"></i> Crafting Powerful Thesis Statements</h1>
+<p class="subtitle">Your Guide to Building Arguments from the Ground Up</p>
+<div style="margin-top: 20px;">
+<button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+<a aria-label="Back to course hub" class="btn" href="../index.html"><i class="fas fa-home"></i> Course Hub</a>
+</div>
+</div>
+<div class="stats-bar">
+<div class="stat">
+<span class="stat-label">Stronger Arguments!</span>
+</div>
+<div class="stat">
+<span class="stat-label">Clearer Thinking!</span>
+</div>
+<div class="stat">
+<span class="stat-label">Better Grades!</span>
+</div>
+</div>
+<div class="section active" id="section1">
+<div class="section-header" onclick="toggleSection(this)">
+<span><i class="fas fa-info-circle"></i> I. Introduction: Your Argument's Foundation</span>
+<span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+</div>
+<div class="section-content">
+<p>You've got a writing assignment and a head full of ideas, but how do you turn them into a powerful, central argument? This guide will walk you through a powerful framework to build your thesis from the ground up.</p>
+<div class="highlight-box">
+<p>A thesis statement is <strong>one or two sentences</strong> that presents your essay's <strong>main argument, claim, or central idea.</strong> It tells your reader what to expect and guides the structure of your entire paper.</p>
+</div>
+<div class="tools-note">
+<p><strong>By the end of this guide, you will be able to:</strong></p>
+<ul>
+<li>Apply the Topic-to-Thesis framework to develop arguments</li>
+<li>Distinguish between strong and weak thesis statements</li>
+<li>Use templates to craft effective thesis statements</li>
+<li>Apply the framework to both writing and critical reading</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="section2">
+<div class="section-header" onclick="toggleSection(this)">
+<span><i class="fas fa-project-diagram"></i> II. The Topic-to-Thesis Framework: Your Blueprint</span>
+<span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+</div>
+<div class="section-content">
+<p>A strong thesis isn't just plucked from thin air; it's built. Follow this roadmap to develop yours:</p>
+<div class="thesis-framework">
+<div class="framework-step">
+<div class="framework-step-number">1</div>
+<div class="framework-step-content">
+<strong>Topic:</strong> The broad subject area (e.g., "Education," "Social Media," "Climate Change")
+                        </div>
+<div class="framework-arrow"></div>
+</div>
+<div class="framework-step">
+<div class="framework-step-number">2</div>
+<div class="framework-step-content">
+<strong>Problem/Issue/Observation:</strong> A specific challenge, controversy, or puzzle within that topic
+                        </div>
+<div class="framework-arrow"></div>
+</div>
+<div class="framework-step">
+<div class="framework-step-number">3</div>
+<div class="framework-step-content">
+<strong>Questions:</strong> The queries that your problem raises to guide your research
+                        </div>
+<div class="framework-arrow"></div>
+</div>
+<div class="framework-step">
+<div class="framework-step-number">4</div>
+<div class="framework-step-content">
+<strong>Research:</strong> The process of investigating your questions to find answers and evidence
+                        </div>
+<div class="framework-arrow"></div>
+</div>
+<div class="framework-step">
+<div class="framework-step-number">5</div>
+<div class="framework-step-content">
+<strong>Thesis/Argument:</strong> Your informed, debatable claim that addresses the original problem
+                        </div>
+</div>
+</div>
+<div class="example-box">
+<strong>From Blueprint to Paragraph: An Example</strong><br/><br/>
+                    The <strong>topic</strong> of `urban sustainability` is vast, but a critical <strong>problem</strong> in many cities is the `"urban heat island" effect`, where metropolitan areas become significantly warmer than their rural surroundings. This <strong>observation raises important questions</strong>: What are the primary causes of this phenomenon? And what are the most effective strategies to mitigate it? <strong>Preliminary research</strong> points to the prevalence of dark, heat-absorbing surfaces like asphalt and the lack of vegetation as key factors. Therefore, this paper will <strong>argue</strong> that `mandating the implementation of green roofs and cool pavements represents the most viable and immediate strategy for cities to combat the urban heat island effect, reduce energy consumption, and protect vulnerable populations.`
                 </div>
-                
-                <div class="example-box">
-                    <strong>Example:</strong><br>
-                    In her influential TED Talk, vulnerability researcher Brené Brown challenges conventional thinking by stating, "Vulnerability is the birthplace of innovation, creativity and change" (Brown). This powerful assertion reframes vulnerability not as a weakness to be avoided, but as a crucial strength that enables personal and professional growth in our increasingly complex world.
-                </div>
-
-                <div class="interactive-element">
-                    <h3><i class="fas fa-clipboard-list"></i> Build Your Own Sandwich</h3>
-                    <p>Practice creating a quote sandwich with this interactive builder:</p>
-                    
-                    <div class="sandwich-builder">
-                        <div class="sandwich-part">
-                            <label for="topBun">Top Bun (Introduction):</label>
-                            <textarea id="topBun" placeholder="Introduce your quote with a signal phrase and context..."></textarea>
-                        </div>
-                        
-                        <div class="sandwich-part">
-                            <label for="meat">Meat (Quote with Citation):</label>
-                            <textarea id="meat" placeholder="Paste your quote here with proper citation..."></textarea>
-                        </div>
-                        
-                        <div class="sandwich-part">
-                            <label for="bottomBun">Bottom Bun (Analysis):</label>
-                            <textarea id="bottomBun" placeholder="Explain how this quote supports your argument..."></textarea>
-                        </div>
-                        
-                        <button class="btn" onclick="generateSandwich()">Build My Sandwich</button>
-                        
-                        <div class="sandwich-output" id="sandwichOutput" style="display: none;">
-                            <h4>Your Quote Sandwich:</h4>
-                            <p id="sandwichResult"></p>
-                            <button class="btn" onclick="copySandwich()" style="margin-top: 10px;"><i class="fas fa-copy"></i> Copy to Clipboard</button>
-                        </div>
+<div class="key-takeaway">
+<h4><i class="fas fa-key"></i> Key Takeaway</h4>
+<p>A strong thesis is the destination of a research journey that begins with a broad topic and narrows to a specific, researchable problem.</p>
+</div>
+</div>
+</div>
+<div class="section" id="section3">
+<div class="section-header" onclick="toggleSection(this)">
+<span><i class="fas fa-clipboard-list"></i> III. Thesis Templates &amp; Examples</span>
+<span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+</div>
+<div class="section-content">
+<p>These templates can help you structure your thesis statement effectively:</p>
+<div class="tools-note">
+<p><strong>The "Although... I Argue..." Approach</strong></p>
+<p><strong>Although</strong> readers might assume `[common or obvious idea]`, <strong>I argue that</strong> `[your surprising and insightful claim]`.</p>
+<div class="example-box">
+<strong>Example:</strong> Although many believe that social media primarily harms teenage mental health, I argue that when used intentionally, it can provide valuable spaces for identity exploration and community support.
                     </div>
+</div>
+<div class="tools-note">
+<p><strong>The "By Examining..." Approach</strong></p>
+<p><strong>By examining</strong> `[topic/approach]`, <strong>we can see</strong> `[your surprising claim]`, <strong>which is important because</strong> `[the significance of your claim]`.</p>
+<div class="example-box">
+<strong>Example:</strong> By examining the policy history of renewable energy subsidies, we can see that direct investment in R&amp;D has been far more effective than consumer tax credits, which is important because it provides a model for designing more effective climate policy.
+                    </div>
+</div>
+<div class="practice-item">
+<strong>Try It Yourself:</strong>
+<p>Select a template and try filling in the blanks with your own topic:</p>
+<div class="interactive-element">
+<select id="templateSelect" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+<option value="although">Although... I argue that...</option>
+<option value="examining">By examining... we can see...</option>
+</select>
+<textarea id="templatePractice" placeholder="Type your thesis statement here..." style="width: 100%; height: 100px; padding: 10px; border-radius: 5px;"></textarea>
+<button class="btn" onclick="analyzeThesis()" style="margin-top: 10px;">Analyze My Thesis</button>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section4">
+<div class="section-header" onclick="toggleSection(this)">
+<span><i class="fas fa-rocket"></i> IV. Application: As Reader &amp; Writer</span>
+<span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+</div>
+<div class="section-content">
+<p>The Topic-to-Thesis framework is versatile—use it both to build your own arguments and to analyze others'.</p>
+<div class="tools-note">
+<p><strong>For Writing: Build Your Argument</strong></p>
+<p>Use the framework from start to finish to develop your own unique, research-driven claim.</p>
+<ol>
+<li>Narrow your <strong>Topic</strong> to a specific <strong>Problem</strong></li>
+<li>Let the problem generate research <strong>Questions</strong></li>
+<li><strong>Research</strong> to find answers</li>
+<li>Formulate your <strong>Thesis</strong> as your evidence-based answer</li>
+</ol>
+</div>
+<div class="tools-note">
+<p><strong>For Active Reading: Reverse-Engineer Arguments</strong></p>
+<p>Use the framework to deconstruct articles and books. This is the key to writing strong, argument-focused summaries.</p>
+<ol>
+<li>Find the author's <strong>Thesis</strong> (their main argument)</li>
+<li>Identify the <strong>Research/Evidence</strong> they use to support it</li>
+<li>Deduce the <strong>Questions</strong> their research answers</li>
+<li>Discover the core <strong>Problem/Observation</strong> that motivated the article</li>
+</ol>
+</div>
+<div class="example-box">
+<strong>Example: Reverse-Engineering a Summary</strong><br/><br/>
+<strong>Original Source Paragraph:</strong> "While many point to individual dietary choices as the driver of the obesity epidemic, a deeper analysis reveals the significant role of 'food deserts'—urban areas where fresh, affordable produce is scarce but fast-food outlets are abundant. A longitudinal study of five major U.S. cities found a strong correlation between the number of fast-food restaurants per capita in a zip code and rates of obesity and diabetes, even when controlling for income. This suggests that public health policy must shift its focus from blaming individuals to addressing these systemic environmental factors."<br/><br/>
+<strong>Strong Summary Using the Framework:</strong> "In their analysis of the <strong>topic</strong> of public health nutrition, the authors identify the <strong>problem</strong> of the obesity epidemic. They <strong>argue</strong> that policy must shift from focusing on individual responsibility to addressing systemic issues like food deserts. This <strong>thesis</strong> is supported by <strong>research</strong> citing a longitudinal study that found a direct correlation between the density of fast-food outlets and rates of obesity and diabetes in urban areas."
                 </div>
-
-                <div class="key-takeaway">
-                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
-                    <p>Never let quotes speak for themselves. Every quote needs your introduction to provide context and your analysis to explain its significance to your argument.</p>
-                </div>
-
-                <a href="https://www.youtube.com/watch?v=5qvPqvkgFXY" target="_blank" class="video-link">
-                    <i class="fas fa-play-circle"></i> MLA In-Text Citation, Quotations, and Paraphrases
-                </a>
-            </div>
-        <div class="section" id="section2">
-            <div class="section-header" onclick="toggleSection(this)">
-                <span><i class="fas fa-layer-group"></i> II. Weaving Multiple Sources</span>
-                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-            </div>
-            <div class="section-content">
-                <p><strong>Goal:</strong> help your reader follow a conversation, not a stack of quotes.</p>
-                <div class="highlight-box">
-                    <p><strong>A simple weave pattern:</strong></p>
-                    <ol>
-                        <li><strong>Set up the point</strong> you want to make.</li>
-                        <li><strong>Bring in Source A</strong> (briefly).</li>
-                        <li><strong>Connect it</strong> to your claim in your own words.</li>
-                        <li><strong>Add Source B</strong> to deepen, complicate, or challenge Source A.</li>
-                        <li><strong>Explain the relationship</strong> between A and B (agreement, tension, cause/effect, example, exception).</li>
-                    </ol>
-                </div>
-                <div class="key-takeaway">
-                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
-                    <p>Don't make sources do the talking for you. Your sentences should control the conversation.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="section3">
-            <div class="section-header" onclick="toggleSection(this)">
-                <span><i class="fas fa-project-diagram"></i> III. Synthesis Moves</span>
-                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-            </div>
-            <div class="section-content">
-                <p><strong>Synthesis</strong> is when you show how ideas connect (or clash) across sources.</p>
-                <div class="tools-note">
-                    <p><strong>Useful sentence stems:</strong></p>
-                    <ul>
-                        <li><strong>Agreement:</strong> Both A and B suggest that...</li>
-                        <li><strong>Tension:</strong> While A argues ..., B complicates this by...</li>
-                        <li><strong>Extension:</strong> A focuses on ..., but B extends the discussion to...</li>
-                        <li><strong>Example:</strong> B illustrates A's claim when...</li>
-                        <li><strong>Exception:</strong> A is mostly true, except when...</li>
-                    </ul>
-                </div>
-                <div class="highlight-box">
-                    <p><strong>Rule of thumb:</strong> If your paragraph could survive with the sources removed (because your claim + reasoning still holds), you're doing it right. Sources should support, sharpen, or challenge your thinking—not replace it.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="section4">
-            <div class="section-header" onclick="toggleSection(this)">
-                <span><i class="fas fa-pencil-alt"></i> IV. Practice: Integration Plan</span>
-                <span class="section-icon"><i class="fas fa-chevron-right"></i></span>
-            </div>
-            <div class="section-content">
-                <p>Use this quick checklist before you paste a quote into your draft:</p>
-                <ul>
-                    <li>What is my <strong>point</strong> in this paragraph?</li>
-                    <li>What does this source <strong>add</strong> (evidence, definition, example, counterargument)?</li>
-                    <li>What will I <strong>say after</strong> the source to explain why it matters?</li>
-                    <li>How does this connect back to my <strong>thesis</strong>?</li>
-                </ul>
-                <div class="key-takeaway">
-                    <h4><i class="fas fa-key"></i> Key Takeaway</h4>
-                    <p>If you can't explain a quote in your own words, it's not ready to be in your paper yet.</p>
-                </div>
-            </div>
-        </div>
-
-        </div>
-
-        
-
-        
-
-        
-    </div>
-
-        <script src="../app.js?v=17"></script>
-
-
-
-</body></html>
+</div>
+</div>
+<div class="section" id="section5">
+<div class="section-header" onclick="toggleSection(this)">
+<span><i class="fas fa-pencil-alt"></i> V. Practice: Build Your Thesis</span>
+<span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+</div>
+<div class="section-content">
+<p>Use this interactive builder to develop your own thesis statement step by step:</p>
+<div class="thesis-builder">
+<h3><i class="fas fa-tools"></i> Thesis Statement Builder</h3>
+<div class="builder-step">
+<label for="topic">1. Topic:</label>
+<input id="topic" placeholder="Enter your broad topic (e.g., Higher Education)" type="text"/>
+</div>
+<div class="builder-step">
+<label for="problem">2. Problem/Issue/Observation:</label>
+<input id="problem" placeholder="What specific problem have you identified?" type="text"/>
+</div>
+<div class="builder-step">
+<label for="questions">3. Research Questions:</label>
+<textarea id="questions" placeholder="What questions does this problem raise?"></textarea>
+</div>
+<div class="builder-step">
+<label for="research">4. Research Findings:</label>
+<textarea id="research" placeholder="What evidence have you found?"></textarea>
+</div>
+<div class="builder-step">
+<label for="thesis">5. Thesis Statement:</label>
+<textarea id="thesis" placeholder="Your evidence-based argument"></textarea>
+</div>
+<button class="btn" onclick="generateThesis()"><i class="fas fa-magic"></i> Generate Thesis</button>
+<div class="thesis-preview">
+<p id="thesisOutput">Your thesis will appear here...</p>
+</div>
+</div>
+<div class="practice-item">
+<span class="difficulty-label difficulty-medium">Exercise: Thesis Analysis</span>
+<strong>Analyze the following thesis statements. Which ones are strong? Which are weak? Why?</strong>
+<ol type="A">
+<li>Social media has both positive and negative effects on teenagers.</li>
+<li>This paper will discuss the causes of the Civil War.</li>
+<li>While social media platforms are often criticized for promoting superficial connections, they actually enable marginalized youth to find community and support that may be unavailable in their physical environments.</li>
+<li>Climate change is a real problem that affects everyone.</li>
+</ol>
+<div class="interactive-element">
+<h3><i class="fas fa-tasks"></i> Your Analysis:</h3>
+<textarea placeholder="Type your analysis here..." style="width: 100%; height: 150px; margin-top: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ddd;"></textarea>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section6">
+<div class="section-header" onclick="toggleSection(this)">
+<span><i class="fas fa-tasks"></i> VI. Checklist: Test Your Thesis</span>
+<span class="section-icon"><i class="fas fa-chevron-right"></i></span>
+</div>
+<div class="section-content">
+<p>Put your draft thesis to the test! A strong thesis statement:</p>
+<div class="interactive-element">
+<h3><i class="fas fa-clipboard-check"></i> Self-Evaluation Checklist</h3>
+<div style="margin-top: 15px;">
+<label style="display: block; margin-bottom: 10px;">
+<input class="skill-checkbox" type="checkbox"/> Is specific, not vague
+                        </label>
+<label style="display: block; margin-bottom: 10px;">
+<input class="skill-checkbox" type="checkbox"/> Makes an arguable claim, not just a statement of fact
+                        </label>
+<label style="display: block; margin-bottom: 10px;">
+<input class="skill-checkbox" type="checkbox"/> Can be supported with evidence from sources
+                        </label>
+<label style="display: block; margin-bottom: 10px;">
+<input class="skill-checkbox" type="checkbox"/> Answers the "So what?" question—why does it matter?
+                        </label>
+<label style="display: block; margin-bottom: 10px;">
+<input class="skill-checkbox" type="checkbox"/> Passes the "Although... I argue..." test
+                        </label>
+<label style="display: block; margin-bottom: 10px;">
+<input class="skill-checkbox" type="checkbox"/> Is appropriate in scope for the assignment length
+                        </label>
+</div>
+</div>
+<div class="key-takeaway">
+<h4><i class="fas fa-key"></i> Key Takeaway</h4>
+<p>Remember that your first thesis is a <strong>working thesis</strong>. It's a starting point. As you research and write, you may find new evidence that requires you to refine, narrow, or even completely change your argument. This is a normal and important part of the writing process!</p>
+</div>
+<div class="highlight-box">
+<p><strong>Avoid These Common Thesis Pitfalls:</strong></p>
+<ul>
+<li><strong>The Vague Statement:</strong> "This paper is about social media."</li>
+<li><strong>The Announcement:</strong> "In this essay, I will discuss the effects of pollution."</li>
+<li><strong>The Factual Statement:</strong> "Water boils at 100 degrees Celsius."</li>
+<li><strong>The Moral Judgment:</strong> "Animal testing is cruel and inhumane."</li>
+</ul>
+</div>
+</div>
+</div>
+<nav aria-label="Chapter sequence" class="chapter-sequence-nav"><a class="chapter-sequence-previous" href="chapter-7.html"><span class="chapter-sequence-label">Previous</span><strong>Chapter 7: Strategies for Getting Started</strong></a><a class="chapter-sequence-next" href="chapter-9.html"><span class="chapter-sequence-label">Next</span><strong>Chapter 9: Designing Effective Paragraphs</strong></a></nav></main>
+<script src="../app.js?v=22-rc2"></script>
+<script data-sc-revision-round="2" src="../revision-round-2.js?v=1"></script></body></html>
