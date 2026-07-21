@@ -1,3 +1,4 @@
+# Triggered after workflow registration on main
 name: Repair ENG 1010 Chapter Progress
 
 on:
@@ -88,7 +89,6 @@ jobs:
             function readCompleted() {
               var completed = normalizeCompleted(readJSON(COMPLETED_KEY));
               if (completed.length) return completed;
-
               var legacyKeys = ['completedChapters', 'scholarsCompassCompletedChapters'];
               for (var index = 0; index < legacyKeys.length; index += 1) {
                 completed = normalizeCompleted(readJSON(legacyKeys[index]));
@@ -138,16 +138,13 @@ jobs:
               var progressBar = document.getElementById('overallProgress');
               var progressText = document.getElementById('progressText');
               if (!progressBar || !progressText) return;
-
               var completed = readCompleted();
               var current = readCurrent();
               var percent = Math.round((completed.length / TOTAL_CHAPTERS) * 1000) / 10;
-
               progressBar.style.width = percent + '%';
               progressBar.setAttribute('aria-valuenow', String(percent));
               progressBar.setAttribute('aria-label', completed.length + ' of ' + TOTAL_CHAPTERS + ' chapters completed');
               progressText.textContent = completed.length + ' of ' + TOTAL_CHAPTERS + ' chapters completed';
-
               Array.prototype.slice.call(document.querySelectorAll('.chapter-link[data-chapter]')).forEach(function (link) {
                 var number = parseInt(link.getAttribute('data-chapter'), 10);
                 var isCompleted = completed.indexOf(number) !== -1;
@@ -166,14 +163,12 @@ jobs:
             function initIndex() {
               if (!document.getElementById('overallProgress')) return;
               renderIndexProgress();
-
               Array.prototype.slice.call(document.querySelectorAll('.chapter-link[data-chapter]')).forEach(function (link) {
                 link.addEventListener('click', function () {
                   var number = parseInt(link.getAttribute('data-chapter'), 10);
                   if (number >= 1 && number <= TOTAL_CHAPTERS) writeCurrent(number);
                 });
               });
-
               var reset = document.getElementById('resetProgress');
               if (reset && reset.getAttribute('data-progress-ready') !== 'true') {
                 reset.setAttribute('data-progress-ready', 'true');
@@ -197,7 +192,6 @@ jobs:
                   }
                 });
               }
-
               window.addEventListener('pageshow', renderIndexProgress);
               window.addEventListener('storage', renderIndexProgress);
               document.addEventListener('scholarsCompassProgressChanged', renderIndexProgress);
@@ -207,14 +201,12 @@ jobs:
               var number = chapterNumberFromPage();
               if (!number) return;
               writeCurrent(number);
-
               var completed = false;
               var complete = function () {
                 if (completed) return;
                 completed = true;
                 markComplete(number);
               };
-
               var closingNavigation = document.querySelector('.chapter-sequence-nav');
               if (closingNavigation && 'IntersectionObserver' in window) {
                 var observer = new IntersectionObserver(function (entries) {
@@ -227,7 +219,6 @@ jobs:
                 }, { threshold: [0.2, 0.5] });
                 observer.observe(closingNavigation);
               }
-
               var nearBottom = function () {
                 var root = document.scrollingElement || document.documentElement;
                 if ((root.scrollTop || window.pageYOffset || 0) + window.innerHeight >= root.scrollHeight - 140) complete();
@@ -235,7 +226,6 @@ jobs:
               window.addEventListener('scroll', nearBottom, { passive: true });
               window.addEventListener('pageshow', nearBottom);
               setTimeout(nearBottom, 120);
-
               var next = document.querySelector('.chapter-sequence-next');
               if (next) next.addEventListener('click', complete);
             }
@@ -251,13 +241,11 @@ jobs:
           })();'''
 
           app_path.write_text(app + '\n\n' + block + '\n', encoding='utf-8')
-
           pages = sorted(Path('1010').glob('*.html'))
           for page in pages:
               text = page.read_text(encoding='utf-8')
               text = re.sub(r'app\.js\?v=[^"\']+', 'app.js?v=23-progress', text)
               page.write_text(text, encoding='utf-8')
-
           print(f'Updated app.js and {len(pages)} ENG 1010 HTML files')
           PY
 
@@ -283,35 +271,29 @@ jobs:
           trap 'kill $server_pid' EXIT
           python - <<'PY'
           from playwright.sync_api import sync_playwright
-
           base = 'http://127.0.0.1:8000/1010/'
           with sync_playwright() as p:
               browser = p.chromium.launch()
               page = browser.new_page(viewport={"width": 1280, "height": 800})
-
               page.goto(base + 'index.html', wait_until='networkidle')
               page.evaluate('localStorage.clear()')
               page.reload(wait_until='networkidle')
               assert page.locator('#progressText').inner_text() == '0 of 14 chapters completed'
               assert page.locator('#overallProgress').get_attribute('aria-valuenow') == '0'
-
               page.goto(base + 'chapter-1.html', wait_until='networkidle')
               page.evaluate('window.scrollTo(0, document.documentElement.scrollHeight)')
               page.wait_for_timeout(700)
               completed = page.evaluate("JSON.parse(localStorage.getItem('scholarsCompass:1010:completedChapters') || '[]')")
               assert 1 in completed, completed
-
               page.goto(base + 'index.html', wait_until='networkidle')
               assert page.locator('#progressText').inner_text() == '1 of 14 chapters completed'
               assert float(page.locator('#overallProgress').get_attribute('aria-valuenow')) > 7
               assert page.locator('.chapter-link[data-chapter="1"] .completed-badge').is_visible()
               assert not page.locator('.chapter-link[data-chapter="1"] .available-badge').is_visible()
-
               page.locator('#resetProgress').click()
               assert page.locator('#progressText').inner_text() == '0 of 14 chapters completed'
               assert page.locator('#overallProgress').get_attribute('aria-valuenow') == '0'
               assert page.evaluate("localStorage.getItem('scholarsCompass:1010:completedChapters')") is None
-
               browser.close()
           print('ENG 1010 progress browser regression passed')
           PY
