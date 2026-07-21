@@ -45,7 +45,11 @@ html:not(.js) .section { opacity: 1 !important; }
 }
 
 /* HTML review batch 1 */
-body[data-page="introduction"] .header h1 { color: #fff !important; }
+body[data-page="introduction"] .header h1,
+body[data-page="introduction"] .header .subtitle {
+  color: #fff !important;
+}
+body[data-page="introduction"] .header .subtitle { opacity: 1; }
 .sc-reading-progress-bar {
   width: 100% !important;
   transform: scaleX(0);
@@ -59,17 +63,8 @@ body[data-page="introduction"] .header h1 { color: #fff !important; }
   margin: .35rem 0 .8rem;
 }
 @media (max-width: 768px) {
-  .sc-sticky-chapter {
-    top: 50px;
-    width: auto;
-    max-width: calc(100vw - 5rem);
-    padding: .18rem .55rem;
-    border-radius: 0 0 .45rem .45rem;
-    font-size: .72rem;
-    line-height: 1.15;
-    font-weight: 650;
-    box-shadow: 0 2px 8px rgba(0,0,0,.12);
-    opacity: 0;
+  .sc-sticky-chapter,
+  .sc-sticky-chapter.is-visible {
+    display: none !important;
   }
-  .sc-sticky-chapter.is-visible { opacity: .9; }
 }
