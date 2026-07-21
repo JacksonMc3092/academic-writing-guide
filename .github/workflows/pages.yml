@@ -67,15 +67,18 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if [ "${{ steps.deployment.outcome }}" = "success" ]; then
-            state="success"
-            description="Scholar's Compass published to GitHub Pages"
+            gh api \
+              --method POST \
+              "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
+              -f state="success" \
+              -f context="scholars-compass-pages" \
+              -f description="Scholar's Compass published to GitHub Pages" \
+              -f target_url="${{ steps.deployment.outputs.page_url }}"
           else
-            state="failure"
-            description="Scholar's Compass Pages deployment failed"
+            gh api \
+              --method POST \
+              "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
+              -f state="failure" \
+              -f context="scholars-compass-pages" \
+              -f description="Scholar's Compass Pages deployment failed"
           fi
-          gh api \
-            --method POST \
-            "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
-            -f state="$state" \
-            -f context="scholars-compass-pages" \
-            -f description="$description"
