@@ -1,0 +1,325 @@
+name: Repair ENG 1010 Chapter Progress
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/fix-eng1010-progress.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair-and-test:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out production
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Restore chapter progress behavior
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          app_path = Path('app.js')
+          app = app_path.read_text(encoding='utf-8')
+          marker = "/* Scholar's Compass — ENG 1010 chapter completion progress */"
+          if marker in app:
+              app = app.split(marker, 1)[0].rstrip()
+
+          block = r'''/* Scholar's Compass — ENG 1010 chapter completion progress */
+          (function () {
+            'use strict';
+
+            var TOTAL_CHAPTERS = 14;
+            var COMPLETED_KEY = 'scholarsCompass:1010:completedChapters';
+            var CURRENT_KEY = 'scholarsCompass:1010:currentChapter';
+
+            function is1010() {
+              var bodyCourse = document.body && document.body.getAttribute('data-course');
+              return bodyCourse === '1010' || (window.location.pathname || '').indexOf('/1010/') !== -1;
+            }
+
+            function chapterNumberFromPage() {
+              var page = document.body && document.body.getAttribute('data-page');
+              var match = String(page || window.location.pathname || '').match(/chapter-(\d+)/i);
+              if (!match) return null;
+              var number = parseInt(match[1], 10);
+              return number >= 1 && number <= TOTAL_CHAPTERS ? number : null;
+            }
+
+            function normalizeCompleted(value) {
+              var numbers = [];
+              if (Array.isArray(value)) {
+                value.forEach(function (item) {
+                  var number = parseInt(item, 10);
+                  if (number >= 1 && number <= TOTAL_CHAPTERS && numbers.indexOf(number) === -1) numbers.push(number);
+                });
+              } else if (value && typeof value === 'object') {
+                Object.keys(value).forEach(function (key) {
+                  if (!value[key]) return;
+                  var number = parseInt(key, 10);
+                  if (number >= 1 && number <= TOTAL_CHAPTERS && numbers.indexOf(number) === -1) numbers.push(number);
+                });
+              }
+              return numbers.sort(function (a, b) { return a - b; });
+            }
+
+            function readJSON(key) {
+              try {
+                var raw = localStorage.getItem(key);
+                return raw === null ? null : JSON.parse(raw);
+              } catch (error) {
+                return null;
+              }
+            }
+
+            function readCompleted() {
+              var completed = normalizeCompleted(readJSON(COMPLETED_KEY));
+              if (completed.length) return completed;
+
+              var legacyKeys = ['completedChapters', 'scholarsCompassCompletedChapters'];
+              for (var index = 0; index < legacyKeys.length; index += 1) {
+                completed = normalizeCompleted(readJSON(legacyKeys[index]));
+                if (completed.length) {
+                  writeCompleted(completed);
+                  return completed;
+                }
+              }
+              return [];
+            }
+
+            function writeCompleted(completed) {
+              try { localStorage.setItem(COMPLETED_KEY, JSON.stringify(normalizeCompleted(completed))); }
+              catch (error) {}
+            }
+
+            function readCurrent() {
+              try {
+                var number = parseInt(localStorage.getItem(CURRENT_KEY), 10);
+                return number >= 1 && number <= TOTAL_CHAPTERS ? number : null;
+              } catch (error) {
+                return null;
+              }
+            }
+
+            function writeCurrent(number) {
+              try { localStorage.setItem(CURRENT_KEY, String(number)); }
+              catch (error) {}
+            }
+
+            function markComplete(number) {
+              var completed = readCompleted();
+              if (completed.indexOf(number) !== -1) return;
+              completed.push(number);
+              writeCompleted(completed);
+              document.dispatchEvent(new CustomEvent('scholarsCompassProgressChanged', {
+                detail: { chapter: number, completed: completed.slice() }
+              }));
+            }
+
+            function setVisible(element, visible) {
+              if (!element) return;
+              element.style.display = visible ? 'inline-flex' : 'none';
+            }
+
+            function renderIndexProgress() {
+              var progressBar = document.getElementById('overallProgress');
+              var progressText = document.getElementById('progressText');
+              if (!progressBar || !progressText) return;
+
+              var completed = readCompleted();
+              var current = readCurrent();
+              var percent = Math.round((completed.length / TOTAL_CHAPTERS) * 1000) / 10;
+
+              progressBar.style.width = percent + '%';
+              progressBar.setAttribute('aria-valuenow', String(percent));
+              progressBar.setAttribute('aria-label', completed.length + ' of ' + TOTAL_CHAPTERS + ' chapters completed');
+              progressText.textContent = completed.length + ' of ' + TOTAL_CHAPTERS + ' chapters completed';
+
+              Array.prototype.slice.call(document.querySelectorAll('.chapter-link[data-chapter]')).forEach(function (link) {
+                var number = parseInt(link.getAttribute('data-chapter'), 10);
+                var isCompleted = completed.indexOf(number) !== -1;
+                var isCurrent = !isCompleted && current === number;
+                var card = link.querySelector('.guide-card');
+                if (card) {
+                  card.classList.toggle('chapter-completed', isCompleted);
+                  card.classList.toggle('chapter-current', isCurrent);
+                }
+                setVisible(link.querySelector('.completed-badge'), isCompleted);
+                setVisible(link.querySelector('.current-badge'), isCurrent);
+                setVisible(link.querySelector('.available-badge'), !isCompleted && !isCurrent);
+              });
+            }
+
+            function initIndex() {
+              if (!document.getElementById('overallProgress')) return;
+              renderIndexProgress();
+
+              Array.prototype.slice.call(document.querySelectorAll('.chapter-link[data-chapter]')).forEach(function (link) {
+                link.addEventListener('click', function () {
+                  var number = parseInt(link.getAttribute('data-chapter'), 10);
+                  if (number >= 1 && number <= TOTAL_CHAPTERS) writeCurrent(number);
+                });
+              });
+
+              var reset = document.getElementById('resetProgress');
+              if (reset && reset.getAttribute('data-progress-ready') !== 'true') {
+                reset.setAttribute('data-progress-ready', 'true');
+                reset.setAttribute('role', 'button');
+                reset.setAttribute('tabindex', '0');
+                reset.setAttribute('aria-label', 'Reset ENG 1010 chapter progress');
+                var clearProgress = function () {
+                  try {
+                    localStorage.removeItem(COMPLETED_KEY);
+                    localStorage.removeItem(CURRENT_KEY);
+                    localStorage.removeItem('completedChapters');
+                    localStorage.removeItem('scholarsCompassCompletedChapters');
+                  } catch (error) {}
+                  renderIndexProgress();
+                };
+                reset.addEventListener('click', clearProgress);
+                reset.addEventListener('keydown', function (event) {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    clearProgress();
+                  }
+                });
+              }
+
+              window.addEventListener('pageshow', renderIndexProgress);
+              window.addEventListener('storage', renderIndexProgress);
+              document.addEventListener('scholarsCompassProgressChanged', renderIndexProgress);
+            }
+
+            function initChapter() {
+              var number = chapterNumberFromPage();
+              if (!number) return;
+              writeCurrent(number);
+
+              var completed = false;
+              var complete = function () {
+                if (completed) return;
+                completed = true;
+                markComplete(number);
+              };
+
+              var closingNavigation = document.querySelector('.chapter-sequence-nav');
+              if (closingNavigation && 'IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                  entries.forEach(function (entry) {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+                      complete();
+                      observer.disconnect();
+                    }
+                  });
+                }, { threshold: [0.2, 0.5] });
+                observer.observe(closingNavigation);
+              }
+
+              var nearBottom = function () {
+                var root = document.scrollingElement || document.documentElement;
+                if ((root.scrollTop || window.pageYOffset || 0) + window.innerHeight >= root.scrollHeight - 140) complete();
+              };
+              window.addEventListener('scroll', nearBottom, { passive: true });
+              window.addEventListener('pageshow', nearBottom);
+              setTimeout(nearBottom, 120);
+
+              var next = document.querySelector('.chapter-sequence-next');
+              if (next) next.addEventListener('click', complete);
+            }
+
+            function init() {
+              if (!is1010()) return;
+              initIndex();
+              initChapter();
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+            else init();
+          })();'''
+
+          app_path.write_text(app + '\n\n' + block + '\n', encoding='utf-8')
+
+          pages = sorted(Path('1010').glob('*.html'))
+          for page in pages:
+              text = page.read_text(encoding='utf-8')
+              text = re.sub(r'app\.js\?v=[^"\']+', 'app.js?v=23-progress', text)
+              page.write_text(text, encoding='utf-8')
+
+          print(f'Updated app.js and {len(pages)} ENG 1010 HTML files')
+          PY
+
+      - name: Static validation
+        run: |
+          node --check app.js
+          grep -q "chapter completion progress" app.js
+          grep -q "scholarsCompass:1010:completedChapters" app.js
+          test "$(grep -l 'app.js?v=23-progress' 1010/*.html | wc -l)" -eq 16
+          grep -q 'id="overallProgress"' 1010/index.html
+          grep -q 'id="resetProgress"' 1010/index.html
+          grep -q 'class="chapter-sequence-nav"' 1010/chapter-1.html
+
+      - name: Install browser test tools
+        run: |
+          python -m pip install --disable-pip-version-check playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Browser regression test
+        run: |
+          python -m http.server 8000 > /tmp/scholars-compass-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill $server_pid' EXIT
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+
+          base = 'http://127.0.0.1:8000/1010/'
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page(viewport={"width": 1280, "height": 800})
+
+              page.goto(base + 'index.html', wait_until='networkidle')
+              page.evaluate('localStorage.clear()')
+              page.reload(wait_until='networkidle')
+              assert page.locator('#progressText').inner_text() == '0 of 14 chapters completed'
+              assert page.locator('#overallProgress').get_attribute('aria-valuenow') == '0'
+
+              page.goto(base + 'chapter-1.html', wait_until='networkidle')
+              page.evaluate('window.scrollTo(0, document.documentElement.scrollHeight)')
+              page.wait_for_timeout(700)
+              completed = page.evaluate("JSON.parse(localStorage.getItem('scholarsCompass:1010:completedChapters') || '[]')")
+              assert 1 in completed, completed
+
+              page.goto(base + 'index.html', wait_until='networkidle')
+              assert page.locator('#progressText').inner_text() == '1 of 14 chapters completed'
+              assert float(page.locator('#overallProgress').get_attribute('aria-valuenow')) > 7
+              assert page.locator('.chapter-link[data-chapter="1"] .completed-badge').is_visible()
+              assert not page.locator('.chapter-link[data-chapter="1"] .available-badge').is_visible()
+
+              page.locator('#resetProgress').click()
+              assert page.locator('#progressText').inner_text() == '0 of 14 chapters completed'
+              assert page.locator('#overallProgress').get_attribute('aria-valuenow') == '0'
+              assert page.evaluate("localStorage.getItem('scholarsCompass:1010:completedChapters')") is None
+
+              browser.close()
+          print('ENG 1010 progress browser regression passed')
+          PY
+
+      - name: Commit tested repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app.js 1010/*.html
+          git commit -m "Repair ENG 1010 chapter progress tracking"
+          git push origin HEAD:main
