@@ -10,6 +10,7 @@ from __future__ import annotations
 import subprocess
 from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
+from urllib.error import HTTPError, URLError
 from urllib.parse import unquote, urlsplit
 from urllib.request import Request, urlopen
 
@@ -39,6 +40,16 @@ SHARED_ASSETS = {
     "1010/chapter-12-tools.js",
 }
 
+APPROVED_ROOT_FILES = {
+    "app.js",
+    "interactive-tools.js",
+    "styles.css",
+    "stabilization-0.2.css",
+    "revision-round-2.css",
+    "revision-round-2.js",
+    "favicon.svg",
+}
+
 STAGING_PHRASES = (
     "The current chapter includes the video",
     "The video will be included only after it is verified",
@@ -65,12 +76,15 @@ def run(*args: str) -> str:
 def download(relative_path: str) -> None:
     url = f"{PREVIEW_BASE}/{relative_path}"
     request = Request(url, headers={"User-Agent": "Scholar's Compass deployment"})
-    with urlopen(request, timeout=45) as response:
-        payload = response.read()
+    try:
+        with urlopen(request, timeout=45) as response:
+            payload = response.read()
+    except (HTTPError, URLError) as error:
+        raise RuntimeError(f"Could not download approved file {relative_path}: {error}") from error
     destination = ROOT / relative_path
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_bytes(payload)
-    print(f"Downloaded {relative_path} ({len(payload):,} bytes)")
+    print(f"Downloaded {relative_path} ({len(payload):,} bytes)", flush=True)
 
 
 def resolve_local_reference(page_path: str, reference: str) -> str | None:
@@ -103,37 +117,29 @@ def collect_references(page_path: str) -> set[str]:
     }
 
 
+def is_approved_path(path: str) -> bool:
+    return (
+        path.startswith("1010/")
+        or path in APPROVED_ROOT_FILES
+        or path.startswith("assets/revision-companion.")
+    )
+
+
 def deploy() -> None:
     for path in [*DESTINATIONS, *sorted(SHARED_ASSETS)]:
         download(path)
 
-    # Fetch any additional local file referenced by the approved pages. Limit the
-    # operation to ENG 1010 and the approved shared-asset surface.
-    approved_root_files = {
-        "app.js",
-        "interactive-tools.js",
-        "styles.css",
-        "stabilization-0.2.css",
-        "revision-round-2.css",
-        "revision-round-2.js",
-        "favicon.svg",
-    }
+    # Fetch any additional local file referenced by the approved pages. Every
+    # discovered ENG 1010 asset is refreshed from the same approved package.
     queue = list(DESTINATIONS)
-    seen = set(queue)
+    seen = set(DESTINATIONS) | set(SHARED_ASSETS)
     while queue:
         page = queue.pop()
         for referenced in collect_references(page):
-            allowed = (
-                referenced.startswith("1010/")
-                or referenced in approved_root_files
-                or referenced.startswith("assets/revision-companion.")
-            )
-            if not allowed or referenced in seen:
+            if not is_approved_path(referenced) or referenced in seen:
                 continue
             seen.add(referenced)
-            destination = ROOT / referenced
-            if not destination.exists():
-                download(referenced)
+            download(referenced)
             if referenced.endswith(".html"):
                 queue.append(referenced)
 
@@ -193,11 +199,7 @@ def validate() -> None:
                 raise SystemExit(f"Broken local destination from {path}: {referenced}")
 
     changed = set(run("git", "diff", "--name-only").splitlines())
-    allowed = {
-        *DESTINATIONS,
-        *SHARED_ASSETS,
-    }
-    unexpected = sorted(path for path in changed if path and path not in allowed)
+    unexpected = sorted(path for path in changed if path and not is_approved_path(path))
     if unexpected:
         raise SystemExit(f"Deployment touched unapproved paths: {unexpected}")
 
