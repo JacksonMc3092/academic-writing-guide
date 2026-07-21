@@ -68,3 +68,5 @@ jobs:
           fi
           git commit -m "Deploy approved ENG 1010 revision"
           git push origin HEAD:deploy-eng1010-july-2026
+
+# Clean production deployment trigger.
