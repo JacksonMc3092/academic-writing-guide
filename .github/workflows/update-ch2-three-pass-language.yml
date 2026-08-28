@@ -1,0 +1,49 @@
+name: Update Chapter 2 Three-Pass Language
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .sc-triggers/update-ch2-three-pass-language.txt
+
+permissions:
+  contents: write
+
+jobs:
+  edit-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production
+        uses: actions/checkout@v4
+
+      - name: Update student-facing language
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('1010/chapter-2.html')
+          text = path.read_text(encoding='utf-8')
+          old = '<p>The current Scholar’s Compass chapter used a three-pass process. That structure remains useful, but it should be flexible rather than ceremonial.</p>'
+          new = '<p>A three-pass process can help you annotate with purpose. You do not have to follow each pass rigidly. Use the process as a flexible guide and adjust it to fit the text, assignment, and way you read best.</p>'
+
+          if text.count(old) != 1:
+              raise SystemExit(f'Expected exactly one target paragraph; found {text.count(old)}')
+
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          updated = path.read_text(encoding='utf-8')
+          assert old not in updated
+          assert new in updated
+          assert '<h3>Pass 1: Preview and orient</h3>' in updated
+          assert '<h3>Pass 2: Read and respond</h3>' in updated
+          assert '<h3>Pass 3: Review and carry forward</h3>' in updated
+          PY
+
+      - name: Commit verified chapter edit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 1010/chapter-2.html
+          git commit -m "Revise Chapter 2 three-pass annotation language"
+          git push origin HEAD:main
