@@ -1,0 +1,50 @@
+name: Update Chapter 3 Transitional Language
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .sc-triggers/update-ch3-transitional-language.txt
+
+permissions:
+  contents: write
+
+jobs:
+  edit-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production
+        uses: actions/checkout@v4
+
+      - name: Update student-facing transitional language
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('1010/chapter-3.html')
+          text = path.read_text(encoding='utf-8')
+          old = 'The old chapter used APA-style author-date language. In MLA, omit the publication year from routine in-text attribution unless the date itself is relevant to the discussion.'
+          new = 'Transitional language helps readers see how one idea or source relates to the next. Words and phrases such as <em>similarly</em>, <em>however</em>, <em>in contrast</em>, and <em>extends this idea</em> do more than connect sentences; they signal whether sources agree, differ, qualify, or build on one another. Choose transitions that accurately describe the relationship you want readers to notice rather than adding them simply for variety.'
+
+          if text.count(old) != 1:
+              raise SystemExit(f'Expected exactly one target paragraph; found {text.count(old)}')
+
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+
+          updated = path.read_text(encoding='utf-8')
+          assert old not in updated
+          assert new in updated
+          assert '<p><strong>Agreement:</strong></p>' in updated
+          assert '<p><strong>Extension:</strong></p>' in updated
+          assert '<p><strong>Contrast or shift in emphasis:</strong></p>' in updated
+          PY
+
+      - name: Commit verified chapter edit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 1010/chapter-3.html
+          git commit -m "Revise Chapter 3 transitional language guidance"
+          git push origin HEAD:main
